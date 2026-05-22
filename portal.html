@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Customer Portal Login | GrayTech Systems</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta
+      content="GrayTech Systems customer portal login register account"
+      name="keywords"
+    />
+    <meta
+      content="Login to your GrayTech Systems customer portal to view invoices, check data usage, raise support tickets, and manage your account."
+      name="description"
+    />
+    <link href="img/favicon.ico" rel="icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: #06a3da;
+        --primary-dark: #0582b0;
+        --secondary: #34ad54;
+        --dark: #091e3e;
+        --gray: #4a5568;
+        --gray-light: #e2e8f0;
+        --gray-bg: #f7fafc;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background: var(--gray-bg);
+        min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+      }
+      .portal-wrapper {
+        display: flex;
+        min-height: 100vh;
+      }
+      .portal-left {
+        flex: 1;
+        background: linear-gradient(135deg, var(--dark) 0%, #0d2b4f 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .portal-left::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.05"><path fill="white" d="M20,20 L80,20 L80,80 L20,80 Z"/><circle cx="50" cy="50" r="15"/></svg>')
+          repeat;
+        pointer-events: none;
+      }
+      .left-content {
+        max-width: 480px;
+        color: white;
+        position: relative;
+        z-index: 1;
+      }
+      .left-logo {
+        margin-bottom: 3rem;
+      }
+      .left-logo h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+      .left-logo i {
+        margin-right: 0.5rem;
+        color: var(--primary);
+      }
+      .left-content h2 {
+        font-size: 2.25rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        line-height: 1.3;
+        letter-spacing: -0.02em;
+      }
+      .left-content p {
+        font-size: 1rem;
+        line-height: 1.6;
+        opacity: 0.8;
+        margin-bottom: 2rem;
+      }
+      .feature-list {
+        list-style: none;
+        margin-bottom: 2rem;
+      }
+      .feature-list li {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+        font-size: 0.9375rem;
+      }
+      .feature-list li i {
+        color: var(--primary);
+        font-size: 1.125rem;
+      }
+      .trust-badge {
+        display: flex;
+        gap: 1.5rem;
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .trust-badge span {
+        font-size: 0.75rem;
+        opacity: 0.7;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .trust-badge i {
+        font-size: 1rem;
+      }
+      .portal-right {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        background: white;
+      }
+      .login-card {
+        width: 100%;
+        max-width: 440px;
+      }
+      .back-to-site {
+        text-align: right;
+        margin-bottom: 1rem;
+      }
+      .back-to-site a {
+        color: var(--gray);
+        font-size: 0.875rem;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: color 0.2s;
+      }
+      .back-to-site a:hover {
+        color: var(--primary);
+      }
+      .auth-tabs {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        border-bottom: 2px solid var(--gray-light);
+      }
+      .auth-tab {
+        flex: 1;
+        text-align: center;
+        padding: 0.75rem;
+        background: none;
+        border: none;
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--gray);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+      .auth-tab.active {
+        color: var(--primary);
+      }
+      .auth-tab.active::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: var(--primary);
+      }
+      .auth-tab:hover:not(.active) {
+        color: var(--dark);
+      }
+      .auth-form {
+        display: none;
+      }
+      .auth-form.active {
+        display: block;
+        animation: fadeIn 0.4s ease;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+      .form-group label {
+        display: block;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--dark);
+        margin-bottom: 0.5rem;
+      }
+      .form-group label i {
+        margin-right: 0.5rem;
+        color: var(--primary);
+        width: 18px;
+      }
+      .input-group-custom {
+        position: relative;
+      }
+      .input-group-custom input {
+        width: 100%;
+        padding: 0.875rem 1rem;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.9375rem;
+        border: 1.5px solid var(--gray-light);
+        border-radius: 12px;
+        transition: all 0.2s ease;
+        background: var(--gray-bg);
+      }
+      .input-group-custom input:focus {
+        outline: none;
+        border-color: var(--primary);
+        background: white;
+        box-shadow: 0 0 0 3px rgba(6, 163, 218, 0.1);
+      }
+      .input-group-custom input.error {
+        border-color: #e53e3e;
+      }
+      .error-message {
+        font-size: 0.75rem;
+        color: #e53e3e;
+        margin-top: 0.375rem;
+        display: none;
+      }
+      .password-toggle {
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: var(--gray);
+        transition: color 0.2s;
+      }
+      .password-toggle:hover {
+        color: var(--primary);
+      }
+      .form-options {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        font-size: 0.875rem;
+      }
+      .checkbox {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+      }
+      .checkbox input {
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+        accent-color: var(--primary);
+      }
+      .checkbox span {
+        color: var(--gray);
+      }
+      .forgot-link {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+      .forgot-link:hover {
+        color: var(--primary-dark);
+        text-decoration: underline;
+      }
+      .btn-auth {
+        width: 100%;
+        padding: 0.875rem;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.9375rem;
+        font-weight: 600;
+        background: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-bottom: 1rem;
+      }
+      .btn-auth:hover {
+        background: var(--primary-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(6, 163, 218, 0.3);
+      }
+      .divider {
+        text-align: center;
+        margin: 1.5rem 0;
+        position: relative;
+      }
+      .divider::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        height: 1px;
+        background: var(--gray-light);
+      }
+      .divider span {
+        background: white;
+        padding: 0 1rem;
+        position: relative;
+        color: var(--gray);
+        font-size: 0.875rem;
+      }
+      .social-login {
+        display: flex;
+        gap: 1rem;
+      }
+      .btn-social {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.75rem;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.875rem;
+        font-weight: 500;
+        background: var(--gray-bg);
+        border: 1.5px solid var(--gray-light);
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        color: var(--dark);
+        text-decoration: none;
+      }
+      .btn-social:hover {
+        background: white;
+        border-color: var(--primary);
+        transform: translateY(-2px);
+      }
+      .btn-social i {
+        font-size: 1.125rem;
+      }
+      .btn-social.google i {
+        color: #db4437;
+      }
+      .btn-social.microsoft i {
+        color: #0078d4;
+      }
+      .alert {
+        padding: 1rem;
+        border-radius: 12px;
+        margin-bottom: 1.5rem;
+        font-size: 0.875rem;
+        display: none;
+      }
+      .alert-success {
+        background: #c6f6d5;
+        color: #22543d;
+        border-left: 4px solid #38a169;
+      }
+      .alert-error {
+        background: #fed7d7;
+        color: #742a2a;
+        border-left: 4px solid #e53e3e;
+      }
+      .terms-text {
+        font-size: 0.75rem;
+        color: var(--gray);
+        text-align: center;
+        margin-top: 1.5rem;
+      }
+      .terms-text a {
+        color: var(--primary);
+        text-decoration: none;
+      }
+      .terms-text a:hover {
+        text-decoration: underline;
+      }
+      @media (max-width: 992px) {
+        .portal-left {
+          display: none;
+        }
+        .portal-right {
+          flex: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="portal-wrapper">
+      <div class="portal-left">
+        <div class="left-content">
+          <div class="left-logo">
+            <h1><i class="fa fa-wifi"></i>GrayTech Systems</h1>
+          </div>
+          <h2>Welcome to your<br />Customer Portal</h2>
+          <p>
+            Manage your internet services, track support tickets, view invoices,
+            and monitor your data usage — all in one place.
+          </p>
+          <ul class="feature-list">
+            <li>
+              <i class="fas fa-chart-line"></i> Real-time data usage monitoring
+            </li>
+            <li>
+              <i class="fas fa-file-invoice-dollar"></i> View and pay invoices
+              online
+            </li>
+            <li><i class="fas fa-headset"></i> 24/7 support ticket system</li>
+            <li>
+              <i class="fas fa-bell"></i> Outage notifications and service
+              alerts
+            </li>
+            <li>
+              <i class="fas fa-sync-alt"></i> Manage your plans and upgrades
+            </li>
+          </ul>
+          <div class="trust-badge">
+            <span><i class="fas fa-shield-alt"></i> POPIA Compliant</span>
+            <span><i class="fas fa-lock"></i> Secure Encryption</span>
+            <span><i class="fas fa-headset"></i> 24/7 Support</span>
+          </div>
+        </div>
+      </div>
+      <div class="portal-right">
+        <div class="login-card">
+          <div class="back-to-site">
+            <a href="index.html"
+              ><i class="fas fa-arrow-left"></i> Back to Website</a
+            >
+          </div>
+          <div class="auth-tabs">
+            <button class="auth-tab active" data-tab="login">Login</button
+            ><button class="auth-tab" data-tab="register">Register</button>
+          </div>
+          <div id="alertMessage" class="alert"></div>
+          <div id="loginForm" class="auth-form active">
+            <form id="login">
+              <div class="form-group">
+                <label><i class="fas fa-envelope"></i> Email Address</label>
+                <div class="input-group-custom">
+                  <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="customer@graytech.co.za"
+                    required
+                  />
+                </div>
+                <div class="error-message" id="loginEmailError">
+                  Please enter a valid email address
+                </div>
+              </div>
+              <div class="form-group">
+                <label><i class="fas fa-lock"></i> Password</label>
+                <div class="input-group-custom">
+                  <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Enter your password"
+                    required
+                  /><span
+                    class="password-toggle"
+                    onclick="togglePassword('loginPassword')"
+                    ><i class="far fa-eye"></i
+                  ></span>
+                </div>
+                <div class="error-message" id="loginPasswordError">
+                  Password is required
+                </div>
+              </div>
+              <div class="form-options">
+                <label class="checkbox"
+                  ><input type="checkbox" id="rememberMe" /><span
+                    >Remember me</span
+                  ></label
+                ><a
+                  href="#"
+                  class="forgot-link"
+                  onclick="showForgotPassword(); return false;"
+                  >Forgot password?</a
+                >
+              </div>
+              <button type="submit" class="btn-auth">Sign In</button>
+            </form>
+            <div class="divider"><span>Or continue with</span></div>
+            <div class="social-login">
+              <a
+                href="#"
+                class="btn-social google"
+                onclick="socialLogin('Google'); return false;"
+                ><i class="fab fa-google"></i> Google</a
+              ><a
+                href="#"
+                class="btn-social microsoft"
+                onclick="socialLogin('Microsoft'); return false;"
+                ><i class="fab fa-microsoft"></i> Microsoft</a
+              >
+            </div>
+          </div>
+          <div id="registerForm" class="auth-form">
+            <form id="register">
+              <div class="form-group">
+                <label><i class="fas fa-user"></i> Full Name</label>
+                <div class="input-group-custom">
+                  <input
+                    type="text"
+                    id="regName"
+                    placeholder="Thabo Nkosi"
+                    required
+                  />
+                </div>
+                <div class="error-message" id="regNameError">
+                  Please enter your full name
+                </div>
+              </div>
+              <div class="form-group">
+                <label><i class="fas fa-envelope"></i> Email Address</label>
+                <div class="input-group-custom">
+                  <input
+                    type="email"
+                    id="regEmail"
+                    placeholder="customer@graytech.co.za"
+                    required
+                  />
+                </div>
+                <div class="error-message" id="regEmailError">
+                  Please enter a valid email address
+                </div>
+              </div>
+              <div class="form-group">
+                <label><i class="fas fa-phone-alt"></i> Phone Number</label>
+                <div class="input-group-custom">
+                  <input
+                    type="tel"
+                    id="regPhone"
+                    placeholder="+27 87 701 9055"
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label><i class="fas fa-lock"></i> Password</label>
+                <div class="input-group-custom">
+                  <input
+                    type="password"
+                    id="regPassword"
+                    placeholder="Create a password (min. 8 characters)"
+                    required
+                  /><span
+                    class="password-toggle"
+                    onclick="togglePassword('regPassword')"
+                    ><i class="far fa-eye"></i
+                  ></span>
+                </div>
+                <div class="error-message" id="regPasswordError">
+                  Password must be at least 8 characters
+                </div>
+              </div>
+              <div class="form-group">
+                <label><i class="fas fa-lock"></i> Confirm Password</label>
+                <div class="input-group-custom">
+                  <input
+                    type="password"
+                    id="regConfirmPassword"
+                    placeholder="Confirm your password"
+                    required
+                  /><span
+                    class="password-toggle"
+                    onclick="togglePassword('regConfirmPassword')"
+                    ><i class="far fa-eye"></i
+                  ></span>
+                </div>
+                <div class="error-message" id="regConfirmError">
+                  Passwords do not match
+                </div>
+              </div>
+              <div class="form-options">
+                <label class="checkbox"
+                  ><input type="checkbox" id="acceptTerms" required /><span
+                    >I agree to the
+                    <a href="#" class="forgot-link">Terms of Service</a> and
+                    <a href="#" class="forgot-link">Privacy Policy</a></span
+                  ></label
+                >
+              </div>
+              <button type="submit" class="btn-auth">Create Account</button>
+            </form>
+            <div class="terms-text">
+              By registering, you'll get access to your dashboard, invoices,
+              support tickets, and usage data.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.querySelectorAll('.auth-tab').forEach((tab) => {
+        tab.addEventListener('click', function () {
+          const tabName = this.getAttribute('data-tab');
+          document
+            .querySelectorAll('.auth-tab')
+            .forEach((t) => t.classList.remove('active'));
+          this.classList.add('active');
+          document
+            .querySelectorAll('.auth-form')
+            .forEach((form) => form.classList.remove('active'));
+          if (tabName === 'login') {
+            document.getElementById('loginForm').classList.add('active');
+          } else {
+            document.getElementById('registerForm').classList.add('active');
+          }
+          hideAlert();
+          clearErrors();
+        });
+      });
+      function togglePassword(fieldId) {
+        const field = document.getElementById(fieldId);
+        const toggle = field.nextElementSibling;
+        if (field.type === 'password') {
+          field.type = 'text';
+          toggle.innerHTML = '<i class="far fa-eye-slash"></i>';
+        } else {
+          field.type = 'password';
+          toggle.innerHTML = '<i class="far fa-eye"></i>';
+        }
+      }
+      function showAlert(message, type) {
+        const alert = document.getElementById('alertMessage');
+        alert.className = `alert alert-${type}`;
+        alert.innerHTML = `<i class="fas fa-${
+          type === 'success' ? 'check-circle' : 'exclamation-triangle'
+        }"></i> ${message}`;
+        alert.style.display = 'block';
+        setTimeout(() => hideAlert(), 5000);
+      }
+      function hideAlert() {
+        document.getElementById('alertMessage').style.display = 'none';
+      }
+      function clearErrors() {
+        document
+          .querySelectorAll('.error-message')
+          .forEach((err) => (err.style.display = 'none'));
+        document
+          .querySelectorAll('.input-group-custom input')
+          .forEach((input) => input.classList.remove('error'));
+      }
+      function showError(inputId, errorId, condition) {
+        const input = document.getElementById(inputId);
+        const error = document.getElementById(errorId);
+        if (condition) {
+          input.classList.add('error');
+          error.style.display = 'block';
+          return true;
+        }
+        input.classList.remove('error');
+        error.style.display = 'none';
+        return false;
+      }
+      function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+      document.getElementById('login').addEventListener('submit', function (e) {
+        e.preventDefault();
+        clearErrors();
+        const email = document.getElementById('loginEmail').value.trim();
+        const password = document.getElementById('loginPassword').value;
+        let hasError = false;
+        if (!isValidEmail(email)) {
+          showError('loginEmail', 'loginEmailError', true);
+          hasError = true;
+        }
+        if (!password) {
+          showError('loginPassword', 'loginPasswordError', true);
+          hasError = true;
+        }
+        if (hasError) return;
+        showAlert('Welcome back! Redirecting to dashboard...', 'success');
+        setTimeout(() => {
+          window.location.href = 'dashboard/index.html';
+        }, 1500);
+      });
+      document
+        .getElementById('register')
+        .addEventListener('submit', function (e) {
+          e.preventDefault();
+          clearErrors();
+          const name = document.getElementById('regName').value.trim();
+          const email = document.getElementById('regEmail').value.trim();
+          const password = document.getElementById('regPassword').value;
+          const confirmPassword =
+            document.getElementById('regConfirmPassword').value;
+          const terms = document.getElementById('acceptTerms').checked;
+          let hasError = false;
+          if (!name)
+            showError('regName', 'regNameError', true) && (hasError = true);
+          if (!isValidEmail(email))
+            showError('regEmail', 'regEmailError', true) && (hasError = true);
+          if (password.length < 8)
+            showError('regPassword', 'regPasswordError', true) &&
+              (hasError = true);
+          if (password !== confirmPassword)
+            showError('regConfirmPassword', 'regConfirmError', true) &&
+              (hasError = true);
+          if (!terms) {
+            showAlert(
+              'Please accept the Terms of Service and Privacy Policy.',
+              'error'
+            );
+            hasError = true;
+          }
+          if (hasError) return;
+          showAlert(
+            'Account created successfully! Please check your email for verification.',
+            'success'
+          );
+          document.getElementById('regName').value = '';
+          document.getElementById('regEmail').value = '';
+          document.getElementById('regPhone').value = '';
+          document.getElementById('regPassword').value = '';
+          document.getElementById('regConfirmPassword').value = '';
+          document.getElementById('acceptTerms').checked = false;
+          setTimeout(() => {
+            document.querySelector('.auth-tab[data-tab="login"]').click();
+            showAlert('You can now log in with your new account.', 'success');
+          }, 2000);
+        });
+      function showForgotPassword() {
+        showAlert(
+          'Password reset link would be sent to your email address.',
+          'success'
+        );
+      }
+      function socialLogin(provider) {
+        showAlert(
+          `You would be redirected to ${provider} for authentication.`,
+          'success'
+        );
+      }
+      document
+        .getElementById('regPassword')
+        .addEventListener('input', function () {
+          showError('regPassword', 'regPasswordError', this.value.length < 8);
+        });
+      document
+        .getElementById('regConfirmPassword')
+        .addEventListener('input', function () {
+          const password = document.getElementById('regPassword').value;
+          showError(
+            'regConfirmPassword',
+            'regConfirmError',
+            this.value !== password
+          );
+        });
+      document
+        .getElementById('loginEmail')
+        .addEventListener('input', function () {
+          showError(
+            'loginEmail',
+            'loginEmailError',
+            !isValidEmail(this.value.trim()) && this.value.length > 0
+          );
+        });
+    </script>
+  </body>
+</html>

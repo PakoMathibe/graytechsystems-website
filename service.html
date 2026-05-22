@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>
+      GrayTech Systems | Fibre, LTE, Wireless & VoIP Services South Africa
+    </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta
+      content="GrayTech Systems fibre installation wireless internet LTE VoIP business connectivity South Africa services"
+      name="keywords"
+    />
+    <meta
+      content="GrayTech Systems offers fast fibre, reliable LTE, business wireless, VoIP phone systems, and IT support across South Africa. Get connected today."
+      name="description"
+    />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link
+      href="src/lib/owlcarousel/assets/owl.carousel.min.css"
+      rel="stylesheet"
+    />
+    <link href="src/lib/animate/animate.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="src/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="src/css/style.css" rel="stylesheet" />
+
+    <style>
+      /* Mega Menu Dropdown Styles */
+      .dropdown-menu {
+        border-radius: 12px;
+        border: none;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      }
+      .dropdown-item {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+        transition: all 0.2s;
+      }
+      .dropdown-item:hover {
+        background-color: rgba(6, 163, 218, 0.05);
+        color: #06a3da;
+        transform: translateX(5px);
+      }
+      .dropdown-header {
+        font-weight: 700;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .mega-dropdown {
+        min-width: 580px;
+        padding: 1.5rem;
+      }
+      @media (max-width: 991.98px) {
+        .mega-dropdown {
+          min-width: auto;
+          width: 100%;
+        }
+      }
+
+      /* Custom Service Card Styles - No faded blue */
+      .service-card-custom {
+        background: white;
+        border-radius: 16px;
+        padding: 2rem 1.5rem;
+        text-align: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        height: 100%;
+        border: 1px solid #eef2f6;
+      }
+      .service-card-custom:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+      .service-icon-custom {
+        width: 80px;
+        height: 80px;
+        background: rgba(6, 163, 218, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+      }
+      .service-icon-custom i {
+        font-size: 2rem;
+        color: #06a3da;
+      }
+      .service-card-custom h4 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: #091e3e;
+      }
+      .service-card-custom p {
+        font-size: 0.875rem;
+        color: #4a5568;
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
+      }
+      .service-btn {
+        background: #06a3da;
+        color: white;
+        border: none;
+        padding: 0.6rem 1.2rem;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 0.875rem;
+        transition: all 0.3s;
+        text-decoration: none;
+        display: inline-block;
+      }
+      .service-btn:hover {
+        background: #0582b0;
+        transform: translateY(-2px);
+        color: white;
+      }
+      .section-bg-light {
+        background-color: #f8fafc;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Spinner Start -->
+    <div
+      id="spinner"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+    >
+      <div class="spinner"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative p-0">
+      <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+        <a href="index.html" class="navbar-brand p-0">
+          <h1 class="m-0"><i class="fa fa-wifi me-2"></i>GrayTech</h1>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+        >
+          <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav ms-auto py-0">
+            <a href="index.html" class="nav-item nav-link">Home</a>
+            <a href="fibre.html" class="nav-item nav-link">Fibre</a>
+            <a href="lte.html" class="nav-item nav-link">LTE & 5G</a>
+            <a href="voip-systems.html" class="nav-item nav-link">VoIP</a>
+
+            <!-- Vox-style Mega Dropdown -->
+            <div class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                >Solutions</a
+              >
+              <div class="dropdown-menu mega-dropdown">
+                <div class="row g-4">
+                  <div class="col-md-4">
+                    <h6 class="dropdown-header text-primary mb-3">
+                      Connectivity
+                    </h6>
+                    <a href="fibre.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-tachometer-alt text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >Fibre Internet<br /><small class="text-muted"
+                        >Up to 1Gbps speeds</small
+                      ></a
+                    >
+                    <a href="lte.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-mobile-alt text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >LTE & 5G<br /><small class="text-muted"
+                        >Fast mobile internet</small
+                      ></a
+                    >
+                    <a href="satellite.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-satellite-dish text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >Satellite Internet<br /><small class="text-muted"
+                        >Connect anywhere</small
+                      ></a
+                    >
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="dropdown-header text-primary mb-3">
+                      Business IT
+                    </h6>
+                    <a href="voip-systems.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-phone-alt text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >VoIP Systems<br /><small class="text-muted"
+                        >Save up to 60% on calls</small
+                      ></a
+                    >
+                    <a href="network-solutions.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-network-wired text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >Network Solutions<br /><small class="text-muted"
+                        >Design & installation</small
+                      ></a
+                    >
+                    <a href="it-maintenance.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-laptop-code text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >IT Maintenance<br /><small class="text-muted"
+                        >Hardware & software</small
+                      ></a
+                    >
+                    <a href="remote-monitoring.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-eye text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >Remote Monitoring<br /><small class="text-muted"
+                        >24/7 surveillance</small
+                      ></a
+                    >
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="dropdown-header text-primary mb-3">
+                      Security & Power
+                    </h6>
+                    <a href="connected-security.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-video text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >Security Systems<br /><small class="text-muted"
+                        >CCTV & access control</small
+                      ></a
+                    >
+                    <a href="backup-power.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-battery-full text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >Backup Power<br /><small class="text-muted"
+                        >Load shedding solutions</small
+                      ></a
+                    >
+                    <a href="surge-protection.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-bolt text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >Surge Protection<br /><small class="text-muted"
+                        >Equipment safety</small
+                      ></a
+                    >
+                    <div class="mt-3 pt-2 border-top">
+                      <a href="web-hosting.html" class="dropdown-item"
+                        ><i
+                          class="fas fa-cloud-upload-alt text-primary me-2"
+                          style="width: 20px"
+                        ></i
+                        >Web Hosting<br /><small class="text-muted"
+                          >Fast SA servers</small
+                        ></a
+                      >
+                      <a href="quote.html" class="dropdown-item"
+                        ><i
+                          class="fas fa-file-invoice text-primary me-2"
+                          style="width: 20px"
+                        ></i
+                        >Request Quote<br /><small class="text-muted"
+                          >Get custom pricing</small
+                        ></a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                  <div class="col-12">
+                    <a
+                      href="service.html"
+                      class="text-primary text-decoration-none small"
+                      >View all solutions →</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <a href="contact.html" class="nav-item nav-link">Contact</a>
+            <a href="portal.html" class="nav-item nav-link">Customer Portal</a>
+          </div>
+          <a href="contact.html" class="btn btn-primary py-2 px-4 ms-3"
+            >Get Quote</a
+          >
+        </div>
+      </nav>
+
+      <div
+        class="container-fluid bg-primary py-5 bg-header"
+        style="margin-bottom: 90px"
+      >
+        <div class="row py-5">
+          <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+            <h1 class="display-4 text-white animated zoomIn">Services</h1>
+            <a href="index.html" class="h5 text-white">Home</a>
+            <i class="far fa-circle text-white px-2"></i>
+            <a href="service.html" class="h5 text-white">Services</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Full Screen Search Start -->
+    <div class="modal fade" id="searchModal" tabindex="-1">
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content" style="background: rgba(9, 30, 62, 0.7)">
+          <div class="modal-header border-0">
+            <button
+              type="button"
+              class="btn bg-white btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div
+            class="modal-body d-flex align-items-center justify-content-center"
+          >
+            <div class="input-group" style="max-width: 600px">
+              <input
+                type="text"
+                class="form-control bg-transparent border-primary p-3"
+                placeholder="Search our services..."
+              />
+              <button class="btn btn-primary px-4">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Full Screen Search End -->
+
+    <!-- SECTION 1: INTERNET CONNECTIVITY -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="container py-5">
+        <div
+          class="section-title text-center position-relative pb-3 mb-5 mx-auto"
+          style="max-width: 700px"
+        >
+          <h5 class="fw-bold text-primary text-uppercase">
+            Internet Connectivity
+          </h5>
+          <h1 class="mb-0">Fast, Reliable Internet For Every Need</h1>
+          <p class="mt-3">
+            Stay connected with South Africa's most trusted internet solutions
+          </p>
+        </div>
+        <div class="row g-4">
+          <!-- Fibre -->
+          <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+            <div class="service-card-custom">
+              <div class="service-icon-custom">
+                <i class="fas fa-tachometer-alt"></i>
+              </div>
+              <h4>Fibre Internet</h4>
+              <p>
+                Lightning-fast fibre from 50Mbps to 1Gbps. Perfect for
+                streaming, gaming, and working from home.
+              </p>
+              <a href="fibre.html" class="service-btn">Learn More →</a>
+            </div>
+          </div>
+          <!-- LTE & 5G -->
+          <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+            <div class="service-card-custom">
+              <div class="service-icon-custom">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <h4>LTE & 5G</h4>
+              <p>
+                High-speed mobile data with flexible contracts. Uncapped and
+                capped options available.
+              </p>
+              <a href="lte.html" class="service-btn">Learn More →</a>
+            </div>
+          </div>
+          <!-- Satellite -->
+          <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
+            <div class="service-card-custom">
+              <div class="service-icon-custom">
+                <i class="fas fa-satellite-dish"></i>
+              </div>
+              <h4>Satellite Internet</h4>
+              <p>
+                Connect anywhere in South Africa. Perfect for rural and remote
+                areas.
+              </p>
+              <a href="satellite.html" class="service-btn">Learn More →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 2: IT SOLUTIONS -->
+    <div
+      class="container-fluid py-5 wow fadeInUp section-bg-light"
+      data-wow-delay="0.1s"
+    >
+      <div class="container py-5">
+        <div
+          class="section-title text-center position-relative pb-3 mb-5 mx-auto"
+          style="max-width: 700px"
+        >
+          <h5 class="fw-bold text-primary text-uppercase">IT Solutions</h5>
+          <h1 class="mb-0">Complete Business Technology Solutions</h1>
+          <p class="mt-3">
+            Empower your business with enterprise-grade IT services
+          </p>
+        </div>
+        <div class="row g-4">
+          <!-- VoIP Systems -->
+          <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+            <div class="service-card-custom">
+              <div class="service-icon-custom">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <h4>VoIP Systems</h4>
+              <p>
+                Cloud-based business telephony with call recording,
+                auto-attendant, and mobile apps. Save up to 60%.
+              </p>
+              <a href="voip-systems.html" class="service-btn">Learn More →</a>
+            </div>
+          </div>
+          <!-- Network Solutions -->
+          <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+            <div class="service-card-custom">
+              <div class="service-icon-custom">
+                <i class="fas fa-network-wired"></i>
+              </div>
+              <h4>Network Solutions</h4>
+              <p>
+                Design, installation, and configuration of enterprise networks,
+                switches, routers, and firewalls.
+              </p>
+              <a href="network-solutions.html" class="service-btn"
+                >Learn More →</a
+              >
+            </div>
+          </div>
+          <!-- IT Maintenance -->
+          <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
+            <div class="service-card-custom">
+              <div class="service-icon-custom">
+                <i class="fas fa-laptop-code"></i>
+              </div>
+              <h4>IT Maintenance</h4>
+              <p>
+                Regular system updates, patch management, hardware checks, and
+                user support for your business.
+              </p>
+              <a href="it-maintenance.html" class="service-btn">Learn More →</a>
+            </div>
+          </div>
+          <!-- Remote Monitoring -->
+          <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+            <div class="service-card-custom">
+              <div class="service-icon-custom"><i class="fas fa-eye"></i></div>
+              <h4>Remote Monitoring</h4>
+              <p>
+                24/7 network and server monitoring with instant alerts. We
+                detect issues before you do.
+              </p>
+              <a href="remote-monitoring.html" class="service-btn"
+                >Learn More →</a
+              >
+            </div>
+          </div>
+          <!-- Backup Power -->
+          <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+            <div class="service-card-custom">
+              <div class="service-icon-custom">
+                <i class="fas fa-battery-full"></i>
+              </div>
+              <h4>Backup Power</h4>
+              <p>
+                UPS and generator solutions to keep your network running during
+                load shedding and outages.
+              </p>
+              <a href="backup-power.html" class="service-btn">Learn More →</a>
+            </div>
+          </div>
+          <!-- Surge & Lightning Protection -->
+          <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
+            <div class="service-card-custom">
+              <div class="service-icon-custom"><i class="fas fa-bolt"></i></div>
+              <h4>Surge & Lightning Protection</h4>
+              <p>
+                Protect your valuable equipment from power surges and lightning
+                strikes with certified suppressors.
+              </p>
+              <a href="surge-protection.html" class="service-btn"
+                >Learn More →</a
+              >
+            </div>
+          </div>
+          <!-- Connected Security -->
+          <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+            <div class="service-card-custom">
+              <div class="service-icon-custom">
+                <i class="fas fa-video"></i>
+              </div>
+              <h4>Connected Security</h4>
+              <p>
+                IP cameras, access control, and alarm systems with remote
+                viewing and mobile alerts.
+              </p>
+              <a href="connected-security.html" class="service-btn"
+                >Learn More →</a
+              >
+            </div>
+          </div>
+          <!-- Web Hosting -->
+          <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+            <div class="service-card-custom">
+              <div class="service-icon-custom">
+                <i class="fas fa-cloud-upload-alt"></i>
+              </div>
+              <h4>Web Hosting</h4>
+              <p>
+                Fast, secure South African hosting with daily backups, SSL
+                certificates, and 24/7 support.
+              </p>
+              <a href="web-hosting.html" class="service-btn">Learn More →</a>
+            </div>
+          </div>
+          <!-- Fibre Maintenance -->
+          <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
+            <div class="service-card-custom">
+              <div class="service-icon-custom">
+                <i class="fas fa-tachometer-alt"></i>
+              </div>
+              <h4>Fibre Maintenance</h4>
+              <p>
+                Proactive fibre network monitoring, fault detection, and rapid
+                repair to ensure 99.9% uptime.
+              </p>
+              <a href="fibre-maintenance.html" class="service-btn"
+                >Learn More →</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quote Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="container py-5">
+        <div class="row g-5">
+          <div class="col-lg-7">
+            <div class="section-title position-relative pb-3 mb-5">
+              <h5 class="fw-bold text-primary text-uppercase">
+                Request A Quote
+              </h5>
+              <h1 class="mb-0">
+                Need A Free IT or Connectivity Quote? We're Here to Help
+              </h1>
+            </div>
+            <div class="row gx-3">
+              <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
+                <h5 class="mb-4">
+                  <i class="fa fa-reply text-primary me-3"></i>Reply within 24
+                  hours
+                </h5>
+              </div>
+              <div class="col-sm-6 wow zoomIn" data-wow-delay="0.4s">
+                <h5 class="mb-4">
+                  <i class="fa fa-phone-alt text-primary me-3"></i>24 hrs
+                  telephone support
+                </h5>
+              </div>
+            </div>
+            <p class="mb-4">
+              Tell us about your connectivity or IT needs — whether it's fibre
+              for your home, VoIP for your business, network security, or backup
+              power solutions. We'll prepare a custom quote with no obligation.
+            </p>
+            <div
+              class="d-flex align-items-center mt-2 wow zoomIn"
+              data-wow-delay="0.6s"
+            >
+              <div
+                class="bg-primary d-flex align-items-center justify-content-center rounded"
+                style="width: 60px; height: 60px"
+              >
+                <i class="fa fa-phone-alt text-white"></i>
+              </div>
+              <div class="ps-4">
+                <h5 class="mb-2">Call to discuss your needs</h5>
+                <h4 class="text-primary mb-0">087 701 9055</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div
+              class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn"
+              data-wow-delay="0.9s"
+            >
+              <form id="quoteForm" class="w-100">
+                <div class="row g-3">
+                  <div class="col-xl-12">
+                    <input
+                      type="text"
+                      name="name"
+                      id="quoteName"
+                      class="form-control bg-light border-0"
+                      placeholder="Your Name"
+                      style="height: 55px"
+                      required
+                    />
+                  </div>
+                  <div class="col-12">
+                    <input
+                      type="email"
+                      name="email"
+                      id="quoteEmail"
+                      class="form-control bg-light border-0"
+                      placeholder="Your Email"
+                      style="height: 55px"
+                      required
+                    />
+                  </div>
+                  <div class="col-12">
+                    <select
+                      name="service"
+                      id="quoteService"
+                      class="form-select bg-light border-0"
+                      style="height: 55px"
+                      required
+                    >
+                      <option value="">Select A Service</option>
+                      <option value="Fibre to the Home">
+                        🏠 Fibre to the Home - 50Mbps to 1Gbps
+                      </option>
+                      <option value="Business Fibre">
+                        🏢 Business Fibre - Dedicated connectivity
+                      </option>
+                      <option value="LTE / 5G">
+                        📱 LTE / 5G - Uncapped and capped plans
+                      </option>
+                      <option value="Wireless Broadband">
+                        📡 Wireless Broadband - For remote areas
+                      </option>
+                      <option value="VoIP Phone Systems">
+                        ☎️ VoIP Phone Systems - Business telephony
+                      </option>
+                      <option value="Network Solutions">
+                        🔧 Network Solutions - Design & installation
+                      </option>
+                      <option value="IT Maintenance">
+                        💻 IT Maintenance - Hardware & software support
+                      </option>
+                      <option value="Backup Power">
+                        ⚡ Backup Power - Load shedding solutions
+                      </option>
+                      <option value="Security Systems">
+                        🎥 Security Systems - CCTV & access control
+                      </option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <textarea
+                      name="message"
+                      id="quoteMessage"
+                      class="form-control bg-light border-0"
+                      rows="3"
+                      placeholder="Tell us about your requirements..."
+                    ></textarea>
+                  </div>
+                  <div class="col-12">
+                    <button
+                      type="submit"
+                      class="btn btn-dark w-100 py-3 fw-bold"
+                    >
+                      Request A Quote
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Quote End -->
+
+    <!-- Footer Start -->
+    <div
+      class="container-fluid bg-dark text-white mt-5 wow fadeInUp"
+      data-wow-delay="0.1s"
+    >
+      <div class="container">
+        <div class="row gx-5">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <div
+              class="d-flex flex-column align-items-center justify-content-center text-center h-100 p-4"
+            >
+              <a href="index.html" class="navbar-brand"
+                ><h1 class="m-0 text-white">
+                  <i class="fa fa-wifi me-2 text-primary"></i>GrayTech
+                </h1></a
+              >
+              <p class="mt-3 mb-4 text-white">
+                Your trusted IT solutions partner for fibre, VoIP, network
+                security, and managed IT services across South Africa.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-8 col-md-6">
+            <div class="row gx-5">
+              <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                <div
+                  class="section-title section-title-sm position-relative pb-3 mb-4"
+                >
+                  <h3 class="text-white mb-0">Get In Touch</h3>
+                </div>
+                <div class="d-flex mb-2">
+                  <i class="bi bi-geo-alt text-primary me-2"></i>
+                  <p class="mb-0 text-white">Fourways, Johannesburg, 2191</p>
+                </div>
+                <div class="d-flex mb-2">
+                  <i class="bi bi-envelope-open text-primary me-2"></i>
+                  <p class="mb-0 text-white">info@graytechsystems.co.za</p>
+                </div>
+                <div class="d-flex mb-2">
+                  <i class="bi bi-telephone text-primary me-2"></i>
+                  <p class="mb-0 text-white">087 701 9055</p>
+                </div>
+                <div class="d-flex mt-4">
+                  <a class="btn btn-outline-light btn-square me-2" href="#"
+                    ><i class="fab fa-twitter fw-normal"></i
+                  ></a>
+                  <a class="btn btn-outline-light btn-square me-2" href="#"
+                    ><i class="fab fa-facebook-f fw-normal"></i
+                  ></a>
+                  <a class="btn btn-outline-light btn-square me-2" href="#"
+                    ><i class="fab fa-linkedin-in fw-normal"></i
+                  ></a>
+                  <a class="btn btn-outline-light btn-square" href="#"
+                    ><i class="fab fa-instagram fw-normal"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                <div
+                  class="section-title section-title-sm position-relative pb-3 mb-4"
+                >
+                  <h3 class="text-white mb-0">Solutions</h3>
+                </div>
+                <div
+                  class="link-animated d-flex flex-column justify-content-start"
+                >
+                  <a class="text-white mb-2" href="fibre.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Fibre</a
+                  >
+                  <a class="text-white mb-2" href="voip-systems.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>VoIP</a
+                  >
+                  <a class="text-white mb-2" href="network-solutions.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Network
+                    Solutions</a
+                  >
+                  <a class="text-white mb-2" href="backup-power.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Backup
+                    Power</a
+                  >
+                  <a class="text-white" href="connected-security.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i
+                    >Security</a
+                  >
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                <div
+                  class="section-title section-title-sm position-relative pb-3 mb-4"
+                >
+                  <h3 class="text-white mb-0">Quick Links</h3>
+                </div>
+                <div
+                  class="link-animated d-flex flex-column justify-content-start"
+                >
+                  <a class="text-white mb-2" href="index.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Home</a
+                  >
+                  <a class="text-white mb-2" href="about.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>About
+                    Us</a
+                  >
+                  <a class="text-white mb-2" href="contact.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i
+                    >Contact</a
+                  >
+                  <a class="text-white mb-2" href="quote.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Get
+                    Quote</a
+                  >
+                  <a class="text-white" href="portal.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Customer
+                    Portal</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid" style="background: #061429">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-12">
+            <div
+              class="d-flex align-items-center justify-content-center"
+              style="height: 60px"
+            >
+              <p class="mb-0 text-white small">
+                &copy;
+                <a class="text-white border-bottom" href="index.html"
+                  >GrayTech Systems</a
+                >. All Rights Reserved. POPIA Compliant
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"
+      ><i class="bi bi-arrow-up"></i
+    ></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="src/lib/wow/wow.min.js"></script>
+    <script src="src/lib/easing/easing.min.js"></script>
+    <script src="src/lib/waypoints/waypoints.min.js"></script>
+    <script src="src/lib/counterup/counterup.min.js"></script>
+    <script src="src/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="src/js/main.js"></script>
+
+    <script>
+      const quoteForm = document.getElementById('quoteForm');
+      if (quoteForm) {
+        quoteForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          const name = document.getElementById('quoteName')?.value.trim();
+          const email = document.getElementById('quoteEmail')?.value.trim();
+          const service = document.getElementById('quoteService')?.value;
+
+          if (!name || !email || !service) {
+            alert('Please fill in all required fields.');
+            return;
+          }
+
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(email)) {
+            alert('Please enter a valid email address.');
+            return;
+          }
+
+          alert(
+            'Thank you! A GrayTech consultant will contact you within 24 hours.'
+          );
+          this.reset();
+        });
+      }
+    </script>
+  </body>
+</html>

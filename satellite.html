@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>
+      Satellite | GrayTech Systems - Satellite Internet South Africa
+    </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta
+      content="GrayTech Systems satellite internet rural connectivity remote areas South Africa"
+      name="keywords"
+    />
+    <meta
+      content="Reliable satellite internet from GrayTech Systems. Perfect for rural and remote areas where fibre isn't available. Get connected anywhere in South Africa."
+      name="description"
+    />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link
+      href="src/lib/owlcarousel/assets/owl.carousel.min.css"
+      rel="stylesheet"
+    />
+    <link href="src/lib/animate/animate.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="src/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="src/css/style.css" rel="stylesheet" />
+
+    <style>
+      .satellite-card {
+        background: white;
+        border-radius: 16px;
+        padding: 1.5rem;
+        text-align: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        height: 100%;
+        border: 1px solid #eef2f6;
+      }
+      .satellite-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      }
+      .satellite-card.featured {
+        border-color: #06a3da;
+        position: relative;
+        overflow: hidden;
+      }
+      .satellite-card.featured::before {
+        content: 'Best Value';
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: #06a3da;
+        color: white;
+        padding: 0.25rem 1rem;
+        font-size: 0.7rem;
+        font-weight: 600;
+      }
+      .satellite-price {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #06a3da;
+      }
+      .satellite-price small {
+        font-size: 0.875rem;
+        font-weight: 400;
+      }
+      .feature-list {
+        list-style: none;
+        text-align: left;
+        margin-top: 1rem;
+      }
+      .feature-list li {
+        padding: 0.5rem 0;
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .feature-list li i {
+        color: #34ad54;
+        width: 20px;
+      }
+      .benefit-icon {
+        width: 60px;
+        height: 60px;
+        background: rgba(6, 163, 218, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+      }
+      .benefit-icon i {
+        font-size: 1.5rem;
+        color: #06a3da;
+      }
+
+      /* Mega Menu Dropdown Styles */
+      .dropdown-menu {
+        border-radius: 12px;
+        border: none;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      }
+      .dropdown-item {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+        transition: all 0.2s;
+      }
+      .dropdown-item:hover {
+        background-color: rgba(6, 163, 218, 0.05);
+        color: #06a3da;
+        transform: translateX(5px);
+      }
+      .dropdown-header {
+        font-weight: 700;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .mega-dropdown {
+        min-width: 580px;
+        padding: 1.5rem;
+      }
+      @media (max-width: 991.98px) {
+        .mega-dropdown {
+          min-width: auto;
+          width: 100%;
+        }
+      }
+
+      /* CSS Satellite Illustration Styles */
+      .satellite-illustration {
+        position: relative;
+        min-height: 450px;
+        background: linear-gradient(135deg, #0a1a2f 0%, #0d2b4f 100%);
+        border-radius: 24px;
+        overflow: hidden;
+        padding: 2rem;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Stars Background */
+      .stars {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: radial-gradient(
+            2px 2px at 20px 30px,
+            #fff,
+            rgba(0, 0, 0, 0)
+          ),
+          radial-gradient(1px 1px at 60px 80px, #fff, rgba(0, 0, 0, 0)),
+          radial-gradient(3px 3px at 100px 150px, #fff, rgba(0, 0, 0, 0)),
+          radial-gradient(1px 1px at 150px 50px, #fff, rgba(0, 0, 0, 0)),
+          radial-gradient(2px 2px at 200px 200px, #fff, rgba(0, 0, 0, 0)),
+          radial-gradient(1px 1px at 260px 120px, #fff, rgba(0, 0, 0, 0)),
+          radial-gradient(2px 2px at 320px 280px, #fff, rgba(0, 0, 0, 0)),
+          radial-gradient(1px 1px at 380px 60px, #fff, rgba(0, 0, 0, 0));
+        background-repeat: no-repeat;
+        background-size: 200px 200px;
+        animation: twinkle 3s ease-in-out infinite;
+      }
+
+      @keyframes twinkle {
+        0%,
+        100% {
+          opacity: 0.5;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+
+      /* Satellite Dish */
+      .satellite-dish {
+        position: absolute;
+        bottom: 60px;
+        right: 60px;
+        width: 140px;
+        height: 140px;
+        z-index: 2;
+      }
+
+      .dish-base {
+        position: absolute;
+        bottom: 0;
+        left: 60px;
+        width: 20px;
+        height: 30px;
+        background: #4a5568;
+        border-radius: 2px;
+      }
+
+      .dish-bowl {
+        position: absolute;
+        bottom: 30px;
+        left: 20px;
+        width: 100px;
+        height: 60px;
+        background: linear-gradient(135deg, #06a3da 0%, #0582b0 100%);
+        border-radius: 50% 50% 0 0;
+        transform: rotate(-15deg);
+      }
+
+      .dish-arm {
+        position: absolute;
+        bottom: 60px;
+        left: 70px;
+        width: 60px;
+        height: 3px;
+        background: #4a5568;
+        transform: rotate(25deg);
+      }
+
+      .dish-receiver {
+        position: absolute;
+        bottom: 85px;
+        left: 125px;
+        width: 8px;
+        height: 20px;
+        background: #06a3da;
+        border-radius: 2px;
+      }
+
+      /* Signal Waves */
+      .signal-waves {
+        position: absolute;
+        bottom: 100px;
+        right: 80px;
+        z-index: 1;
+      }
+
+      .wave {
+        position: absolute;
+        border: 2px solid #06a3da;
+        border-radius: 50%;
+        opacity: 0;
+        animation: signalPulse 2s ease-out infinite;
+      }
+
+      .wave1 {
+        width: 60px;
+        height: 60px;
+        bottom: -30px;
+        right: -30px;
+        animation-delay: 0s;
+      }
+      .wave2 {
+        width: 100px;
+        height: 100px;
+        bottom: -50px;
+        right: -50px;
+        animation-delay: 0.6s;
+      }
+      .wave3 {
+        width: 140px;
+        height: 140px;
+        bottom: -70px;
+        right: -70px;
+        animation-delay: 1.2s;
+      }
+      .wave4 {
+        width: 180px;
+        height: 180px;
+        bottom: -90px;
+        right: -90px;
+        animation-delay: 1.8s;
+      }
+
+      @keyframes signalPulse {
+        0% {
+          opacity: 0.8;
+          transform: scale(0.5);
+        }
+        100% {
+          opacity: 0;
+          transform: scale(1.5);
+        }
+      }
+
+      /* House on the ground */
+      .rural-house {
+        position: absolute;
+        bottom: 40px;
+        left: 40px;
+        width: 80px;
+        z-index: 2;
+      }
+
+      .rural-house-roof {
+        width: 0;
+        height: 0;
+        border-left: 40px solid transparent;
+        border-right: 40px solid transparent;
+        border-bottom: 30px solid #4a5568;
+      }
+
+      .rural-house-body {
+        width: 80px;
+        height: 50px;
+        background: rgba(6, 163, 218, 0.2);
+        border: 1px solid #06a3da;
+        border-top: none;
+      }
+
+      .rural-house-door {
+        position: absolute;
+        bottom: 0;
+        left: 28px;
+        width: 24px;
+        height: 30px;
+        background: #0a1a2f;
+        border: 1px solid #06a3da;
+        border-radius: 10px 10px 0 0;
+      }
+
+      /* Trees */
+      .tree {
+        position: absolute;
+        bottom: 40px;
+        width: 30px;
+        height: 50px;
+        background: #1a4731;
+        border-radius: 50% 50% 0 0;
+      }
+
+      .tree1 {
+        left: 130px;
+        width: 25px;
+        height: 45px;
+      }
+      .tree2 {
+        left: 165px;
+        width: 20px;
+        height: 35px;
+      }
+      .tree3 {
+        left: 280px;
+        width: 25px;
+        height: 50px;
+      }
+
+      /* Connection Status */
+      .connection-status {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(5px);
+        padding: 10px 15px;
+        border-radius: 20px;
+        z-index: 3;
+      }
+
+      .connection-text {
+        color: #34ad54;
+        font-weight: bold;
+        font-size: 0.8rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .connection-text i {
+        font-size: 0.8rem;
+      }
+
+      .signal-bars {
+        display: flex;
+        gap: 3px;
+        align-items: center;
+      }
+
+      .bar {
+        width: 4px;
+        height: 12px;
+        background: #4a5568;
+        border-radius: 2px;
+      }
+
+      .bar.active {
+        background: #34ad54;
+      }
+
+      .bar:nth-child(1) {
+        height: 8px;
+        animation: barPulse 1s ease infinite;
+      }
+      .bar:nth-child(2) {
+        height: 12px;
+        animation: barPulse 1s ease 0.2s infinite;
+      }
+      .bar:nth-child(3) {
+        height: 16px;
+        animation: barPulse 1s ease 0.4s infinite;
+      }
+      .bar:nth-child(4) {
+        height: 20px;
+        animation: barPulse 1s ease 0.6s infinite;
+      }
+
+      @keyframes barPulse {
+        0%,
+        100% {
+          opacity: 0.5;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+
+      .satellite-illustration::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+          circle at 30% 40%,
+          rgba(6, 163, 218, 0.08) 0%,
+          transparent 60%
+        );
+        pointer-events: none;
+      }
+
+      @media (max-width: 768px) {
+        .satellite-illustration {
+          min-height: 400px;
+        }
+        .satellite-dish {
+          transform: scale(0.8);
+          right: 10px;
+          bottom: 20px;
+        }
+        .rural-house {
+          transform: scale(0.8);
+          left: 10px;
+          bottom: 20px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Spinner Start -->
+    <div
+      id="spinner"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+    >
+      <div class="spinner"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative p-0">
+      <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+        <a href="index.html" class="navbar-brand p-0">
+          <h1 class="m-0"><i class="fa fa-wifi me-2"></i>GrayTech</h1>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+        >
+          <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav ms-auto py-0">
+            <a href="index.html" class="nav-item nav-link">Home</a>
+            <a href="fibre.html" class="nav-item nav-link">Fibre</a>
+            <a href="lte.html" class="nav-item nav-link">LTE & 5G</a>
+            <a href="voip-systems.html" class="nav-item nav-link">VoIP</a>
+
+            <!-- Vox-style Mega Dropdown -->
+            <div class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                >Solutions</a
+              >
+              <div class="dropdown-menu mega-dropdown">
+                <div class="row g-4">
+                  <div class="col-md-4">
+                    <h6 class="dropdown-header text-primary mb-3">
+                      Connectivity
+                    </h6>
+                    <a href="fibre.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-tachometer-alt text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >Fibre Internet<br /><small class="text-muted"
+                        >Up to 1Gbps speeds</small
+                      ></a
+                    >
+                    <a href="lte.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-mobile-alt text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >LTE & 5G<br /><small class="text-muted"
+                        >Fast mobile internet</small
+                      ></a
+                    >
+                    <a href="satellite.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-satellite-dish text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >Satellite Internet<br /><small class="text-muted"
+                        >Connect anywhere</small
+                      ></a
+                    >
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="dropdown-header text-primary mb-3">
+                      Business IT
+                    </h6>
+                    <a href="voip-systems.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-phone-alt text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >VoIP Systems<br /><small class="text-muted"
+                        >Save up to 60% on calls</small
+                      ></a
+                    >
+                    <a href="network-solutions.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-network-wired text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >Network Solutions<br /><small class="text-muted"
+                        >Design & installation</small
+                      ></a
+                    >
+                    <a href="it-maintenance.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-laptop-code text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >IT Maintenance<br /><small class="text-muted"
+                        >Hardware & software</small
+                      ></a
+                    >
+                    <a href="remote-monitoring.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-eye text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >Remote Monitoring<br /><small class="text-muted"
+                        >24/7 surveillance</small
+                      ></a
+                    >
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="dropdown-header text-primary mb-3">
+                      Security & Power
+                    </h6>
+                    <a href="connected-security.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-video text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >Security Systems<br /><small class="text-muted"
+                        >CCTV & access control</small
+                      ></a
+                    >
+                    <a href="backup-power.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-battery-full text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >Backup Power<br /><small class="text-muted"
+                        >Load shedding solutions</small
+                      ></a
+                    >
+                    <a href="surge-protection.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-bolt text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >Surge Protection<br /><small class="text-muted"
+                        >Equipment safety</small
+                      ></a
+                    >
+                    <div class="mt-3 pt-2 border-top">
+                      <a href="web-hosting.html" class="dropdown-item"
+                        ><i
+                          class="fas fa-cloud-upload-alt text-primary me-2"
+                          style="width: 20px"
+                        ></i
+                        >Web Hosting<br /><small class="text-muted"
+                          >Fast SA servers</small
+                        ></a
+                      >
+                      <a href="quote.html" class="dropdown-item"
+                        ><i
+                          class="fas fa-file-invoice text-primary me-2"
+                          style="width: 20px"
+                        ></i
+                        >Request Quote<br /><small class="text-muted"
+                          >Get custom pricing</small
+                        ></a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                  <div class="col-12">
+                    <a
+                      href="service.html"
+                      class="text-primary text-decoration-none small"
+                      >View all solutions →</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <a href="contact.html" class="nav-item nav-link">Contact</a>
+            <a href="portal.html" class="nav-item nav-link">Customer Portal</a>
+          </div>
+          <a href="contact.html" class="btn btn-primary py-2 px-4 ms-3"
+            >Get Quote</a
+          >
+        </div>
+      </nav>
+
+      <div
+        class="container-fluid bg-primary py-5 bg-header"
+        style="margin-bottom: 90px"
+      >
+        <div class="row py-5">
+          <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+            <h1 class="display-4 text-white animated zoomIn">
+              Satellite Internet
+            </h1>
+            <a href="index.html" class="h5 text-white">Home</a>
+            <i class="far fa-circle text-white px-2"></i>
+            <a href="service.html" class="h5 text-white">Services</a>
+            <i class="far fa-circle text-white px-2"></i>
+            <a href="satellite.html" class="h5 text-white">Satellite</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Full Screen Search Start -->
+    <div class="modal fade" id="searchModal" tabindex="-1">
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content" style="background: rgba(9, 30, 62, 0.7)">
+          <div class="modal-header border-0">
+            <button
+              type="button"
+              class="btn bg-white btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div
+            class="modal-body d-flex align-items-center justify-content-center"
+          >
+            <div class="input-group" style="max-width: 600px">
+              <input
+                type="text"
+                class="form-control bg-transparent border-primary p-3"
+                placeholder="Search our site..."
+              />
+              <button class="btn btn-primary px-4">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Full Screen Search End -->
+
+    <!-- Hero Section with CSS Illustration -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="container py-4">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6">
+            <div class="section-title position-relative pb-3 mb-4">
+              <h5 class="fw-bold text-primary text-uppercase">
+                Satellite Internet
+              </h5>
+              <h1 class="mb-3">Connect Anywhere in South Africa</h1>
+            </div>
+            <p class="mb-4">
+              No fibre in your area? No problem. GrayTech satellite internet
+              provides reliable, high-speed connectivity to rural and remote
+              locations across the country.
+            </p>
+            <div class="row g-3 mb-4">
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-globe text-primary fa-2x me-3"></i>
+                  <div>
+                    <strong>100% Coverage</strong><br /><small
+                      >Anywhere in SA</small
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-tachometer-alt text-primary fa-2x me-3"></i>
+                  <div>
+                    <strong>Up to 100Mbps</strong><br /><small
+                      >Fast satellite speeds</small
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-satellite-dish text-primary fa-2x me-3"></i>
+                  <div>
+                    <strong>Professional Installation</strong><br /><small
+                      >Certified installers</small
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-headset text-primary fa-2x me-3"></i>
+                  <div>
+                    <strong>24/7 Support</strong><br /><small
+                      >Local support team</small
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a href="quote.html" class="btn btn-primary py-3 px-5"
+              >Check Availability →</a
+            >
+          </div>
+          <div class="col-lg-6">
+            <!-- CSS Satellite Illustration -->
+            <div class="satellite-illustration">
+              <div class="stars"></div>
+
+              <div class="satellite-dish">
+                <div class="dish-base"></div>
+                <div class="dish-bowl"></div>
+                <div class="dish-arm"></div>
+                <div class="dish-receiver"></div>
+              </div>
+
+              <div class="signal-waves">
+                <div class="wave wave1"></div>
+                <div class="wave wave2"></div>
+                <div class="wave wave3"></div>
+                <div class="wave wave4"></div>
+              </div>
+
+              <div class="rural-house">
+                <div class="rural-house-roof"></div>
+                <div class="rural-house-body"></div>
+                <div class="rural-house-door"></div>
+              </div>
+
+              <div class="tree tree1"></div>
+              <div class="tree tree2"></div>
+              <div class="tree tree3"></div>
+
+              <div class="connection-status">
+                <div class="connection-text">
+                  <i class="fas fa-satellite-dish"></i> Connected
+                  <div class="signal-bars">
+                    <div class="bar active"></div>
+                    <div class="bar active"></div>
+                    <div class="bar active"></div>
+                    <div class="bar"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Benefits Section -->
+    <div
+      class="container-fluid py-5 wow fadeInUp bg-light"
+      data-wow-delay="0.1s"
+    >
+      <div class="container py-4">
+        <div
+          class="section-title text-center position-relative pb-3 mb-5 mx-auto"
+          style="max-width: 700px"
+        >
+          <h5 class="fw-bold text-primary text-uppercase">Why Satellite</h5>
+          <h1 class="mb-0">Perfect for Rural & Remote Areas</h1>
+          <p class="mt-3">
+            Get connected where traditional internet can't reach
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="text-center">
+              <div class="benefit-icon mx-auto">
+                <i class="fas fa-map-marked-alt"></i>
+              </div>
+              <h5>Nationwide Coverage</h5>
+              <p class="text-muted">
+                Access the internet from anywhere in South Africa, no matter how
+                remote.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="text-center">
+              <div class="benefit-icon mx-auto">
+                <i class="fas fa-plug"></i>
+              </div>
+              <h5>Quick Installation</h5>
+              <p class="text-muted">
+                Professional installation typically completed within 5-7
+                business days.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="text-center">
+              <div class="benefit-icon mx-auto">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h5>Reliable Connection</h5>
+              <p class="text-muted">
+                Consistent speeds even during bad weather with advanced
+                satellite technology.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Packages Section -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="container py-4">
+        <div
+          class="section-title text-center position-relative pb-3 mb-5 mx-auto"
+          style="max-width: 700px"
+        >
+          <h5 class="fw-bold text-primary text-uppercase">Our Plans</h5>
+          <h1 class="mb-0">Satellite Internet Packages</h1>
+          <p class="mt-3">Choose the plan that fits your needs</p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Basic Plan -->
+          <div class="col-lg-4 col-md-6">
+            <div class="satellite-card">
+              <h3>Basic</h3>
+              <div class="satellite-price">R 699<small>/month</small></div>
+              <ul class="feature-list">
+                <li><i class="fas fa-check"></i> 50GB Data</li>
+                <li><i class="fas fa-check"></i> Speeds up to 50Mbps</li>
+                <li><i class="fas fa-check"></i> Standard dish included</li>
+                <li><i class="fas fa-check"></i> Professional installation</li>
+                <li><i class="fas fa-check"></i> 12-month contract</li>
+                <li class="text-muted">
+                  <i class="fas fa-times"></i> Unlimited data
+                </li>
+              </ul>
+              <button
+                class="btn btn-outline-primary w-100 mt-3"
+                onclick="orderPackage('Basic Satellite', 699)"
+              >
+                Sign Up
+              </button>
+            </div>
+          </div>
+
+          <!-- Professional Plan - Featured -->
+          <div class="col-lg-4 col-md-6">
+            <div class="satellite-card featured">
+              <h3>Professional</h3>
+              <div class="satellite-price">R 999<small>/month</small></div>
+              <ul class="feature-list">
+                <li><i class="fas fa-check"></i> 150GB Data</li>
+                <li><i class="fas fa-check"></i> Speeds up to 100Mbps</li>
+                <li><i class="fas fa-check"></i> Advanced dish included</li>
+                <li><i class="fas fa-check"></i> Professional installation</li>
+                <li><i class="fas fa-check"></i> 12-month contract</li>
+                <li><i class="fas fa-check"></i> Priority support</li>
+              </ul>
+              <button
+                class="btn btn-primary w-100 mt-3"
+                onclick="orderPackage('Professional Satellite', 999)"
+              >
+                Sign Up
+              </button>
+            </div>
+          </div>
+
+          <!-- Unlimited Plan -->
+          <div class="col-lg-4 col-md-6">
+            <div class="satellite-card">
+              <h3>Unlimited</h3>
+              <div class="satellite-price">R 1,499<small>/month</small></div>
+              <ul class="feature-list">
+                <li><i class="fas fa-check"></i> Uncapped Data</li>
+                <li><i class="fas fa-check"></i> Speeds up to 100Mbps</li>
+                <li><i class="fas fa-check"></i> Premium dish included</li>
+                <li><i class="fas fa-check"></i> Professional installation</li>
+                <li><i class="fas fa-check"></i> 12-month contract</li>
+                <li><i class="fas fa-check"></i> Premium 24/7 support</li>
+              </ul>
+              <button
+                class="btn btn-outline-primary w-100 mt-3"
+                onclick="orderPackage('Unlimited Satellite', 1499)"
+              >
+                Sign Up
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div
+      class="container-fluid py-5 wow fadeInUp bg-light"
+      data-wow-delay="0.1s"
+    >
+      <div class="container py-4">
+        <div
+          class="section-title text-center position-relative pb-3 mb-5 mx-auto"
+          style="max-width: 700px"
+        >
+          <h5 class="fw-bold text-primary text-uppercase">FAQ</h5>
+          <h1 class="mb-0">Frequently Asked Questions</h1>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="mb-4">
+              <h5>Is satellite internet available in my area?</h5>
+              <p>
+                Yes! Satellite internet is available anywhere in South Africa
+                with a clear view of the southern sky.
+              </p>
+            </div>
+            <div class="mb-4">
+              <h5>How does weather affect satellite internet?</h5>
+              <p>
+                Modern satellite technology is very reliable. Heavy rain may
+                cause temporary slowdowns, but service typically remains
+                available.
+              </p>
+            </div>
+            <div class="mb-4">
+              <h5>What equipment is included?</h5>
+              <p>
+                Each package includes a satellite dish, modem/router, all
+                necessary cables, and professional installation.
+              </p>
+            </div>
+            <div class="mb-4">
+              <h5>Can I use satellite internet for gaming?</h5>
+              <p>
+                Satellite internet has higher latency than fibre, so it's not
+                ideal for competitive gaming. It's perfect for browsing,
+                streaming, and working remotely.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function orderPackage(plan, price) {
+        alert(
+          `You've selected the ${plan} plan (R ${price}/month)\n\nA GrayTech consultant will contact you within 24 hours to schedule installation.`
+        );
+      }
+    </script>
+
+    <!-- Footer Start -->
+    <div
+      class="container-fluid bg-dark text-white mt-5 wow fadeInUp"
+      data-wow-delay="0.1s"
+    >
+      <div class="container">
+        <div class="row gx-5">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <div
+              class="d-flex flex-column align-items-center justify-content-center text-center h-100 p-4"
+            >
+              <a href="index.html" class="navbar-brand"
+                ><h1 class="m-0 text-white">
+                  <i class="fa fa-wifi me-2 text-primary"></i>GrayTech
+                </h1></a
+              >
+              <p class="mt-3 mb-4 text-white">
+                Your trusted IT solutions partner for fibre, VoIP, network
+                security, and managed IT services across South Africa.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-8 col-md-6">
+            <div class="row gx-5">
+              <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                <div
+                  class="section-title section-title-sm position-relative pb-3 mb-4"
+                >
+                  <h3 class="text-white mb-0">Get In Touch</h3>
+                </div>
+                <div class="d-flex mb-2">
+                  <i class="bi bi-geo-alt text-primary me-2"></i>
+                  <p class="mb-0 text-white">Fourways, Johannesburg, 2191</p>
+                </div>
+                <div class="d-flex mb-2">
+                  <i class="bi bi-envelope-open text-primary me-2"></i>
+                  <p class="mb-0 text-white">info@graytechsystems.co.za</p>
+                </div>
+                <div class="d-flex mb-2">
+                  <i class="bi bi-telephone text-primary me-2"></i>
+                  <p class="mb-0 text-white">087 701 9055</p>
+                </div>
+                <div class="d-flex mt-4">
+                  <a class="btn btn-outline-light btn-square me-2" href="#"
+                    ><i class="fab fa-twitter fw-normal"></i
+                  ></a>
+                  <a class="btn btn-outline-light btn-square me-2" href="#"
+                    ><i class="fab fa-facebook-f fw-normal"></i
+                  ></a>
+                  <a class="btn btn-outline-light btn-square me-2" href="#"
+                    ><i class="fab fa-linkedin-in fw-normal"></i
+                  ></a>
+                  <a class="btn btn-outline-light btn-square" href="#"
+                    ><i class="fab fa-instagram fw-normal"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                <div
+                  class="section-title section-title-sm position-relative pb-3 mb-4"
+                >
+                  <h3 class="text-white mb-0">Solutions</h3>
+                </div>
+                <div
+                  class="link-animated d-flex flex-column justify-content-start"
+                >
+                  <a class="text-white mb-2" href="fibre.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Fibre</a
+                  >
+                  <a class="text-white mb-2" href="voip-systems.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>VoIP</a
+                  >
+                  <a class="text-white mb-2" href="network-solutions.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Network
+                    Solutions</a
+                  >
+                  <a class="text-white mb-2" href="backup-power.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Backup
+                    Power</a
+                  >
+                  <a class="text-white" href="connected-security.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i
+                    >Security</a
+                  >
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                <div
+                  class="section-title section-title-sm position-relative pb-3 mb-4"
+                >
+                  <h3 class="text-white mb-0">Quick Links</h3>
+                </div>
+                <div
+                  class="link-animated d-flex flex-column justify-content-start"
+                >
+                  <a class="text-white mb-2" href="index.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Home</a
+                  >
+                  <a class="text-white mb-2" href="about.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>About
+                    Us</a
+                  >
+                  <a class="text-white mb-2" href="contact.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i
+                    >Contact</a
+                  >
+                  <a class="text-white mb-2" href="quote.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Get
+                    Quote</a
+                  >
+                  <a class="text-white" href="portal.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Customer
+                    Portal</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid" style="background: #061429">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-12">
+            <div
+              class="d-flex align-items-center justify-content-center"
+              style="height: 60px"
+            >
+              <p class="mb-0 text-white small">
+                &copy;
+                <a class="text-white border-bottom" href="index.html"
+                  >GrayTech Systems</a
+                >. All Rights Reserved. POPIA Compliant
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"
+      ><i class="bi bi-arrow-up"></i
+    ></a>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="src/lib/wow/wow.min.js"></script>
+    <script src="src/lib/easing/easing.min.js"></script>
+    <script src="src/lib/waypoints/waypoints.min.js"></script>
+    <script src="src/lib/counterup/counterup.min.js"></script>
+    <script src="src/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="src/js/main.js"></script>
+  </body>
+</html>

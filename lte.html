@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>
+      LTE & 5G | GrayTech Systems - High-Speed Mobile Internet South Africa
+    </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta
+      content="GrayTech Systems LTE 5G mobile internet wireless data packages South Africa"
+      name="keywords"
+    />
+    <meta
+      content="Fast and reliable LTE and 5G internet from GrayTech Systems. Flexible data packages, no long-term contracts, and nationwide coverage across South Africa."
+      name="description"
+    />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link
+      href="src/lib/owlcarousel/assets/owl.carousel.min.css"
+      rel="stylesheet"
+    />
+    <link href="src/lib/animate/animate.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="src/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="src/css/style.css" rel="stylesheet" />
+
+    <style>
+      .package-card {
+        background: white;
+        border-radius: 16px;
+        padding: 1.5rem;
+        text-align: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        height: 100%;
+        border: 1px solid #eef2f6;
+      }
+      .package-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      }
+      .package-card.featured {
+        border-color: #06a3da;
+        position: relative;
+        overflow: hidden;
+      }
+      .package-card.featured::before {
+        content: 'Most Popular';
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: #06a3da;
+        color: white;
+        padding: 0.25rem 1rem;
+        font-size: 0.7rem;
+        font-weight: 600;
+      }
+      .package-price {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #06a3da;
+      }
+      .package-price small {
+        font-size: 0.875rem;
+        font-weight: 400;
+      }
+      .feature-list {
+        list-style: none;
+        text-align: left;
+        margin-top: 1rem;
+      }
+      .feature-list li {
+        padding: 0.5rem 0;
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .feature-list li i {
+        color: #34ad54;
+        width: 20px;
+      }
+      .coverage-badge {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        background: rgba(6, 163, 218, 0.1);
+        color: #06a3da;
+        border-radius: 20px;
+        font-size: 0.75rem;
+      }
+
+      /* Mega Menu Dropdown Styles */
+      .dropdown-menu {
+        border-radius: 12px;
+        border: none;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      }
+      .dropdown-item {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+        transition: all 0.2s;
+      }
+      .dropdown-item:hover {
+        background-color: rgba(6, 163, 218, 0.05);
+        color: #06a3da;
+        transform: translateX(5px);
+      }
+      .dropdown-header {
+        font-weight: 700;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .mega-dropdown {
+        min-width: 580px;
+        padding: 1.5rem;
+      }
+      @media (max-width: 991.98px) {
+        .mega-dropdown {
+          min-width: auto;
+          width: 100%;
+        }
+      }
+
+      /* CSS Mobile Signal Illustration */
+      .signal-illustration {
+        background: linear-gradient(135deg, #091e3e 0%, #0d2b4f 100%);
+        border-radius: 30px;
+        padding: 2rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .phone-mock {
+        background: #1a1a2e;
+        border-radius: 40px;
+        padding: 15px 10px;
+        display: inline-block;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      .phone-screen {
+        background: linear-gradient(135deg, #0a1a2f, #0d2b4f);
+        border-radius: 30px;
+        padding: 20px;
+        width: 260px;
+      }
+
+      .signal-bars-large {
+        display: flex;
+        justify-content: center;
+        gap: 6px;
+        margin-bottom: 20px;
+      }
+
+      .signal-bar {
+        width: 6px;
+        background: #4a5568;
+        border-radius: 3px;
+        transition: all 0.3s;
+      }
+
+      .signal-bar.active {
+        background: #34ad54;
+      }
+
+      .bar1 {
+        height: 15px;
+        animation: barPulse 1s ease infinite;
+      }
+      .bar2 {
+        height: 25px;
+        animation: barPulse 1s ease 0.2s infinite;
+      }
+      .bar3 {
+        height: 35px;
+        animation: barPulse 1s ease 0.4s infinite;
+      }
+      .bar4 {
+        height: 45px;
+        animation: barPulse 1s ease 0.6s infinite;
+      }
+
+      @keyframes barPulse {
+        0%,
+        100% {
+          opacity: 0.6;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+
+      .speed-display {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .speed-number {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #06a3da;
+      }
+
+      .speed-unit {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.9rem;
+      }
+
+      .tech-badge {
+        display: inline-block;
+        background: rgba(6, 163, 218, 0.2);
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.7rem;
+        color: #06a3da;
+        margin-top: 10px;
+      }
+
+      .data-indicator {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 15px;
+        padding: 10px 15px;
+        margin-top: 15px;
+      }
+
+      .data-text {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.7rem;
+      }
+
+      .data-value {
+        color: #06a3da;
+        font-weight: bold;
+      }
+
+      .pulse-dot {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        background: #34ad54;
+        border-radius: 50%;
+        animation: pulse 1.5s ease infinite;
+        margin-right: 8px;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.5;
+          transform: scale(1.2);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .phone-screen {
+          width: 220px;
+          padding: 15px;
+        }
+        .speed-number {
+          font-size: 1.8rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Spinner Start -->
+    <div
+      id="spinner"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+    >
+      <div class="spinner"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative p-0">
+      <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+        <a href="index.html" class="navbar-brand p-0">
+          <h1 class="m-0"><i class="fa fa-wifi me-2"></i>GrayTech</h1>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+        >
+          <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav ms-auto py-0">
+            <a href="index.html" class="nav-item nav-link">Home</a>
+            <a href="fibre.html" class="nav-item nav-link">Fibre</a>
+            <a href="lte.html" class="nav-item nav-link active">LTE & 5G</a>
+            <a href="voip-systems.html" class="nav-item nav-link">VoIP</a>
+
+            <!-- Vox-style Mega Dropdown -->
+            <div class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                >Solutions</a
+              >
+              <div class="dropdown-menu mega-dropdown">
+                <div class="row g-4">
+                  <div class="col-md-4">
+                    <h6 class="dropdown-header text-primary mb-3">
+                      Connectivity
+                    </h6>
+                    <a href="fibre.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-tachometer-alt text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >Fibre Internet<br /><small class="text-muted"
+                        >Up to 1Gbps speeds</small
+                      ></a
+                    >
+                    <a href="lte.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-mobile-alt text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >LTE & 5G<br /><small class="text-muted"
+                        >Fast mobile internet</small
+                      ></a
+                    >
+                    <a href="satellite.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-satellite-dish text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >Satellite Internet<br /><small class="text-muted"
+                        >Connect anywhere</small
+                      ></a
+                    >
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="dropdown-header text-primary mb-3">
+                      Business IT
+                    </h6>
+                    <a href="voip-systems.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-phone-alt text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >VoIP Systems<br /><small class="text-muted"
+                        >Save up to 60% on calls</small
+                      ></a
+                    >
+                    <a href="network-solutions.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-network-wired text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >Network Solutions<br /><small class="text-muted"
+                        >Design & installation</small
+                      ></a
+                    >
+                    <a href="it-maintenance.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-laptop-code text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >IT Maintenance<br /><small class="text-muted"
+                        >Hardware & software</small
+                      ></a
+                    >
+                    <a href="remote-monitoring.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-eye text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >Remote Monitoring<br /><small class="text-muted"
+                        >24/7 surveillance</small
+                      ></a
+                    >
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="dropdown-header text-primary mb-3">
+                      Security & Power
+                    </h6>
+                    <a href="connected-security.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-video text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >Security Systems<br /><small class="text-muted"
+                        >CCTV & access control</small
+                      ></a
+                    >
+                    <a href="backup-power.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-battery-full text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >Backup Power<br /><small class="text-muted"
+                        >Load shedding solutions</small
+                      ></a
+                    >
+                    <a href="surge-protection.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-bolt text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >Surge Protection<br /><small class="text-muted"
+                        >Equipment safety</small
+                      ></a
+                    >
+                    <div class="mt-3 pt-2 border-top">
+                      <a href="web-hosting.html" class="dropdown-item"
+                        ><i
+                          class="fas fa-cloud-upload-alt text-primary me-2"
+                          style="width: 20px"
+                        ></i
+                        >Web Hosting<br /><small class="text-muted"
+                          >Fast SA servers</small
+                        ></a
+                      >
+                      <a href="quote.html" class="dropdown-item"
+                        ><i
+                          class="fas fa-file-invoice text-primary me-2"
+                          style="width: 20px"
+                        ></i
+                        >Request Quote<br /><small class="text-muted"
+                          >Get custom pricing</small
+                        ></a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                  <div class="col-12">
+                    <a
+                      href="service.html"
+                      class="text-primary text-decoration-none small"
+                      >View all solutions →</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <a href="contact.html" class="nav-item nav-link">Contact</a>
+            <a href="portal.html" class="nav-item nav-link">Customer Portal</a>
+          </div>
+          <a href="contact.html" class="btn btn-primary py-2 px-4 ms-3"
+            >Get Quote</a
+          >
+        </div>
+      </nav>
+
+      <div
+        class="container-fluid bg-primary py-5 bg-header"
+        style="margin-bottom: 90px"
+      >
+        <div class="row py-5">
+          <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+            <h1 class="display-4 text-white animated zoomIn">LTE & 5G</h1>
+            <a href="index.html" class="h5 text-white">Home</a>
+            <i class="far fa-circle text-white px-2"></i>
+            <a href="service.html" class="h5 text-white">Services</a>
+            <i class="far fa-circle text-white px-2"></i>
+            <a href="lte.html" class="h5 text-white">LTE & 5G</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Full Screen Search Start -->
+    <div class="modal fade" id="searchModal" tabindex="-1">
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content" style="background: rgba(9, 30, 62, 0.7)">
+          <div class="modal-header border-0">
+            <button
+              type="button"
+              class="btn bg-white btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div
+            class="modal-body d-flex align-items-center justify-content-center"
+          >
+            <div class="input-group" style="max-width: 600px">
+              <input
+                type="text"
+                class="form-control bg-transparent border-primary p-3"
+                placeholder="Search our site..."
+              />
+              <button class="btn btn-primary px-4">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Full Screen Search End -->
+
+    <!-- Hero Section with CSS Signal Illustration -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="container py-4">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6">
+            <div class="section-title position-relative pb-3 mb-4">
+              <h5 class="fw-bold text-primary text-uppercase">
+                Mobile Internet
+              </h5>
+              <h1 class="mb-3">Fast, Reliable LTE & 5G</h1>
+            </div>
+            <p class="mb-4">
+              Get connected with South Africa's most reliable mobile internet.
+              Whether you need internet for your home, office, or on the go,
+              GrayTech has the perfect LTE and 5G solution for you.
+            </p>
+            <div class="row g-3 mb-4">
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-tachometer-alt text-primary fa-2x me-3"></i>
+                  <div>
+                    <strong>Up to 200Mbps</strong><br /><small
+                      >Lightning fast speeds</small
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-check-circle text-primary fa-2x me-3"></i>
+                  <div>
+                    <strong>95% Coverage</strong><br /><small
+                      >Nationwide network</small
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-calendar-alt text-primary fa-2x me-3"></i>
+                  <div>
+                    <strong>Flexible Contracts</strong><br /><small
+                      >Month-to-month options</small
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-headset text-primary fa-2x me-3"></i>
+                  <div>
+                    <strong>24/7 Support</strong><br /><small
+                      >Local support team</small
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a href="quote.html" class="btn btn-primary py-3 px-5"
+              >View Plans →</a
+            >
+          </div>
+          <div class="col-lg-6">
+            <!-- CSS Mobile Signal Illustration -->
+            <div class="signal-illustration">
+              <div class="phone-mock">
+                <div class="phone-screen">
+                  <div class="signal-bars-large">
+                    <div class="signal-bar bar1 active"></div>
+                    <div class="signal-bar bar2 active"></div>
+                    <div class="signal-bar bar3 active"></div>
+                    <div class="signal-bar bar4"></div>
+                  </div>
+                  <div class="speed-display">
+                    <span class="speed-number">156</span>
+                    <span class="speed-unit">Mbps</span>
+                    <div class="tech-badge">
+                      <span class="pulse-dot"></span> 5G Connected
+                    </div>
+                  </div>
+                  <div class="data-indicator">
+                    <span class="data-text">Data remaining</span>
+                    <span class="data-value">47.5 GB</span>
+                  </div>
+                  <div class="data-indicator">
+                    <span class="data-text">Network</span>
+                    <span class="data-value">GrayTech 5G</span>
+                  </div>
+                  <div class="data-indicator">
+                    <span class="data-text">Signal strength</span>
+                    <span class="data-value">Excellent</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Packages Section -->
+    <div
+      class="container-fluid py-5 wow fadeInUp bg-light"
+      data-wow-delay="0.1s"
+    >
+      <div class="container py-4">
+        <div
+          class="section-title text-center position-relative pb-3 mb-5 mx-auto"
+          style="max-width: 700px"
+        >
+          <h5 class="fw-bold text-primary text-uppercase">Our Plans</h5>
+          <h1 class="mb-0">LTE & 5G Data Packages</h1>
+          <p class="mt-3">Choose the plan that suits your needs</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="package-card">
+              <h3>Basic</h3>
+              <div class="package-price">R 299<small>/month</small></div>
+              <ul class="feature-list">
+                <li><i class="fas fa-check"></i> 20GB Data</li>
+                <li><i class="fas fa-check"></i> LTE speeds up to 50Mbps</li>
+                <li><i class="fas fa-check"></i> Free SIM card</li>
+                <li><i class="fas fa-check"></i> 30-day contract</li>
+                <li><i class="fas fa-check"></i> National coverage</li>
+                <li class="text-muted">
+                  <i class="fas fa-times"></i> 5G access
+                </li>
+                <li class="text-muted">
+                  <i class="fas fa-times"></i> Router included
+                </li>
+              </ul>
+              <button
+                class="btn btn-outline-primary w-100 mt-3"
+                onclick="orderPackage('Basic LTE', 299)"
+              >
+                Sign Up
+              </button>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="package-card featured">
+              <h3>Professional</h3>
+              <div class="package-price">R 599<small>/month</small></div>
+              <ul class="feature-list">
+                <li><i class="fas fa-check"></i> 100GB Data</li>
+                <li><i class="fas fa-check"></i> LTE speeds up to 100Mbps</li>
+                <li><i class="fas fa-check"></i> Free SIM card</li>
+                <li><i class="fas fa-check"></i> 12-month contract</li>
+                <li><i class="fas fa-check"></i> National coverage</li>
+                <li><i class="fas fa-check"></i> 5G ready</li>
+                <li><i class="fas fa-check"></i> Free router included</li>
+              </ul>
+              <button
+                class="btn btn-primary w-100 mt-3"
+                onclick="orderPackage('Professional LTE', 599)"
+              >
+                Sign Up
+              </button>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="package-card">
+              <h3>Unlimited</h3>
+              <div class="package-price">R 899<small>/month</small></div>
+              <ul class="feature-list">
+                <li><i class="fas fa-check"></i> Uncapped Data</li>
+                <li><i class="fas fa-check"></i> 5G speeds up to 200Mbps</li>
+                <li><i class="fas fa-check"></i> Free SIM card</li>
+                <li><i class="fas fa-check"></i> 12-month contract</li>
+                <li><i class="fas fa-check"></i> Premium support</li>
+                <li><i class="fas fa-check"></i> 5G access included</li>
+                <li><i class="fas fa-check"></i> Free 5G router included</li>
+              </ul>
+              <button
+                class="btn btn-outline-primary w-100 mt-3"
+                onclick="orderPackage('Unlimited LTE', 899)"
+              >
+                Sign Up
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Coverage Section -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="container py-4">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6">
+            <div class="section-title position-relative pb-3 mb-4">
+              <h5 class="fw-bold text-primary text-uppercase">Coverage</h5>
+              <h2 class="mb-3">Nationwide LTE & 5G Network</h2>
+            </div>
+            <p>
+              Our LTE and 5G network covers major metros and towns across South
+              Africa, with continuous expansion to bring fast internet to more
+              areas.
+            </p>
+            <div class="row g-3">
+              <div class="col-6">
+                <span class="coverage-badge"
+                  ><i class="fas fa-check-circle me-1"></i> Johannesburg</span
+                >
+              </div>
+              <div class="col-6">
+                <span class="coverage-badge"
+                  ><i class="fas fa-check-circle me-1"></i> Pretoria</span
+                >
+              </div>
+              <div class="col-6">
+                <span class="coverage-badge"
+                  ><i class="fas fa-check-circle me-1"></i> Cape Town</span
+                >
+              </div>
+              <div class="col-6">
+                <span class="coverage-badge"
+                  ><i class="fas fa-check-circle me-1"></i> Durban</span
+                >
+              </div>
+              <div class="col-6">
+                <span class="coverage-badge"
+                  ><i class="fas fa-check-circle me-1"></i> Bloemfontein</span
+                >
+              </div>
+              <div class="col-6">
+                <span class="coverage-badge"
+                  ><i class="fas fa-check-circle me-1"></i> Port Elizabeth</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="bg-light rounded p-4 text-center">
+              <i class="fas fa-map-marked-alt fa-4x text-primary mb-3"></i>
+              <h5>Check your coverage</h5>
+              <p class="text-muted">
+                Enter your address to see if LTE/5G is available in your area
+              </p>
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter suburb or city"
+                  id="coverageAddress"
+                />
+                <button class="btn btn-primary" onclick="checkCoverage()">
+                  Check
+                </button>
+              </div>
+              <div id="coverageResult" class="mt-3 small text-muted"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function orderPackage(plan, price) {
+        alert(
+          `You've selected the ${plan} plan (R ${price}/month)\n\nA GrayTech consultant will contact you within 24 hours to complete your order.`
+        );
+      }
+
+      function checkCoverage() {
+        const address = document.getElementById('coverageAddress').value;
+        const resultDiv = document.getElementById('coverageResult');
+        if (!address) {
+          resultDiv.innerHTML =
+            '<span class="text-warning">Please enter an address</span>';
+          return;
+        }
+        resultDiv.innerHTML =
+          '<span class="text-success">5G available in this area! A consultant will contact you.</span>';
+      }
+    </script>
+
+    <!-- Footer Start -->
+    <div
+      class="container-fluid bg-dark text-white mt-5 wow fadeInUp"
+      data-wow-delay="0.1s"
+    >
+      <div class="container">
+        <div class="row gx-5">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <div
+              class="d-flex flex-column align-items-center justify-content-center text-center h-100 p-4"
+            >
+              <a href="index.html" class="navbar-brand"
+                ><h1 class="m-0 text-white">
+                  <i class="fa fa-wifi me-2 text-primary"></i>GrayTech
+                </h1></a
+              >
+              <p class="mt-3 mb-4 text-white">
+                Your trusted IT solutions partner for fibre, VoIP, network
+                security, and managed IT services across South Africa.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-8 col-md-6">
+            <div class="row gx-5">
+              <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                <div
+                  class="section-title section-title-sm position-relative pb-3 mb-4"
+                >
+                  <h3 class="text-white mb-0">Get In Touch</h3>
+                </div>
+                <div class="d-flex mb-2">
+                  <i class="bi bi-geo-alt text-primary me-2"></i>
+                  <p class="mb-0 text-white">Fourways, Johannesburg, 2191</p>
+                </div>
+                <div class="d-flex mb-2">
+                  <i class="bi bi-envelope-open text-primary me-2"></i>
+                  <p class="mb-0 text-white">info@graytechsystems.co.za</p>
+                </div>
+                <div class="d-flex mb-2">
+                  <i class="bi bi-telephone text-primary me-2"></i>
+                  <p class="mb-0 text-white">087 701 9055</p>
+                </div>
+                <div class="d-flex mt-4">
+                  <a class="btn btn-outline-light btn-square me-2" href="#"
+                    ><i class="fab fa-twitter fw-normal"></i
+                  ></a>
+                  <a class="btn btn-outline-light btn-square me-2" href="#"
+                    ><i class="fab fa-facebook-f fw-normal"></i
+                  ></a>
+                  <a class="btn btn-outline-light btn-square me-2" href="#"
+                    ><i class="fab fa-linkedin-in fw-normal"></i
+                  ></a>
+                  <a class="btn btn-outline-light btn-square" href="#"
+                    ><i class="fab fa-instagram fw-normal"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                <div
+                  class="section-title section-title-sm position-relative pb-3 mb-4"
+                >
+                  <h3 class="text-white mb-0">Solutions</h3>
+                </div>
+                <div
+                  class="link-animated d-flex flex-column justify-content-start"
+                >
+                  <a class="text-white mb-2" href="fibre.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Fibre</a
+                  >
+                  <a class="text-white mb-2" href="voip-systems.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>VoIP</a
+                  >
+                  <a class="text-white mb-2" href="network-solutions.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Network
+                    Solutions</a
+                  >
+                  <a class="text-white mb-2" href="backup-power.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Backup
+                    Power</a
+                  >
+                  <a class="text-white" href="connected-security.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i
+                    >Security</a
+                  >
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                <div
+                  class="section-title section-title-sm position-relative pb-3 mb-4"
+                >
+                  <h3 class="text-white mb-0">Quick Links</h3>
+                </div>
+                <div
+                  class="link-animated d-flex flex-column justify-content-start"
+                >
+                  <a class="text-white mb-2" href="index.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Home</a
+                  >
+                  <a class="text-white mb-2" href="about.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>About
+                    Us</a
+                  >
+                  <a class="text-white mb-2" href="contact.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i
+                    >Contact</a
+                  >
+                  <a class="text-white mb-2" href="quote.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Get
+                    Quote</a
+                  >
+                  <a class="text-white" href="portal.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Customer
+                    Portal</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid" style="background: #061429">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-12">
+            <div
+              class="d-flex align-items-center justify-content-center"
+              style="height: 60px"
+            >
+              <p class="mb-0 text-white small">
+                &copy;
+                <a class="text-white border-bottom" href="index.html"
+                  >GrayTech Systems</a
+                >. All Rights Reserved. POPIA Compliant
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"
+      ><i class="bi bi-arrow-up"></i
+    ></a>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="src/lib/wow/wow.min.js"></script>
+    <script src="src/lib/easing/easing.min.js"></script>
+    <script src="src/lib/waypoints/waypoints.min.js"></script>
+    <script src="src/lib/counterup/counterup.min.js"></script>
+    <script src="src/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="src/js/main.js"></script>
+  </body>
+</html>

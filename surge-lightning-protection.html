@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>
+      Surge & Lightning Protection | GrayTech Systems - Equipment Protection
+      South Africa
+    </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta
+      content="GrayTech Systems surge protection lightning protection power surge suppressor equipment protection South Africa"
+      name="keywords"
+    />
+    <meta
+      content="Professional surge and lightning protection solutions from GrayTech Systems. Protect your valuable equipment from power surges and lightning strikes with certified suppressors and lightning rods."
+      name="description"
+    />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link
+      href="src/lib/owlcarousel/assets/owl.carousel.min.css"
+      rel="stylesheet"
+    />
+    <link href="src/lib/animate/animate.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="src/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="src/css/style.css" rel="stylesheet" />
+
+    <style>
+      .protection-card {
+        background: white;
+        border-radius: 16px;
+        padding: 2rem;
+        text-align: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        height: 100%;
+      }
+      .protection-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+      .protection-icon {
+        width: 80px;
+        height: 80px;
+        background: rgba(6, 163, 218, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+      }
+      .protection-icon i {
+        font-size: 2.5rem;
+        color: #06a3da;
+      }
+      .product-card {
+        background: white;
+        border-radius: 16px;
+        padding: 1.5rem;
+        transition: all 0.3s;
+        height: 100%;
+        border: 1px solid #e2e8f0;
+      }
+      .product-card:hover {
+        border-color: #06a3da;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+      .product-price {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #06a3da;
+      }
+      .product-price small {
+        font-size: 0.875rem;
+        font-weight: 400;
+      }
+      .feature-list {
+        list-style: none;
+        text-align: left;
+        margin-top: 1rem;
+      }
+      .feature-list li {
+        padding: 0.5rem 0;
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .feature-list li i {
+        color: #34ad54;
+        width: 20px;
+      }
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: #06a3da;
+      }
+      .lightning-badge {
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        display: inline-block;
+      }
+      .process-step {
+        text-align: center;
+        padding: 1.5rem;
+      }
+      .step-number {
+        width: 50px;
+        height: 50px;
+        background: #06a3da;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin: 0 auto 1rem;
+      }
+      .cta-protection {
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        border-radius: 20px;
+        padding: 3rem;
+        text-align: center;
+        color: white;
+      }
+      .spec-badge {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        background: rgba(6, 163, 218, 0.1);
+        color: #06a3da;
+        border-radius: 20px;
+        font-size: 0.7rem;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .damage-card {
+        background: #f7fafc;
+        border-radius: 12px;
+        padding: 1rem;
+        text-align: center;
+        transition: all 0.3s;
+        height: 100%;
+      }
+      .damage-card:hover {
+        background: white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      .location-badge {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: white;
+        border-radius: 12px;
+        margin: 0.5rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      }
+
+      /* Mega Menu Dropdown Styles */
+      .dropdown-menu {
+        border-radius: 12px;
+        border: none;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      }
+      .dropdown-item {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+        transition: all 0.2s;
+      }
+      .dropdown-item:hover {
+        background-color: rgba(6, 163, 218, 0.05);
+        color: #06a3da;
+        transform: translateX(5px);
+      }
+      .dropdown-header {
+        font-weight: 700;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .mega-dropdown {
+        min-width: 580px;
+        padding: 1.5rem;
+      }
+      @media (max-width: 991.98px) {
+        .mega-dropdown {
+          min-width: auto;
+          width: 100%;
+        }
+      }
+
+      /* CSS Lightning Bolt Illustration */
+      .lightning-illustration {
+        background: linear-gradient(135deg, #0a1a2f 0%, #0d2b4f 100%);
+        border-radius: 24px;
+        padding: 2rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .bolt-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+      }
+
+      .lightning-bolt {
+        width: 0;
+        height: 0;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-bottom: 60px solid #f59e0b;
+        position: relative;
+        animation: boltFlash 0.5s ease-in-out infinite;
+      }
+
+      .lightning-bolt::after {
+        content: '';
+        position: absolute;
+        top: 55px;
+        left: -15px;
+        width: 0;
+        height: 0;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-bottom: 40px solid #f59e0b;
+      }
+
+      @keyframes boltFlash {
+        0%,
+        100% {
+          opacity: 0.8;
+          text-shadow: 0 0 5px #f59e0b;
+        }
+        50% {
+          opacity: 1;
+          text-shadow: 0 0 15px #f59e0b;
+        }
+      }
+
+      .protected-icon {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 0.5rem 1rem;
+        border-radius: 30px;
+        margin-top: 0.5rem;
+      }
+
+      .protected-icon i {
+        color: #34ad54;
+      }
+
+      .protection-stats {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1.5rem;
+        gap: 0.5rem;
+      }
+
+      .protection-stat {
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 12px;
+        padding: 0.5rem;
+        text-align: center;
+        flex: 1;
+      }
+
+      .protection-stat-value {
+        color: #f59e0b;
+        font-weight: bold;
+        font-size: 0.9rem;
+      }
+
+      .protection-stat-label {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.6rem;
+      }
+
+      .warning-icon {
+        color: #e53e3e;
+        animation: pulseWarning 1.5s ease infinite;
+      }
+
+      @keyframes pulseWarning {
+        0%,
+        100% {
+          opacity: 0.5;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.1);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .lightning-bolt {
+          border-left: 15px solid transparent;
+          border-right: 15px solid transparent;
+          border-bottom: 45px solid #f59e0b;
+        }
+        .lightning-bolt::after {
+          left: -11px;
+          border-left: 11px solid transparent;
+          border-right: 11px solid transparent;
+          border-bottom: 30px solid #f59e0b;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Spinner Start -->
+    <div
+      id="spinner"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+    >
+      <div class="spinner"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative p-0">
+      <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+        <a href="index.html" class="navbar-brand p-0">
+          <h1 class="m-0"><i class="fa fa-wifi me-2"></i>GrayTech</h1>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+        >
+          <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav ms-auto py-0">
+            <a href="index.html" class="nav-item nav-link">Home</a>
+            <a href="fibre.html" class="nav-item nav-link">Fibre</a>
+            <a href="lte.html" class="nav-item nav-link">LTE & 5G</a>
+            <a href="voip-systems.html" class="nav-item nav-link">VoIP</a>
+
+            <!-- Vox-style Mega Dropdown -->
+            <div class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                >Solutions</a
+              >
+              <div class="dropdown-menu mega-dropdown">
+                <div class="row g-4">
+                  <div class="col-md-4">
+                    <h6 class="dropdown-header text-primary mb-3">
+                      Connectivity
+                    </h6>
+                    <a href="fibre.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-tachometer-alt text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >Fibre Internet<br /><small class="text-muted"
+                        >Up to 1Gbps speeds</small
+                      ></a
+                    >
+                    <a href="lte.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-mobile-alt text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >LTE & 5G<br /><small class="text-muted"
+                        >Fast mobile internet</small
+                      ></a
+                    >
+                    <a href="satellite.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-satellite-dish text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >Satellite Internet<br /><small class="text-muted"
+                        >Connect anywhere</small
+                      ></a
+                    >
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="dropdown-header text-primary mb-3">
+                      Business IT
+                    </h6>
+                    <a href="voip-systems.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-phone-alt text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >VoIP Systems<br /><small class="text-muted"
+                        >Save up to 60% on calls</small
+                      ></a
+                    >
+                    <a href="network-solutions.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-network-wired text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >Network Solutions<br /><small class="text-muted"
+                        >Design & installation</small
+                      ></a
+                    >
+                    <a href="it-maintenance.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-laptop-code text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >IT Maintenance<br /><small class="text-muted"
+                        >Hardware & software</small
+                      ></a
+                    >
+                    <a href="remote-monitoring.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-eye text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >Remote Monitoring<br /><small class="text-muted"
+                        >24/7 surveillance</small
+                      ></a
+                    >
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="dropdown-header text-primary mb-3">
+                      Security & Power
+                    </h6>
+                    <a href="connected-security.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-video text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >Security Systems<br /><small class="text-muted"
+                        >CCTV & access control</small
+                      ></a
+                    >
+                    <a href="backup-power.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-battery-full text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >Backup Power<br /><small class="text-muted"
+                        >Load shedding solutions</small
+                      ></a
+                    >
+                    <a href="surge-protection.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-bolt text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >Surge Protection<br /><small class="text-muted"
+                        >Equipment safety</small
+                      ></a
+                    >
+                    <div class="mt-3 pt-2 border-top">
+                      <a href="web-hosting.html" class="dropdown-item"
+                        ><i
+                          class="fas fa-cloud-upload-alt text-primary me-2"
+                          style="width: 20px"
+                        ></i
+                        >Web Hosting<br /><small class="text-muted"
+                          >Fast SA servers</small
+                        ></a
+                      >
+                      <a href="quote.html" class="dropdown-item"
+                        ><i
+                          class="fas fa-file-invoice text-primary me-2"
+                          style="width: 20px"
+                        ></i
+                        >Request Quote<br /><small class="text-muted"
+                          >Get custom pricing</small
+                        ></a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                  <div class="col-12">
+                    <a
+                      href="service.html"
+                      class="text-primary text-decoration-none small"
+                      >View all solutions →</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <a href="contact.html" class="nav-item nav-link">Contact</a>
+            <a href="portal.html" class="nav-item nav-link">Customer Portal</a>
+          </div>
+          <a href="contact.html" class="btn btn-primary py-2 px-4 ms-3"
+            >Get Quote</a
+          >
+        </div>
+      </nav>
+
+      <div
+        class="container-fluid bg-primary py-5 bg-header"
+        style="margin-bottom: 90px"
+      >
+        <div class="row py-5">
+          <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+            <h1 class="display-4 text-white animated zoomIn">
+              Surge & Lightning Protection
+            </h1>
+            <a href="index.html" class="h5 text-white">Home</a>
+            <i class="far fa-circle text-white px-2"></i>
+            <a href="service.html" class="h5 text-white">Services</a>
+            <i class="far fa-circle text-white px-2"></i>
+            <a href="surge-protection.html" class="h5 text-white"
+              >Surge Protection</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Full Screen Search Start -->
+    <div class="modal fade" id="searchModal" tabindex="-1">
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content" style="background: rgba(9, 30, 62, 0.7)">
+          <div class="modal-header border-0">
+            <button
+              type="button"
+              class="btn bg-white btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div
+            class="modal-body d-flex align-items-center justify-content-center"
+          >
+            <div class="input-group" style="max-width: 600px">
+              <input
+                type="text"
+                class="form-control bg-transparent border-primary p-3"
+                placeholder="Search protection solutions..."
+              />
+              <button class="btn btn-primary px-4">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Full Screen Search End -->
+
+    <!-- Hero Section with CSS Lightning Illustration -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="container py-4">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6">
+            <div class="section-title position-relative pb-3 mb-4">
+              <h5 class="fw-bold text-primary text-uppercase">
+                Equipment Protection
+              </h5>
+              <h1 class="mb-3">
+                Protect Your Valuable Equipment from Power Surges & Lightning
+              </h1>
+            </div>
+            <p class="mb-4">
+              South Africa experiences some of the highest lightning strike
+              rates in the world. Don't let a single strike destroy thousands of
+              rands worth of equipment.
+            </p>
+            <div class="row g-3 mb-4">
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-bolt text-primary fa-2x me-3"></i>
+                  <div>
+                    <strong>Lightning Protection</strong><br /><small
+                      >Certified lightning rods & grounding</small
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-plug text-primary fa-2x me-3"></i>
+                  <div>
+                    <strong>Surge Suppressors</strong><br /><small
+                      >Protect all connected devices</small
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-tower-cell text-primary fa-2x me-3"></i>
+                  <div>
+                    <strong>Telecom Protection</strong><br /><small
+                      >Data lines & network protection</small
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-certificate text-primary fa-2x me-3"></i>
+                  <div>
+                    <strong>Certified Installers</strong><br /><small
+                      >SANS compliant installations</small
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a href="quote.html" class="btn btn-primary py-3 px-5"
+              >Get Protection Assessment →</a
+            >
+          </div>
+          <div class="col-lg-6">
+            <!-- CSS Lightning Bolt Illustration -->
+            <div class="lightning-illustration">
+              <div class="bolt-container">
+                <div class="lightning-bolt"></div>
+              </div>
+              <div class="protected-icon">
+                <i class="fas fa-shield-alt"></i>
+                <span>Protected by GrayTech</span>
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="protection-stats">
+                <div class="protection-stat">
+                  <div class="protection-stat-value">40kA</div>
+                  <div class="protection-stat-label">Surge Capacity</div>
+                </div>
+                <div class="protection-stat">
+                  <div class="protection-stat-value">&lt;1ns</div>
+                  <div class="protection-stat-label">Response Time</div>
+                </div>
+                <div class="protection-stat">
+                  <div class="protection-stat-value">SANS</div>
+                  <div class="protection-stat-label">Certified</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lightning Risk Alert -->
+    <div class="container-fluid py-3 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="container">
+        <div
+          class="alert alert-danger text-center"
+          style="background: rgba(229, 62, 62, 0.1); border-color: #e53e3e"
+        >
+          <i class="fas fa-bolt text-danger me-2"></i>
+          <strong>Did you know?</strong> South Africa has one of the highest
+          lightning strike densities in the world - over 10 strikes per square
+          kilometer per year!
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="container-fluid py-4 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="container">
+        <div class="row g-4 text-center">
+          <div class="col-lg-3 col-md-6">
+            <div class="stat-number">250+</div>
+            <p class="text-muted mb-0">Lightning Days/Year</p>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="stat-number">10+</div>
+            <p class="text-muted mb-0">Strikes/km²/year</p>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="stat-number">R50k+</div>
+            <p class="text-muted mb-0">Avg Equipment Loss</p>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="stat-number">100%</div>
+            <p class="text-muted mb-0">Preventable</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services Grid -->
+    <div
+      class="container-fluid py-5 wow fadeInUp bg-light"
+      data-wow-delay="0.1s"
+    >
+      <div class="container py-4">
+        <div
+          class="section-title text-center position-relative pb-3 mb-5 mx-auto"
+          style="max-width: 700px"
+        >
+          <h5 class="fw-bold text-primary text-uppercase">Our Services</h5>
+          <h1 class="mb-0">Complete Surge & Lightning Protection</h1>
+          <p class="mt-3">Multi-layered protection for your entire property</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="protection-card">
+              <div class="protection-icon">
+                <i class="fas fa-cloud-sun"></i>
+              </div>
+              <h3>External Lightning Protection</h3>
+              <p>
+                Lightning rods (air terminals) and down conductors to safely
+                direct lightning strikes to ground.
+              </p>
+              <ul class="feature-list">
+                <li>
+                  <i class="fas fa-check"></i> Lightning rods installation
+                </li>
+                <li><i class="fas fa-check"></i> Down conductors</li>
+                <li><i class="fas fa-check"></i> SANS compliant</li>
+                <li><i class="fas fa-check"></i> Risk assessment</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="protection-card">
+              <div class="protection-icon"><i class="fas fa-bolt"></i></div>
+              <h3>Surge Protection Devices (SPD)</h3>
+              <p>
+                Type 1, 2 & 3 surge protectors for main electrical panels and
+                point-of-use protection.
+              </p>
+              <ul class="feature-list">
+                <li><i class="fas fa-check"></i> Type 1 (Main panel)</li>
+                <li><i class="fas fa-check"></i> Type 2 (Sub-distribution)</li>
+                <li><i class="fas fa-check"></i> Type 3 (Point-of-use)</li>
+                <li><i class="fas fa-check"></i> LED status indicators</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="protection-card">
+              <div class="protection-icon">
+                <i class="fas fa-network-wired"></i>
+              </div>
+              <h3>Data Line Protection</h3>
+              <p>
+                Protect network, telephone, and data lines from induced surges.
+              </p>
+              <ul class="feature-list">
+                <li><i class="fas fa-check"></i> Ethernet surge protection</li>
+                <li><i class="fas fa-check"></i> Coaxial protection</li>
+                <li><i class="fas fa-check"></i> Telephone line protection</li>
+                <li><i class="fas fa-check"></i> CCTV surge suppressors</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Products Section -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="container py-4">
+        <div
+          class="section-title text-center position-relative pb-3 mb-5 mx-auto"
+          style="max-width: 700px"
+        >
+          <h5 class="fw-bold text-primary text-uppercase">Products</h5>
+          <h1 class="mb-0">Surge Protection Products</h1>
+          <p class="mt-3">Choose the right protection for your needs</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="product-card">
+              <div class="text-center">
+                <i class="fas fa-plug fa-3x text-primary mb-3"></i>
+                <h4>Single Socket Surge Protector</h4>
+                <div class="product-price">R 299<small></small></div>
+                <span class="spec-badge">230V</span
+                ><span class="spec-badge">10A</span
+                ><span class="spec-badge">385V Clamping</span>
+              </div>
+              <ul class="feature-list">
+                <li><i class="fas fa-check"></i> For individual devices</li>
+                <li><i class="fas fa-check"></i> LED indicator</li>
+                <li><i class="fas fa-check"></i> 1 socket outlet</li>
+              </ul>
+              <button
+                class="btn btn-outline-primary w-100 mt-3"
+                onclick="orderProduct('Single Socket Surge Protector', 299)"
+              >
+                Add to Quote
+              </button>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="product-card">
+              <div class="text-center">
+                <i class="fas fa-plug fa-3x text-primary mb-3"></i>
+                <h4>Multi-Socket Surge Strip</h4>
+                <div class="product-price">R 599<small></small></div>
+                <span class="spec-badge">230V</span
+                ><span class="spec-badge">10A</span
+                ><span class="spec-badge">6 Outlets</span>
+              </div>
+              <ul class="feature-list">
+                <li><i class="fas fa-check"></i> For multiple devices</li>
+                <li>
+                  <i class="fas fa-check"></i> Surge & overload protection
+                </li>
+                <li><i class="fas fa-check"></i> 1.5m cord</li>
+              </ul>
+              <button
+                class="btn btn-outline-primary w-100 mt-3"
+                onclick="orderProduct('Multi-Socket Surge Strip', 599)"
+              >
+                Add to Quote
+              </button>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="product-card">
+              <div class="text-center">
+                <i class="fas fa-tachometer-alt fa-3x text-primary mb-3"></i>
+                <h4>Type 2 Surge Protector</h4>
+                <div class="product-price">R 1,499<small></small></div>
+                <span class="spec-badge">40kA</span
+                ><span class="spec-badge">DIN Rail</span
+                ><span class="spec-badge">3-Phase</span>
+              </div>
+              <ul class="feature-list">
+                <li><i class="fas fa-check"></i> For distribution board</li>
+                <li><i class="fas fa-check"></i> Plug-in modules</li>
+                <li><i class="fas fa-check"></i> Remote indication</li>
+              </ul>
+              <button
+                class="btn btn-outline-primary w-100 mt-3"
+                onclick="orderProduct('Type 2 Surge Protector', 1499)"
+              >
+                Add to Quote
+              </button>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="product-card">
+              <div class="text-center">
+                <i class="fas fa-tower-cell fa-3x text-primary mb-3"></i>
+                <h4>Ethernet Surge Protector</h4>
+                <div class="product-price">R 449<small></small></div>
+                <span class="spec-badge">Cat6</span
+                ><span class="spec-badge">1Gbps</span
+                ><span class="spec-badge">RJ45</span>
+              </div>
+              <ul class="feature-list">
+                <li><i class="fas fa-check"></i> For network cables</li>
+                <li><i class="fas fa-check"></i> PoE compatible</li>
+                <li><i class="fas fa-check"></i> Low insertion loss</li>
+              </ul>
+              <button
+                class="btn btn-outline-primary w-100 mt-3"
+                onclick="orderProduct('Ethernet Surge Protector', 449)"
+              >
+                Add to Quote
+              </button>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="product-card">
+              <div class="text-center">
+                <i class="fas fa-camera fa-3x text-primary mb-3"></i>
+                <h4>CCTV Surge Protector</h4>
+                <div class="product-price">R 399<small></small></div>
+                <span class="spec-badge">BNC</span
+                ><span class="spec-badge">12V</span
+                ><span class="spec-badge">IP66</span>
+              </div>
+              <ul class="feature-list">
+                <li><i class="fas fa-check"></i> For security cameras</li>
+                <li><i class="fas fa-check"></i> Weatherproof housing</li>
+                <li><i class="fas fa-check"></i> Video & power protection</li>
+              </ul>
+              <button
+                class="btn btn-outline-primary w-100 mt-3"
+                onclick="orderProduct('CCTV Surge Protector', 399)"
+              >
+                Add to Quote
+              </button>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="product-card">
+              <div class="text-center">
+                <i class="fas fa-cloud-sun fa-3x text-primary mb-3"></i>
+                <h4>Lightning Rod System</h4>
+                <div class="product-price">From R 12,999<small></small></div>
+                <span class="spec-badge">SANS 62305</span
+                ><span class="spec-badge">20m Coverage</span>
+              </div>
+              <ul class="feature-list">
+                <li>
+                  <i class="fas fa-check"></i> Complete lightning protection
+                </li>
+                <li><i class="fas fa-check"></i> Professional installation</li>
+                <li><i class="fas fa-check"></i> Testing & certification</li>
+              </ul>
+              <button
+                class="btn btn-outline-primary w-100 mt-3"
+                onclick="orderProduct('Lightning Rod System', 12999)"
+              >
+                Request Quote
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- High Risk Areas -->
+    <div
+      class="container-fluid py-5 wow fadeInUp bg-light"
+      data-wow-delay="0.1s"
+    >
+      <div class="container py-4">
+        <div
+          class="section-title text-center position-relative pb-3 mb-5 mx-auto"
+          style="max-width: 700px"
+        >
+          <h5 class="fw-bold text-primary text-uppercase">High Risk Areas</h5>
+          <h1 class="mb-0">Highest Lightning Activity in South Africa</h1>
+          <p class="mt-3">
+            These areas experience the most frequent lightning strikes
+          </p>
+        </div>
+        <div class="text-center">
+          <div class="location-badge">
+            <i class="fas fa-map-marker-alt text-primary me-2"></i>Johannesburg
+          </div>
+          <div class="location-badge">
+            <i class="fas fa-map-marker-alt text-primary me-2"></i>Pretoria
+          </div>
+          <div class="location-badge">
+            <i class="fas fa-map-marker-alt text-primary me-2"></i>Durban
+          </div>
+          <div class="location-badge">
+            <i class="fas fa-map-marker-alt text-primary me-2"></i
+            >Pietermaritzburg
+          </div>
+          <div class="location-badge">
+            <i class="fas fa-map-marker-alt text-primary me-2"></i>Nelspruit
+          </div>
+          <div class="location-badge">
+            <i class="fas fa-map-marker-alt text-primary me-2"></i>Bloemfontein
+          </div>
+          <div class="location-badge">
+            <i class="fas fa-map-marker-alt text-primary me-2"></i>Kimberley
+          </div>
+          <div class="location-badge">
+            <i class="fas fa-map-marker-alt text-primary me-2"></i>Polokwane
+          </div>
+          <div class="location-badge">
+            <i class="fas fa-map-marker-alt text-primary me-2"></i>Rustenburg
+          </div>
+          <div class="location-badge">
+            <i class="fas fa-map-marker-alt text-primary me-2"></i>Mpumalanga
+            Highveld
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <p class="text-muted">
+            <i class="fas fa-info-circle me-2"></i>If your business is in any of
+            these areas, you're at high risk of lightning damage
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SPD Levels Explained -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="container py-4">
+        <div
+          class="section-title text-center position-relative pb-3 mb-5 mx-auto"
+          style="max-width: 700px"
+        >
+          <h5 class="fw-bold text-primary text-uppercase">Protection Levels</h5>
+          <h1 class="mb-0">Multi-Layer Surge Protection</h1>
+          <p class="mt-3">Different levels of protection for different needs</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="protection-card">
+              <h3><span class="badge bg-primary">Type 1</span></h3>
+              <h4 class="mt-3">Main Distribution Board</h4>
+              <p class="text-muted">
+                First line of defense against direct lightning strikes
+              </p>
+              <ul class="feature-list">
+                <li><i class="fas fa-check"></i> For main electrical panel</li>
+                <li><i class="fas fa-check"></i> Handles direct strikes</li>
+                <li><i class="fas fa-check"></i> Commercial & industrial</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="protection-card">
+              <h3><span class="badge bg-primary">Type 2</span></h3>
+              <h4 class="mt-3">Sub-Distribution Board</h4>
+              <p class="text-muted">
+                Second line of defense for induced surges
+              </p>
+              <ul class="feature-list">
+                <li><i class="fas fa-check"></i> For sub-panels</li>
+                <li><i class="fas fa-check"></i> Reduces remaining energy</li>
+                <li><i class="fas fa-check"></i> Residential & commercial</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="protection-card">
+              <h3><span class="badge bg-primary">Type 3</span></h3>
+              <h4 class="mt-3">Point-of-Use</h4>
+              <p class="text-muted">Final protection for sensitive equipment</p>
+              <ul class="feature-list">
+                <li><i class="fas fa-check"></i> Plug-in devices</li>
+                <li><i class="fas fa-check"></i> For computers, TVs, etc.</li>
+                <li><i class="fas fa-check"></i> Most common protection</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Equipment Damage Examples -->
+    <div
+      class="container-fluid py-5 wow fadeInUp bg-light"
+      data-wow-delay="0.1s"
+    >
+      <div class="container py-4">
+        <div
+          class="section-title text-center position-relative pb-3 mb-5 mx-auto"
+          style="max-width: 700px"
+        >
+          <h5 class="fw-bold text-primary text-uppercase">
+            What Can Be Damaged
+          </h5>
+          <h1 class="mb-0">Don't Let This Happen to You</h1>
+          <p class="mt-3">
+            A single surge can destroy thousands of rands worth of equipment
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-3 col-6">
+            <div class="damage-card">
+              <i class="fas fa-desktop fa-2x text-primary mb-2"></i>
+              <h6>Computers</h6>
+              <p class="small mb-0">R5,000 - R30,000+</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="damage-card">
+              <i class="fas fa-server fa-2x text-primary mb-2"></i>
+              <h6>Servers</h6>
+              <p class="small mb-0">R20,000 - R200,000+</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="damage-card">
+              <i class="fas fa-tv fa-2x text-primary mb-2"></i>
+              <h6>TVs & Displays</h6>
+              <p class="small mb-0">R3,000 - R50,000+</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="damage-card">
+              <i class="fas fa-microchip fa-2x text-primary mb-2"></i>
+              <h6>Network Switches</h6>
+              <p class="small mb-0">R1,000 - R50,000+</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="damage-card">
+              <i class="fas fa-phone-alt fa-2x text-primary mb-2"></i>
+              <h6>VoIP Phones</h6>
+              <p class="small mb-0">R1,000 - R5,000+</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="damage-card">
+              <i class="fas fa-camera fa-2x text-primary mb-2"></i>
+              <h6>Security Cameras</h6>
+              <p class="small mb-0">R500 - R15,000+</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="damage-card">
+              <i class="fas fa-database fa-2x text-primary mb-2"></i>
+              <h6>Data Loss</h6>
+              <p class="small mb-0">Priceless</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="damage-card">
+              <i class="fas fa-charging-station fa-2x text-primary mb-2"></i>
+              <h6>EV Chargers</h6>
+              <p class="small mb-0">R10,000 - R50,000+</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Process Section -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="container py-4">
+        <div
+          class="section-title text-center position-relative pb-3 mb-5 mx-auto"
+          style="max-width: 700px"
+        >
+          <h5 class="fw-bold text-primary text-uppercase">Our Process</h5>
+          <h1 class="mb-0">How We Protect Your Property</h1>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6">
+            <div class="process-step">
+              <div class="step-number">1</div>
+              <h4>Risk Assessment</h4>
+              <p class="small text-muted">
+                We evaluate your property's lightning risk level.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="process-step">
+              <div class="step-number">2</div>
+              <h4>Solution Design</h4>
+              <p class="small text-muted">
+                We design a multi-layer protection system.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="process-step">
+              <div class="step-number">3</div>
+              <h4>Professional Installation</h4>
+              <p class="small text-muted">
+                Certified electricians install the system.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="process-step">
+              <div class="step-number">4</div>
+              <h4>Testing & Certification</h4>
+              <p class="small text-muted">
+                We test and provide compliance certification.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Benefits Section -->
+    <div
+      class="container-fluid py-5 wow fadeInUp bg-light"
+      data-wow-delay="0.1s"
+    >
+      <div class="container py-4">
+        <div class="row g-4">
+          <div class="col-md-3 text-center">
+            <i class="fas fa-shield-alt fa-3x text-primary mb-3"></i>
+            <h5>Equipment Protection</h5>
+            <p class="small">Prevent costly equipment damage</p>
+          </div>
+          <div class="col-md-3 text-center">
+            <i class="fas fa-database fa-3x text-primary mb-3"></i>
+            <h5>Data Protection</h5>
+            <p class="small">Prevent data loss from power surges</p>
+          </div>
+          <div class="col-md-3 text-center">
+            <i class="fas fa-chart-line fa-3x text-primary mb-3"></i>
+            <h5>Reduced Downtime</h5>
+            <p class="small">Keep your business running</p>
+          </div>
+          <div class="col-md-3 text-center">
+            <i class="fas fa-file-alt fa-3x text-primary mb-3"></i>
+            <h5>Insurance Compliance</h5>
+            <p class="small">Many insurers require protection</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="container py-4">
+        <div class="cta-protection">
+          <div class="lightning-badge mb-3">
+            <i class="fas fa-bolt me-2"></i> Don't wait for the next storm
+          </div>
+          <h2 class="mb-3">Protect Your Equipment Today</h2>
+          <p class="mb-4" style="max-width: 600px; margin: 0 auto">
+            Get a free surge protection assessment and quote from our certified
+            team.
+          </p>
+          <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <a href="quote.html" class="btn btn-light py-3 px-5"
+              >Free Assessment</a
+            >
+            <a href="contact.html" class="btn btn-outline-light py-3 px-5"
+              >Call 087 701 9055</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Start -->
+    <div
+      class="container-fluid bg-dark text-white mt-5 wow fadeInUp"
+      data-wow-delay="0.1s"
+    >
+      <div class="container">
+        <div class="row gx-5">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <div
+              class="d-flex flex-column align-items-center justify-content-center text-center h-100 p-4"
+            >
+              <a href="index.html" class="navbar-brand"
+                ><h1 class="m-0 text-white">
+                  <i class="fa fa-wifi me-2 text-primary"></i>GrayTech
+                </h1></a
+              >
+              <p class="mt-3 mb-4 text-white">
+                Your trusted IT solutions partner for fibre, VoIP, network
+                security, and managed IT services across South Africa.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-8 col-md-6">
+            <div class="row gx-5">
+              <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                <div
+                  class="section-title section-title-sm position-relative pb-3 mb-4"
+                >
+                  <h3 class="text-white mb-0">Get In Touch</h3>
+                </div>
+                <div class="d-flex mb-2">
+                  <i class="bi bi-geo-alt text-primary me-2"></i>
+                  <p class="mb-0 text-white">Fourways, Johannesburg, 2191</p>
+                </div>
+                <div class="d-flex mb-2">
+                  <i class="bi bi-envelope-open text-primary me-2"></i>
+                  <p class="mb-0 text-white">info@graytechsystems.co.za</p>
+                </div>
+                <div class="d-flex mb-2">
+                  <i class="bi bi-telephone text-primary me-2"></i>
+                  <p class="mb-0 text-white">087 701 9055</p>
+                </div>
+                <div class="d-flex mt-4">
+                  <a class="btn btn-outline-light btn-square me-2" href="#"
+                    ><i class="fab fa-twitter fw-normal"></i
+                  ></a>
+                  <a class="btn btn-outline-light btn-square me-2" href="#"
+                    ><i class="fab fa-facebook-f fw-normal"></i
+                  ></a>
+                  <a class="btn btn-outline-light btn-square me-2" href="#"
+                    ><i class="fab fa-linkedin-in fw-normal"></i
+                  ></a>
+                  <a class="btn btn-outline-light btn-square" href="#"
+                    ><i class="fab fa-instagram fw-normal"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                <div
+                  class="section-title section-title-sm position-relative pb-3 mb-4"
+                >
+                  <h3 class="text-white mb-0">Solutions</h3>
+                </div>
+                <div
+                  class="link-animated d-flex flex-column justify-content-start"
+                >
+                  <a class="text-white mb-2" href="fibre.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Fibre</a
+                  >
+                  <a class="text-white mb-2" href="voip-systems.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>VoIP</a
+                  >
+                  <a class="text-white mb-2" href="network-solutions.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Network
+                    Solutions</a
+                  >
+                  <a class="text-white mb-2" href="backup-power.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Backup
+                    Power</a
+                  >
+                  <a class="text-white" href="connected-security.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i
+                    >Security</a
+                  >
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                <div
+                  class="section-title section-title-sm position-relative pb-3 mb-4"
+                >
+                  <h3 class="text-white mb-0">Quick Links</h3>
+                </div>
+                <div
+                  class="link-animated d-flex flex-column justify-content-start"
+                >
+                  <a class="text-white mb-2" href="index.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Home</a
+                  >
+                  <a class="text-white mb-2" href="about.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>About
+                    Us</a
+                  >
+                  <a class="text-white mb-2" href="contact.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i
+                    >Contact</a
+                  >
+                  <a class="text-white mb-2" href="quote.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Get
+                    Quote</a
+                  >
+                  <a class="text-white" href="portal.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Customer
+                    Portal</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid" style="background: #061429">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-12">
+            <div
+              class="d-flex align-items-center justify-content-center"
+              style="height: 60px"
+            >
+              <p class="mb-0 text-white small">
+                &copy;
+                <a class="text-white border-bottom" href="index.html"
+                  >GrayTech Systems</a
+                >. All Rights Reserved. POPIA Compliant
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"
+      ><i class="bi bi-arrow-up"></i
+    ></a>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="src/lib/wow/wow.min.js"></script>
+    <script src="src/lib/easing/easing.min.js"></script>
+    <script src="src/lib/waypoints/waypoints.min.js"></script>
+    <script src="src/lib/counterup/counterup.min.js"></script>
+    <script src="src/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="src/js/main.js"></script>
+
+    <script>
+      function orderProduct(product, price) {
+        alert(
+          `${product} (R ${price.toLocaleString()}) added to your quote.\n\nA GrayTech consultant will contact you within 24 hours to discuss installation.`
+        );
+      }
+    </script>
+  </body>
+</html>

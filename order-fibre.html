@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Order Fibre | GrayTech Systems - Fast & Reliable Internet</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta
+      content="Order fibre internet from GrayTech Systems. Choose your package, provider, and complete your order online."
+      name="keywords"
+    />
+    <meta
+      content="Complete your fibre order with GrayTech Systems. Select your package, provide your details, and get connected today."
+      name="description"
+    />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link
+      href="src/lib/owlcarousel/assets/owl.carousel.min.css"
+      rel="stylesheet"
+    />
+    <link href="src/lib/animate/animate.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="src/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="src/css/style.css" rel="stylesheet" />
+
+    <style>
+      .order-summary-card {
+        background: white;
+        border-radius: 16px;
+        padding: 1.5rem;
+        box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 2rem;
+      }
+
+      .order-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid #eef2f6;
+      }
+
+      .order-total {
+        font-size: 1.25rem;
+        font-weight: 800;
+        color: var(--primary);
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 2px solid var(--primary);
+      }
+
+      .form-control-custom {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        font-family: inherit;
+        transition: all 0.2s;
+      }
+
+      .form-control-custom:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(6, 163, 218, 0.1);
+      }
+
+      .order-btn-submit {
+        background: var(--success);
+        color: white;
+        border: none;
+        padding: 1rem;
+        border-radius: 12px;
+        font-weight: 700;
+        font-size: 1rem;
+        width: 100%;
+        transition: all 0.3s;
+      }
+
+      .order-btn-submit:hover {
+        background: #2b6e3f;
+        transform: translateY(-2px);
+      }
+
+      .package-badge {
+        background: rgba(6, 163, 218, 0.1);
+        color: var(--primary);
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+      }
+
+      .provider-badge {
+        background: rgba(52, 173, 84, 0.1);
+        color: var(--secondary);
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Spinner Start -->
+    <div
+      id="spinner"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+    >
+      <div class="spinner"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative p-0">
+      <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+        <a href="index.html" class="navbar-brand p-0">
+          <h1 class="m-0"><i class="fa fa-wifi me-2"></i>GrayTech</h1>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+        >
+          <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav ms-auto py-0">
+            <a href="index.html" class="nav-item nav-link">Home</a>
+            <a href="about.html" class="nav-item nav-link">About</a>
+            <a href="service.html" class="nav-item nav-link">Services</a>
+            <div class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle active"
+                data-bs-toggle="dropdown"
+                >Pages</a
+              >
+              <div class="dropdown-menu m-0">
+                <a href="feature.html" class="dropdown-item">Our features</a>
+                <a href="team.html" class="dropdown-item">Team Members</a>
+                <a href="order.html" class="dropdown-item active">Order Now</a>
+                <a href="quote.html" class="dropdown-item">Free Quote</a>
+              </div>
+            </div>
+            <a href="contact.html" class="nav-item nav-link">Contact</a>
+            <a href="portal.html" class="nav-item nav-link">Portal</a>
+          </div>
+          <butaton
+            type="button"
+            class="btn text-primary ms-3"
+            data-bs-toggle="modal"
+            data-bs-target="#searchModal"
+            ><i class="fa fa-search"></i
+          ></butaton>
+          <a
+            href="https://graytechsystems.co.za/contact-us"
+            class="btn btn-primary py-2 px-4 ms-3"
+            >Get Connected</a
+          >
+        </div>
+      </nav>
+
+      <div
+        class="container-fluid bg-primary py-5 bg-header"
+        style="margin-bottom: 90px"
+      >
+        <div class="row py-5">
+          <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+            <h1 class="display-4 text-white animated zoomIn">Order Fibre</h1>
+            <a href="index.html" class="h5 text-white">Home</a>
+            <i class="far fa-circle text-white px-2"></i>
+            <a href="order.html" class="h5 text-white">Order Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Full Screen Search Start -->
+    <div class="modal fade" id="searchModal" tabindex="-1">
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content" style="background: rgba(9, 30, 62, 0.7)">
+          <div class="modal-header border-0">
+            <button
+              type="button"
+              class="btn bg-white btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div
+            class="modal-body d-flex align-items-center justify-content-center"
+          >
+            <div class="input-group" style="max-width: 600px">
+              <input
+                type="text"
+                class="form-control bg-transparent border-primary p-3"
+                placeholder="Search our site..."
+              />
+              <button class="btn btn-primary px-4">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Full Screen Search End -->
+
+    <!-- Order Form Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="container py-5">
+        <div class="row g-5">
+          <!-- Order Form Column -->
+          <div class="col-lg-7">
+            <div class="section-title position-relative pb-3 mb-4">
+              <h5 class="fw-bold text-primary text-uppercase">
+                Complete Your Order
+              </h5>
+              <h1 class="mb-3">Get Connected in 3 Easy Steps</h1>
+              <p>
+                Fill in your details below and we'll get you connected within
+                3-5 business days.
+              </p>
+            </div>
+
+            <form id="orderForm">
+              <!-- Package Selection -->
+              <div class="mb-4">
+                <label class="fw-bold mb-2">1. Select Your Package</label>
+                <select id="packageSelect" class="form-control-custom" required>
+                  <option value="">-- Select a package --</option>
+                  <option value="openserve_50">
+                    OpenServe - 50Mbps - R599/month
+                  </option>
+                  <option value="openserve_100">
+                    OpenServe - 100Mbps - R799/month
+                  </option>
+                  <option value="openserve_200">
+                    OpenServe - 200Mbps - R1,049/month
+                  </option>
+                  <option value="openserve_500">
+                    OpenServe - 500Mbps - R1,499/month
+                  </option>
+                  <option value="openserve_1000">
+                    OpenServe - 1Gbps - R1,999/month
+                  </option>
+                  <option value="vumatel_50">
+                    Vumatel - 50Mbps - R649/month
+                  </option>
+                  <option value="vumatel_100">
+                    Vumatel - 100Mbps - R849/month
+                  </option>
+                  <option value="vumatel_200">
+                    Vumatel - 200Mbps - R1,099/month
+                  </option>
+                  <option value="vumatel_500">
+                    Vumatel - 500Mbps - R1,599/month
+                  </option>
+                  <option value="vumatel_1000">
+                    Vumatel - 1Gbps - R2,099/month
+                  </option>
+                  <option value="octotel_50">
+                    Octotel - 50Mbps - R699/month
+                  </option>
+                  <option value="octotel_100">
+                    Octotel - 100Mbps - R899/month
+                  </option>
+                  <option value="octotel_200">
+                    Octotel - 200Mbps - R1,199/month
+                  </option>
+                  <option value="octotel_500">
+                    Octotel - 500Mbps - R1,699/month
+                  </option>
+                  <option value="octotel_1000">
+                    Octotel - 1Gbps - R2,199/month
+                  </option>
+                  <option value="frogfoot_20">
+                    Frogfoot - 20Mbps - R449/month
+                  </option>
+                  <option value="frogfoot_50">
+                    Frogfoot - 50Mbps - R599/month
+                  </option>
+                  <option value="frogfoot_100">
+                    Frogfoot - 100Mbps - R799/month
+                  </option>
+                  <option value="frogfoot_200">
+                    Frogfoot - 200Mbps - R999/month
+                  </option>
+                </select>
+              </div>
+
+              <!-- Personal Details -->
+              <div class="mb-4">
+                <label class="fw-bold mb-2">2. Your Details</label>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <input
+                      type="text"
+                      id="fullName"
+                      class="form-control-custom"
+                      placeholder="Full Name"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <input
+                      type="email"
+                      id="email"
+                      class="form-control-custom"
+                      placeholder="Email Address"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <input
+                      type="tel"
+                      id="phone"
+                      class="form-control-custom"
+                      placeholder="Phone Number"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <input
+                      type="text"
+                      id="idNumber"
+                      class="form-control-custom"
+                      placeholder="ID / Passport Number"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Address Details -->
+              <div class="mb-4">
+                <label class="fw-bold mb-2">3. Installation Address</label>
+                <div class="row g-3">
+                  <div class="col-12">
+                    <input
+                      type="text"
+                      id="streetAddress"
+                      class="form-control-custom"
+                      placeholder="Street Address"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <input
+                      type="text"
+                      id="suburb"
+                      class="form-control-custom"
+                      placeholder="Suburb / City"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-3">
+                    <input
+                      type="text"
+                      id="postalCode"
+                      class="form-control-custom"
+                      placeholder="Postal Code"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-3">
+                    <select id="province" class="form-control-custom" required>
+                      <option value="">Province</option>
+                      <option value="Gauteng">Gauteng</option>
+                      <option value="Western Cape">Western Cape</option>
+                      <option value="KwaZulu-Natal">KwaZulu-Natal</option>
+                      <option value="Eastern Cape">Eastern Cape</option>
+                      <option value="Free State">Free State</option>
+                      <option value="Mpumalanga">Mpumalanga</option>
+                      <option value="Limpopo">Limpopo</option>
+                      <option value="North West">North West</option>
+                      <option value="Northern Cape">Northern Cape</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Additional Options -->
+              <div class="mb-4">
+                <label class="fw-bold mb-2">Additional Options</label>
+                <div class="form-check mb-2">
+                  <input
+                    type="checkbox"
+                    id="staticIp"
+                    class="form-check-input"
+                  />
+                  <label class="form-check-label" for="staticIp"
+                    >Static IP Address (+R99/month)</label
+                  >
+                </div>
+                <div class="form-check mb-2">
+                  <input
+                    type="checkbox"
+                    id="wifiExtender"
+                    class="form-check-input"
+                  />
+                  <label class="form-check-label" for="wifiExtender"
+                    >WiFi Extender (R299 one-time)</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    id="prioritySupport"
+                    class="form-check-input"
+                  />
+                  <label class="form-check-label" for="prioritySupport"
+                    >Priority Support (4hr response) +R199/month</label
+                  >
+                </div>
+              </div>
+
+              <!-- Terms -->
+              <div class="mb-4">
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    id="termsAccepted"
+                    class="form-check-input"
+                    required
+                  />
+                  <label class="form-check-label" for="termsAccepted">
+                    I agree to the
+                    <a
+                      href="#"
+                      data-bs-toggle="modal"
+                      data-bs-target="#termsModal"
+                      >Terms and Conditions</a
+                    >
+                    and 12-month contract
+                  </label>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- Order Summary Column -->
+          <div class="col-lg-5">
+            <div class="order-summary-card">
+              <h4 class="mb-3">
+                <i class="fas fa-shopping-cart text-primary me-2"></i> Order
+                Summary
+              </h4>
+
+              <div id="orderSummaryItems">
+                <div class="order-item">
+                  <span>Selected Package:</span>
+                  <span class="fw-semibold">Not selected</span>
+                </div>
+              </div>
+
+              <div class="order-total" id="orderTotal">
+                Total: R 0<span style="font-size: 0.875rem">/month</span>
+              </div>
+
+              <div class="mt-3">
+                <small class="text-muted">
+                  <i class="fas fa-check-circle text-success"></i> Free
+                  installation included<br />
+                  <i class="fas fa-check-circle text-success"></i> Free router
+                  included<br />
+                  <i class="fas fa-check-circle text-success"></i> 24/7 support
+                  included
+                </small>
+              </div>
+
+              <button class="order-btn-submit mt-4" id="submitOrderBtn">
+                <i class="fas fa-arrow-right me-2"></i> Place Order
+              </button>
+
+              <p class="text-center text-muted mt-3 small">
+                <i class="fas fa-lock"></i> Secure checkout. No payment required
+                now.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Order Form End -->
+
+    <!-- Vendor Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="container py-5 mb-5">
+        <div class="bg-white">
+          <div class="owl-carousel vendor-carousel">
+            <img src="src/img/vendor-1.jpg" alt="Partner logo" />
+            <img src="src/img/vendor-2.jpg" alt="Partner logo" />
+            <img src="src/img/vendor-3.jpg" alt="Partner logo" />
+            <img src="src/img/vendor-4.jpg" alt="Partner logo" />
+            <img src="src/img/vendor-5.jpg" alt="Partner logo" />
+            <img src="src/img/vendor-6.jpg" alt="Partner logo" />
+            <img src="src/img/vendor-7.jpg" alt="Partner logo" />
+            <img src="src/img/vendor-8.jpg" alt="Partner logo" />
+            <img src="src/img/vendor-9.jpg" alt="Partner logo" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Vendor End -->
+
+    <!-- Footer Start -->
+    <div
+      class="container-fluid bg-dark text-white mt-5 wow fadeInUp"
+      data-wow-delay="0.1s"
+    >
+      <div class="container">
+        <div class="row gx-5">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <div
+              class="d-flex flex-column align-items-center justify-content-center text-center h-100 p-4"
+            >
+              <a href="index.html" class="navbar-brand"
+                ><h1 class="m-0 text-white">
+                  <i class="fa fa-wifi me-2 text-primary"></i>GrayTech
+                </h1></a
+              >
+              <p class="mt-3 mb-4 text-white">
+                Your trusted IT solutions partner for fibre, VoIP, network
+                security, and managed IT services across South Africa.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-8 col-md-6">
+            <div class="row gx-5">
+              <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                <div
+                  class="section-title section-title-sm position-relative pb-3 mb-4"
+                >
+                  <h3 class="text-white mb-0">Get In Touch</h3>
+                </div>
+                <div class="d-flex mb-2">
+                  <i class="bi bi-geo-alt text-primary me-2"></i>
+                  <p class="mb-0 text-white">Fourways, Johannesburg, 2191</p>
+                </div>
+                <div class="d-flex mb-2">
+                  <i class="bi bi-envelope-open text-primary me-2"></i>
+                  <p class="mb-0 text-white">info@graytechsystems.co.za</p>
+                </div>
+                <div class="d-flex mb-2">
+                  <i class="bi bi-telephone text-primary me-2"></i>
+                  <p class="mb-0 text-white">087 701 9055</p>
+                </div>
+                <div class="d-flex mt-4">
+                  <a class="btn btn-outline-light btn-square me-2" href="#"
+                    ><i class="fab fa-twitter fw-normal"></i></a
+                  ><a class="btn btn-outline-light btn-square me-2" href="#"
+                    ><i class="fab fa-facebook-f fw-normal"></i></a
+                  ><a class="btn btn-outline-light btn-square me-2" href="#"
+                    ><i class="fab fa-linkedin-in fw-normal"></i></a
+                  ><a class="btn btn-outline-light btn-square" href="#"
+                    ><i class="fab fa-instagram fw-normal"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                <div
+                  class="section-title section-title-sm position-relative pb-3 mb-4"
+                >
+                  <h3 class="text-white mb-0">Solutions</h3>
+                </div>
+                <div
+                  class="link-animated d-flex flex-column justify-content-start"
+                >
+                  <a class="text-white mb-2" href="fibre.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Fibre</a
+                  ><a class="text-white mb-2" href="voip-systems.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>VoIP</a
+                  ><a class="text-white mb-2" href="network-solutions.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Network
+                    Solutions</a
+                  ><a class="text-white mb-2" href="backup-power.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Backup
+                    Power</a
+                  ><a class="text-white" href="connected-security.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i
+                    >Security</a
+                  >
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                <div
+                  class="section-title section-title-sm position-relative pb-3 mb-4"
+                >
+                  <h3 class="text-white mb-0">Quick Links</h3>
+                </div>
+                <div
+                  class="link-animated d-flex flex-column justify-content-start"
+                >
+                  <a class="text-white mb-2" href="index.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Home</a
+                  ><a class="text-white mb-2" href="about.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>About
+                    Us</a
+                  ><a class="text-white mb-2" href="contact.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i
+                    >Contact</a
+                  ><a class="text-white mb-2" href="quote.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Get
+                    Quote</a
+                  ><a class="text-white" href="portal.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Customer
+                    Portal</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid" style="background: #061429">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-12">
+            <div
+              class="d-flex align-items-center justify-content-center"
+              style="height: 60px"
+            >
+              <p class="mb-0 text-white small">
+                &copy;
+                <a class="text-white border-bottom" href="index.html"
+                  >GrayTech Systems</a
+                >. All Rights Reserved. POPIA Compliant
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"
+      ><i class="bi bi-arrow-up"></i
+    ></a>
+
+    <!-- Terms Modal -->
+    <div class="modal fade" id="termsModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Terms and Conditions</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <h6>12-Month Contract Terms</h6>
+            <p>1. A minimum 12-month contract applies to all fibre packages.</p>
+            <p>2. Early termination fee: 75% of remaining months.</p>
+            <p>3. Installation is free but subject to site survey.</p>
+            <p>4. Router remains property of GrayTech Systems.</p>
+            <p>5. Fair usage policy applies to all uncapped packages.</p>
+            <p>6. Prices subject to annual CPI increase.</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              Accept
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="src/lib/wow/wow.min.js"></script>
+    <script src="src/lib/easing/easing.min.js"></script>
+    <script src="src/lib/waypoints/waypoints.min.js"></script>
+    <script src="src/lib/counterup/counterup.min.js"></script>
+    <script src="src/lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="src/js/main.js"></script>
+
+    <!-- Order Form Script -->
+    <script>
+      // Package mapping
+      const packagePrices = {
+        openserve_50: { provider: 'OpenServe', speed: '50Mbps', price: 599 },
+        openserve_100: { provider: 'OpenServe', speed: '100Mbps', price: 799 },
+        openserve_200: { provider: 'OpenServe', speed: '200Mbps', price: 1049 },
+        openserve_500: { provider: 'OpenServe', speed: '500Mbps', price: 1499 },
+        openserve_1000: { provider: 'OpenServe', speed: '1Gbps', price: 1999 },
+        vumatel_50: { provider: 'Vumatel', speed: '50Mbps', price: 649 },
+        vumatel_100: { provider: 'Vumatel', speed: '100Mbps', price: 849 },
+        vumatel_200: { provider: 'Vumatel', speed: '200Mbps', price: 1099 },
+        vumatel_500: { provider: 'Vumatel', speed: '500Mbps', price: 1599 },
+        vumatel_1000: { provider: 'Vumatel', speed: '1Gbps', price: 2099 },
+        octotel_50: { provider: 'Octotel', speed: '50Mbps', price: 699 },
+        octotel_100: { provider: 'Octotel', speed: '100Mbps', price: 899 },
+        octotel_200: { provider: 'Octotel', speed: '200Mbps', price: 1199 },
+        octotel_500: { provider: 'Octotel', speed: '500Mbps', price: 1699 },
+        octotel_1000: { provider: 'Octotel', speed: '1Gbps', price: 2199 },
+        frogfoot_20: { provider: 'Frogfoot', speed: '20Mbps', price: 449 },
+        frogfoot_50: { provider: 'Frogfoot', speed: '50Mbps', price: 599 },
+        frogfoot_100: { provider: 'Frogfoot', speed: '100Mbps', price: 799 },
+        frogfoot_200: { provider: 'Frogfoot', speed: '200Mbps', price: 999 },
+      };
+
+      // Update order summary when package changes
+      const packageSelect = document.getElementById('packageSelect');
+      const orderSummaryItems = document.getElementById('orderSummaryItems');
+      const orderTotalSpan = document.getElementById('orderTotal');
+      const staticIpCheck = document.getElementById('staticIp');
+      const prioritySupportCheck = document.getElementById('prioritySupport');
+
+      function updateOrderSummary() {
+        const selectedValue = packageSelect.value;
+        let basePrice = 0;
+        let provider = '';
+        let speed = '';
+
+        if (selectedValue && packagePrices[selectedValue]) {
+          basePrice = packagePrices[selectedValue].price;
+          provider = packagePrices[selectedValue].provider;
+          speed = packagePrices[selectedValue].speed;
+        }
+
+        let staticIpCost = staticIpCheck.checked ? 99 : 0;
+        let priorityCost = prioritySupportCheck.checked ? 199 : 0;
+        let total = basePrice + staticIpCost + priorityCost;
+
+        let summaryHtml = `
+          <div class="order-item">
+            <span>Selected Package:</span>
+            <span class="fw-semibold">${
+              provider ? provider + ' - ' + speed : 'Not selected'
+            }</span>
+          </div>
+        `;
+
+        if (selectedValue && packagePrices[selectedValue]) {
+          summaryHtml += `<div class="order-item"><span>Monthly Package:</span><span>R ${basePrice.toLocaleString()}</span></div>`;
+        }
+
+        if (staticIpCheck.checked) {
+          summaryHtml += `<div class="order-item"><span>Static IP Add-on:</span><span>R 99</span></div>`;
+        }
+
+        if (prioritySupportCheck.checked) {
+          summaryHtml += `<div class="order-item"><span>Priority Support:</span><span>R 199</span></div>`;
+        }
+
+        summaryHtml += `<div class="order-item"><span>Installation:</span><span class="text-success">FREE</span></div>`;
+        summaryHtml += `<div class="order-item"><span>Router:</span><span class="text-success">FREE</span></div>`;
+
+        orderSummaryItems.innerHTML = summaryHtml;
+
+        if (total > 0) {
+          orderTotalSpan.innerHTML = `Total: R ${total.toLocaleString()}<span style="font-size: 0.875rem;">/month</span>`;
+        } else {
+          orderTotalSpan.innerHTML = `Total: R 0<span style="font-size: 0.875rem;">/month</span>`;
+        }
+      }
+
+      packageSelect.addEventListener('change', updateOrderSummary);
+      staticIpCheck.addEventListener('change', updateOrderSummary);
+      prioritySupportCheck.addEventListener('change', updateOrderSummary);
+
+      // Submit order
+      document
+        .getElementById('submitOrderBtn')
+        .addEventListener('click', function () {
+          const packageValue = packageSelect.value;
+          const fullName = document.getElementById('fullName').value;
+          const email = document.getElementById('email').value;
+          const phone = document.getElementById('phone').value;
+          const streetAddress = document.getElementById('streetAddress').value;
+          const suburb = document.getElementById('suburb').value;
+          const postalCode = document.getElementById('postalCode').value;
+          const province = document.getElementById('province').value;
+          const termsAccepted =
+            document.getElementById('termsAccepted').checked;
+
+          if (!packageValue) {
+            alert('Please select a package');
+            return;
+          }
+
+          if (
+            !fullName ||
+            !email ||
+            !phone ||
+            !streetAddress ||
+            !suburb ||
+            !postalCode ||
+            !province
+          ) {
+            alert('Please fill in all required fields');
+            return;
+          }
+
+          if (!termsAccepted) {
+            alert('Please accept the Terms and Conditions');
+            return;
+          }
+
+          const orderDetails = {
+            orderNumber:
+              'GT-' + Math.random().toString(36).substr(2, 8).toUpperCase(),
+            package: packagePrices[packageValue],
+            customer: { fullName, email, phone },
+            address: { streetAddress, suburb, postalCode, province },
+            addons: {
+              staticIp: staticIpCheck.checked,
+              prioritySupport: prioritySupportCheck.checked,
+            },
+            total:
+              (packagePrices[packageValue]?.price || 0) +
+              (staticIpCheck.checked ? 99 : 0) +
+              (prioritySupportCheck.checked ? 199 : 0),
+            orderDate: new Date().toLocaleString(),
+          };
+
+          localStorage.setItem('lastOrder', JSON.stringify(orderDetails));
+
+          alert(
+            `🎉 Order Confirmed!\n\nOrder Number: ${orderDetails.orderNumber}\n\nA GrayTech consultant will contact you within 24 hours to schedule installation.\n\nThank you for choosing GrayTech Systems!`
+          );
+
+          // Reset form
+          packageSelect.value = '';
+          document.getElementById('fullName').value = '';
+          document.getElementById('email').value = '';
+          document.getElementById('phone').value = '';
+          document.getElementById('idNumber').value = '';
+          document.getElementById('streetAddress').value = '';
+          document.getElementById('suburb').value = '';
+          document.getElementById('postalCode').value = '';
+          document.getElementById('province').value = '';
+          staticIpCheck.checked = false;
+          prioritySupportCheck.checked = false;
+          document.getElementById('wifiExtender').checked = false;
+          document.getElementById('termsAccepted').checked = false;
+          updateOrderSummary();
+        });
+    </script>
+  </body>
+</html>

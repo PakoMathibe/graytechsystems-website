@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>
+      IT Maintenance | GrayTech Systems - Professional IT Support South Africa
+    </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta
+      content="GrayTech Systems IT maintenance managed IT services computer support network maintenance South Africa"
+      name="keywords"
+    />
+    <meta
+      content="Professional IT maintenance and support services from GrayTech Systems. Managed IT services, computer maintenance, network support, and 24/7 technical assistance for businesses."
+      name="description"
+    />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link
+      href="src/lib/owlcarousel/assets/owl.carousel.min.css"
+      rel="stylesheet"
+    />
+    <link href="src/lib/animate/animate.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="src/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="src/css/style.css" rel="stylesheet" />
+
+    <style>
+      .service-card {
+        background: white;
+        border-radius: 16px;
+        padding: 2rem;
+        text-align: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        height: 100%;
+      }
+      .service-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+      .service-icon {
+        width: 80px;
+        height: 80px;
+        background: rgba(6, 163, 218, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+      }
+      .service-icon i {
+        font-size: 2.5rem;
+        color: #06a3da;
+      }
+      .pricing-card {
+        background: white;
+        border-radius: 16px;
+        padding: 1.5rem;
+        text-align: center;
+        transition: all 0.3s;
+        height: 100%;
+        border: 1px solid #e2e8f0;
+      }
+      .pricing-card:hover {
+        border-color: #06a3da;
+        transform: translateY(-5px);
+      }
+      .pricing-card.featured {
+        border-color: #06a3da;
+        box-shadow: 0 10px 30px rgba(6, 163, 218, 0.15);
+        position: relative;
+        overflow: hidden;
+      }
+      .pricing-card.featured::before {
+        content: 'Most Popular';
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: #06a3da;
+        color: white;
+        padding: 0.25rem 1rem;
+        font-size: 0.7rem;
+        font-weight: 600;
+      }
+      .pricing-price {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #06a3da;
+      }
+      .pricing-price small {
+        font-size: 0.875rem;
+        font-weight: 400;
+      }
+      .feature-list {
+        list-style: none;
+        text-align: left;
+        margin-top: 1rem;
+      }
+      .feature-list li {
+        padding: 0.5rem 0;
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .feature-list li i {
+        color: #34ad54;
+        width: 20px;
+      }
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: #06a3da;
+      }
+      .process-step {
+        text-align: center;
+        padding: 1.5rem;
+      }
+      .step-number {
+        width: 50px;
+        height: 50px;
+        background: #06a3da;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin: 0 auto 1rem;
+      }
+      .cta-it {
+        background: linear-gradient(135deg, #091e3e 0%, #0d2b4f 100%);
+        border-radius: 20px;
+        padding: 3rem;
+        text-align: center;
+        color: white;
+      }
+      .ticket-card {
+        background: #f7fafc;
+        border-radius: 12px;
+        padding: 1rem;
+        text-align: center;
+        transition: all 0.3s;
+      }
+
+      /* Mega Menu Dropdown Styles */
+      .dropdown-menu {
+        border-radius: 12px;
+        border: none;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      }
+      .dropdown-item {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+        transition: all 0.2s;
+      }
+      .dropdown-item:hover {
+        background-color: rgba(6, 163, 218, 0.05);
+        color: #06a3da;
+        transform: translateX(5px);
+      }
+      .dropdown-header {
+        font-weight: 700;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .mega-dropdown {
+        min-width: 580px;
+        padding: 1.5rem;
+      }
+      @media (max-width: 991.98px) {
+        .mega-dropdown {
+          min-width: auto;
+          width: 100%;
+        }
+      }
+
+      /* CSS IT Support Illustration */
+      .it-illustration {
+        background: linear-gradient(135deg, #091e3e 0%, #0d2b4f 100%);
+        border-radius: 20px;
+        padding: 1.5rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .server-rack {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+        margin-bottom: 1.5rem;
+      }
+
+      .server-unit {
+        background: #1a1a2e;
+        border-radius: 6px;
+        padding: 8px 12px;
+        width: 80%;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-left: 3px solid #06a3da;
+      }
+
+      .server-led {
+        width: 8px;
+        height: 8px;
+        background: #34ad54;
+        border-radius: 50%;
+        animation: blink 1.5s ease infinite;
+      }
+
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.3;
+        }
+      }
+
+      .server-name {
+        color: white;
+        font-size: 0.7rem;
+        flex: 1;
+        text-align: left;
+      }
+
+      .server-status {
+        color: #34ad54;
+        font-size: 0.6rem;
+      }
+
+      .monitor-screen {
+        background: #0a1a2f;
+        border-radius: 12px;
+        padding: 1rem;
+        margin-top: 1rem;
+        border: 1px solid rgba(6, 163, 218, 0.3);
+      }
+
+      .monitor-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .monitor-title {
+        color: #06a3da;
+        font-size: 0.7rem;
+        font-weight: 600;
+      }
+
+      .system-stats {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .stat-item {
+        flex: 1;
+        text-align: center;
+      }
+
+      .stat-percent {
+        color: white;
+        font-size: 0.8rem;
+        font-weight: bold;
+      }
+
+      .stat-label {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 0.6rem;
+      }
+
+      .tooltip-icon {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        color: rgba(255, 255, 255, 0.3);
+        font-size: 0.7rem;
+      }
+
+      @media (max-width: 768px) {
+        .server-unit {
+          width: 95%;
+        }
+        .server-name {
+          font-size: 0.6rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Spinner Start -->
+    <div
+      id="spinner"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+    >
+      <div class="spinner"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative p-0">
+      <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+        <a href="index.html" class="navbar-brand p-0">
+          <h1 class="m-0"><i class="fa fa-wifi me-2"></i>GrayTech</h1>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+        >
+          <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav ms-auto py-0">
+            <a href="index.html" class="nav-item nav-link">Home</a>
+            <a href="fibre.html" class="nav-item nav-link">Fibre</a>
+            <a href="lte.html" class="nav-item nav-link">LTE & 5G</a>
+            <a href="voip-systems.html" class="nav-item nav-link">VoIP</a>
+
+            <!-- Vox-style Mega Dropdown -->
+            <div class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                >Solutions</a
+              >
+              <div class="dropdown-menu mega-dropdown">
+                <div class="row g-4">
+                  <div class="col-md-4">
+                    <h6 class="dropdown-header text-primary mb-3">
+                      Connectivity
+                    </h6>
+                    <a href="fibre.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-tachometer-alt text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >Fibre Internet<br /><small class="text-muted"
+                        >Up to 1Gbps speeds</small
+                      ></a
+                    >
+                    <a href="lte.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-mobile-alt text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >LTE & 5G<br /><small class="text-muted"
+                        >Fast mobile internet</small
+                      ></a
+                    >
+                    <a href="satellite.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-satellite-dish text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >Satellite Internet<br /><small class="text-muted"
+                        >Connect anywhere</small
+                      ></a
+                    >
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="dropdown-header text-primary mb-3">
+                      Business IT
+                    </h6>
+                    <a href="voip-systems.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-phone-alt text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >VoIP Systems<br /><small class="text-muted"
+                        >Save up to 60% on calls</small
+                      ></a
+                    >
+                    <a href="network-solutions.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-network-wired text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >Network Solutions<br /><small class="text-muted"
+                        >Design & installation</small
+                      ></a
+                    >
+                    <a href="it-maintenance.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-laptop-code text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >IT Maintenance<br /><small class="text-muted"
+                        >Hardware & software</small
+                      ></a
+                    >
+                    <a href="remote-monitoring.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-eye text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >Remote Monitoring<br /><small class="text-muted"
+                        >24/7 surveillance</small
+                      ></a
+                    >
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="dropdown-header text-primary mb-3">
+                      Security & Power
+                    </h6>
+                    <a href="connected-security.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-video text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >Security Systems<br /><small class="text-muted"
+                        >CCTV & access control</small
+                      ></a
+                    >
+                    <a href="backup-power.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-battery-full text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >Backup Power<br /><small class="text-muted"
+                        >Load shedding solutions</small
+                      ></a
+                    >
+                    <a href="surge-protection.html" class="dropdown-item"
+                      ><i
+                        class="fas fa-bolt text-primary me-2"
+                        style="width: 20px"
+                      ></i
+                      >Surge Protection<br /><small class="text-muted"
+                        >Equipment safety</small
+                      ></a
+                    >
+                    <div class="mt-3 pt-2 border-top">
+                      <a href="web-hosting.html" class="dropdown-item"
+                        ><i
+                          class="fas fa-cloud-upload-alt text-primary me-2"
+                          style="width: 20px"
+                        ></i
+                        >Web Hosting<br /><small class="text-muted"
+                          >Fast SA servers</small
+                        ></a
+                      >
+                      <a href="quote.html" class="dropdown-item"
+                        ><i
+                          class="fas fa-file-invoice text-primary me-2"
+                          style="width: 20px"
+                        ></i
+                        >Request Quote<br /><small class="text-muted"
+                          >Get custom pricing</small
+                        ></a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                  <div class="col-12">
+                    <a
+                      href="service.html"
+                      class="text-primary text-decoration-none small"
+                      >View all solutions →</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <a href="contact.html" class="nav-item nav-link">Contact</a>
+            <a href="portal.html" class="nav-item nav-link">Customer Portal</a>
+          </div>
+          <a href="contact.html" class="btn btn-primary py-2 px-4 ms-3"
+            >Get Quote</a
+          >
+        </div>
+      </nav>
+
+      <div
+        class="container-fluid bg-primary py-5 bg-header"
+        style="margin-bottom: 90px"
+      >
+        <div class="row py-5">
+          <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+            <h1 class="display-4 text-white animated zoomIn">IT Maintenance</h1>
+            <a href="index.html" class="h5 text-white">Home</a>
+            <i class="far fa-circle text-white px-2"></i>
+            <a href="service.html" class="h5 text-white">Services</a>
+            <i class="far fa-circle text-white px-2"></i>
+            <a href="it-maintenance.html" class="h5 text-white"
+              >IT Maintenance</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Full Screen Search Start -->
+    <div class="modal fade" id="searchModal" tabindex="-1">
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content" style="background: rgba(9, 30, 62, 0.7)">
+          <div class="modal-header border-0">
+            <button
+              type="button"
+              class="btn bg-white btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div
+            class="modal-body d-flex align-items-center justify-content-center"
+          >
+            <div class="input-group" style="max-width: 600px">
+              <input
+                type="text"
+                class="form-control bg-transparent border-primary p-3"
+                placeholder="Search IT services..."
+              />
+              <button class="btn btn-primary px-4">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Full Screen Search End -->
+
+    <!-- Hero Section with CSS Illustration -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="container py-4">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6">
+            <div class="section-title position-relative pb-3 mb-4">
+              <h5 class="fw-bold text-primary text-uppercase">
+                Managed IT Services
+              </h5>
+              <h1 class="mb-3">Proactive IT Maintenance & Support</h1>
+            </div>
+            <p class="mb-4">
+              Keep your business running smoothly with GrayTech's comprehensive
+              IT maintenance services. From hardware to software, we've got you
+              covered.
+            </p>
+            <div class="row g-3 mb-4">
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-clock text-primary fa-2x me-3"></i>
+                  <div>
+                    <strong>24/7 Support</strong><br /><small
+                      >Round-the-clock assistance</small
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-shield-alt text-primary fa-2x me-3"></i>
+                  <div>
+                    <strong>Proactive Monitoring</strong><br /><small
+                      >Prevent issues before they happen</small
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-tachometer-alt text-primary fa-2x me-3"></i>
+                  <div>
+                    <strong>Rapid Response</strong><br /><small
+                      >Minimize downtime</small
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-chart-line text-primary fa-2x me-3"></i>
+                  <div>
+                    <strong>Business Continuity</strong><br /><small
+                      >Disaster recovery planning</small
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a href="quote.html" class="btn btn-primary py-3 px-5"
+              >Get IT Support Quote →</a
+            >
+          </div>
+          <div class="col-lg-6">
+            <!-- CSS IT Support Illustration -->
+            <div class="it-illustration">
+              <div class="server-rack">
+                <div class="server-unit">
+                  <div class="server-led"></div>
+                  <span class="server-name">Web Server</span>
+                  <span class="server-status">Online</span>
+                </div>
+                <div class="server-unit">
+                  <div class="server-led"></div>
+                  <span class="server-name">Database Server</span>
+                  <span class="server-status">Online</span>
+                </div>
+                <div class="server-unit">
+                  <div class="server-led"></div>
+                  <span class="server-name">Mail Server</span>
+                  <span class="server-status">Online</span>
+                </div>
+                <div class="server-unit">
+                  <div class="server-led"></div>
+                  <span class="server-name">Backup Server</span>
+                  <span class="server-status">Syncing</span>
+                </div>
+              </div>
+              <div class="monitor-screen">
+                <div class="monitor-header">
+                  <span class="monitor-title"
+                    ><i class="fas fa-chart-line"></i> System Health</span
+                  >
+                  <span class="monitor-title">Last check: 2s ago</span>
+                </div>
+                <div class="system-stats">
+                  <div class="stat-item">
+                    <div class="stat-percent">98%</div>
+                    <div class="stat-label">CPU</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-percent">64%</div>
+                    <div class="stat-label">RAM</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-percent">42%</div>
+                    <div class="stat-label">Storage</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-percent">100%</div>
+                    <div class="stat-label">Network</div>
+                  </div>
+                </div>
+              </div>
+              <div class="tooltip-icon">
+                <i class="fas fa-shield-alt"></i> Protected by GrayTech
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="container-fluid py-4 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="container">
+        <div class="row g-4 text-center">
+          <div class="col-lg-3 col-md-6">
+            <div class="stat-number">500+</div>
+            <p class="text-muted mb-0">Businesses Supported</p>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="stat-number">15min</div>
+            <p class="text-muted mb-0">Avg Response Time</p>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="stat-number">99.9%</div>
+            <p class="text-muted mb-0">Uptime Guarantee</p>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="stat-number">24/7</div>
+            <p class="text-muted mb-0">Support Available</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services Grid -->
+    <div
+      class="container-fluid py-5 wow fadeInUp bg-light"
+      data-wow-delay="0.1s"
+    >
+      <div class="container py-4">
+        <div
+          class="section-title text-center position-relative pb-3 mb-5 mx-auto"
+          style="max-width: 700px"
+        >
+          <h5 class="fw-bold text-primary text-uppercase">What We Cover</h5>
+          <h1 class="mb-0">Comprehensive IT Maintenance</h1>
+          <p class="mt-3">End-to-end IT support for your business</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card">
+              <div class="service-icon"><i class="fas fa-desktop"></i></div>
+              <h3>Hardware Maintenance</h3>
+              <p>
+                Keep your computers, servers, and peripherals running optimally
+                with regular maintenance.
+              </p>
+              <ul class="feature-list">
+                <li><i class="fas fa-check"></i> Desktop & laptop repair</li>
+                <li><i class="fas fa-check"></i> Server maintenance</li>
+                <li><i class="fas fa-check"></i> Peripheral support</li>
+                <li><i class="fas fa-check"></i> Hardware upgrades</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card">
+              <div class="service-icon"><i class="fas fa-windows"></i></div>
+              <h3>Software Support</h3>
+              <p>
+                Expert assistance with operating systems, productivity software,
+                and business applications.
+              </p>
+              <ul class="feature-list">
+                <li><i class="fas fa-check"></i> OS installation & updates</li>
+                <li><i class="fas fa-check"></i> Microsoft 365 support</li>
+                <li>
+                  <i class="fas fa-check"></i> Application troubleshooting
+                </li>
+                <li><i class="fas fa-check"></i> License management</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-shield-virus"></i>
+              </div>
+              <h3>Security Management</h3>
+              <p>
+                Protect your business from cyber threats with comprehensive
+                security solutions.
+              </p>
+              <ul class="feature-list">
+                <li><i class="fas fa-check"></i> Antivirus & anti-malware</li>
+                <li><i class="fas fa-check"></i> Firewall management</li>
+                <li><i class="fas fa-check"></i> Email security</li>
+                <li><i class="fas fa-check"></i> Security audits</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card">
+              <div class="service-icon"><i class="fas fa-database"></i></div>
+              <h3>Backup & Recovery</h3>
+              <p>
+                Protect your critical data with automated backup and disaster
+                recovery solutions.
+              </p>
+              <ul class="feature-list">
+                <li><i class="fas fa-check"></i> Automated backups</li>
+                <li><i class="fas fa-check"></i> Cloud backup</li>
+                <li><i class="fas fa-check"></i> Disaster recovery</li>
+                <li><i class="fas fa-check"></i> Data restoration</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-network-wired"></i>
+              </div>
+              <h3>Network Maintenance</h3>
+              <p>
+                Ensure your network infrastructure is secure, fast, and
+                reliable.
+              </p>
+              <ul class="feature-list">
+                <li><i class="fas fa-check"></i> Network monitoring</li>
+                <li><i class="fas fa-check"></i> Switch & router config</li>
+                <li><i class="fas fa-check"></i> Wi-Fi optimization</li>
+                <li><i class="fas fa-check"></i> VPN support</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-cloud-upload-alt"></i>
+              </div>
+              <h3>Cloud Services</h3>
+              <p>
+                Expert management of your cloud infrastructure and collaboration
+                tools.
+              </p>
+              <ul class="feature-list">
+                <li>
+                  <i class="fas fa-check"></i> Microsoft 365 administration
+                </li>
+                <li><i class="fas fa-check"></i> Google Workspace support</li>
+                <li><i class="fas fa-check"></i> Cloud migration</li>
+                <li><i class="fas fa-check"></i> SaaS management</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pricing Plans -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="container py-4">
+        <div
+          class="section-title text-center position-relative pb-3 mb-5 mx-auto"
+          style="max-width: 700px"
+        >
+          <h5 class="fw-bold text-primary text-uppercase">Simple Pricing</h5>
+          <h1 class="mb-0">Choose Your IT Support Plan</h1>
+          <p class="mt-3">Flexible plans to suit businesses of all sizes</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="pricing-card">
+              <h3>Basic</h3>
+              <div class="pricing-price">R 1,499<small>/month</small></div>
+              <ul class="feature-list">
+                <li><i class="fas fa-check"></i> Up to 5 devices</li>
+                <li><i class="fas fa-check"></i> Business hours support</li>
+                <li><i class="fas fa-check"></i> 24hr response time</li>
+                <li><i class="fas fa-check"></i> Remote support only</li>
+                <li><i class="fas fa-check"></i> Basic monitoring</li>
+                <li><i class="fas fa-check"></i> Monthly security updates</li>
+                <li class="text-muted">
+                  <i class="fas fa-times"></i> On-site support
+                </li>
+                <li class="text-muted">
+                  <i class="fas fa-times"></i> 24/7 emergency support
+                </li>
+              </ul>
+              <button
+                class="btn btn-outline-primary mt-3 w-100"
+                onclick="selectPlan('Basic', 1499)"
+              >
+                Select Plan
+              </button>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="pricing-card featured">
+              <h3>Professional</h3>
+              <div class="pricing-price">R 3,499<small>/month</small></div>
+              <ul class="feature-list">
+                <li><i class="fas fa-check"></i> Up to 15 devices</li>
+                <li><i class="fas fa-check"></i> 24/7 support</li>
+                <li><i class="fas fa-check"></i> 4hr response time</li>
+                <li><i class="fas fa-check"></i> Remote & on-site support</li>
+                <li><i class="fas fa-check"></i> Advanced monitoring</li>
+                <li><i class="fas fa-check"></i> Weekly security updates</li>
+                <li><i class="fas fa-check"></i> Backup management</li>
+                <li><i class="fas fa-check"></i> Quarterly business review</li>
+              </ul>
+              <button
+                class="btn btn-primary mt-3 w-100"
+                onclick="selectPlan('Professional', 3499)"
+              >
+                Select Plan
+              </button>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="pricing-card">
+              <h3>Enterprise</h3>
+              <div class="pricing-price">Custom</div>
+              <ul class="feature-list">
+                <li><i class="fas fa-check"></i> Unlimited devices</li>
+                <li><i class="fas fa-check"></i> 24/7 dedicated support</li>
+                <li><i class="fas fa-check"></i> 1hr response time</li>
+                <li><i class="fas fa-check"></i> On-site technician</li>
+                <li><i class="fas fa-check"></i> Enterprise monitoring</li>
+                <li><i class="fas fa-check"></i> Real-time security</li>
+                <li><i class="fas fa-check"></i> Full backup & DR</li>
+                <li><i class="fas fa-check"></i> Dedicated account manager</li>
+                <li><i class="fas fa-check"></i> Custom SLA</li>
+              </ul>
+              <button
+                class="btn btn-outline-primary mt-3 w-100"
+                onclick="contactSales()"
+              >
+                Contact Sales
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Process Section -->
+    <div
+      class="container-fluid py-5 wow fadeInUp bg-light"
+      data-wow-delay="0.1s"
+    >
+      <div class="container py-4">
+        <div
+          class="section-title text-center position-relative pb-3 mb-5 mx-auto"
+          style="max-width: 700px"
+        >
+          <h5 class="fw-bold text-primary text-uppercase">How It Works</h5>
+          <h1 class="mb-0">Our IT Support Process</h1>
+          <p class="mt-3">
+            A structured approach to keeping your IT running smoothly
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6">
+            <div class="process-step">
+              <div class="step-number">1</div>
+              <h4>Initial Audit</h4>
+              <p class="small text-muted">
+                We assess your current IT infrastructure and identify areas for
+                improvement.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="process-step">
+              <div class="step-number">2</div>
+              <h4>Implementation</h4>
+              <p class="small text-muted">
+                We deploy monitoring tools and implement security measures.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="process-step">
+              <div class="step-number">3</div>
+              <h4>Monitoring</h4>
+              <p class="small text-muted">
+                24/7 proactive monitoring with automated alerting.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="process-step">
+              <div class="step-number">4</div>
+              <h4>Support</h4>
+              <p class="small text-muted">
+                Rapid response and resolution for any issues that arise.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Support Channels -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="container py-4">
+        <div
+          class="section-title text-center position-relative pb-3 mb-5 mx-auto"
+          style="max-width: 700px"
+        >
+          <h5 class="fw-bold text-primary text-uppercase">Support Channels</h5>
+          <h1 class="mb-0">Multiple Ways to Get Help</h1>
+          <p class="mt-3">We're here when you need us</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6">
+            <div class="ticket-card">
+              <i class="fas fa-phone-alt fa-2x text-primary mb-2"></i>
+              <h5>Phone Support</h5>
+              <p class="small">Call our helpdesk for immediate assistance</p>
+              <div class="response-time">4hr response SLA</div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="ticket-card">
+              <i class="fas fa-envelope fa-2x text-primary mb-2"></i>
+              <h5>Email Support</h5>
+              <p class="small">Send your queries to our support team</p>
+              <div class="response-time">2hr response SLA</div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="ticket-card">
+              <i class="fas fa-ticket-alt fa-2x text-primary mb-2"></i>
+              <h5>Ticket Portal</h5>
+              <p class="small">Submit and track support tickets online</p>
+              <div class="response-time">24/7 access</div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="ticket-card">
+              <i class="fas fa-desktop fa-2x text-primary mb-2"></i>
+              <h5>Remote Support</h5>
+              <p class="small">Instant remote assistance for urgent issues</p>
+              <div class="response-time">15min connect time</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="container py-4">
+        <div class="cta-it">
+          <h2 class="mb-3">Ready for Reliable IT Support?</h2>
+          <p class="mb-4" style="max-width: 600px; margin: 0 auto">
+            Let our IT experts handle your technology so you can focus on your
+            business.
+          </p>
+          <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <a href="quote.html" class="btn btn-light py-3 px-5"
+              >Get Free Assessment</a
+            >
+            <a href="contact.html" class="btn btn-outline-light py-3 px-5"
+              >Contact Support</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Start -->
+    <div
+      class="container-fluid bg-dark text-white mt-5 wow fadeInUp"
+      data-wow-delay="0.1s"
+    >
+      <div class="container">
+        <div class="row gx-5">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <div
+              class="d-flex flex-column align-items-center justify-content-center text-center h-100 p-4"
+            >
+              <a href="index.html" class="navbar-brand"
+                ><h1 class="m-0 text-white">
+                  <i class="fa fa-wifi me-2 text-primary"></i>GrayTech
+                </h1></a
+              >
+              <p class="mt-3 mb-4 text-white">
+                Your trusted IT solutions partner for fibre, VoIP, network
+                security, and managed IT services across South Africa.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-8 col-md-6">
+            <div class="row gx-5">
+              <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                <div
+                  class="section-title section-title-sm position-relative pb-3 mb-4"
+                >
+                  <h3 class="text-white mb-0">Get In Touch</h3>
+                </div>
+                <div class="d-flex mb-2">
+                  <i class="bi bi-geo-alt text-primary me-2"></i>
+                  <p class="mb-0 text-white">Fourways, Johannesburg, 2191</p>
+                </div>
+                <div class="d-flex mb-2">
+                  <i class="bi bi-envelope-open text-primary me-2"></i>
+                  <p class="mb-0 text-white">info@graytechsystems.co.za</p>
+                </div>
+                <div class="d-flex mb-2">
+                  <i class="bi bi-telephone text-primary me-2"></i>
+                  <p class="mb-0 text-white">087 701 9055</p>
+                </div>
+                <div class="d-flex mt-4">
+                  <a class="btn btn-outline-light btn-square me-2" href="#"
+                    ><i class="fab fa-twitter fw-normal"></i
+                  ></a>
+                  <a class="btn btn-outline-light btn-square me-2" href="#"
+                    ><i class="fab fa-facebook-f fw-normal"></i
+                  ></a>
+                  <a class="btn btn-outline-light btn-square me-2" href="#"
+                    ><i class="fab fa-linkedin-in fw-normal"></i
+                  ></a>
+                  <a class="btn btn-outline-light btn-square" href="#"
+                    ><i class="fab fa-instagram fw-normal"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                <div
+                  class="section-title section-title-sm position-relative pb-3 mb-4"
+                >
+                  <h3 class="text-white mb-0">Solutions</h3>
+                </div>
+                <div
+                  class="link-animated d-flex flex-column justify-content-start"
+                >
+                  <a class="text-white mb-2" href="fibre.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Fibre</a
+                  >
+                  <a class="text-white mb-2" href="voip-systems.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>VoIP</a
+                  >
+                  <a class="text-white mb-2" href="network-solutions.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Network
+                    Solutions</a
+                  >
+                  <a class="text-white mb-2" href="backup-power.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Backup
+                    Power</a
+                  >
+                  <a class="text-white" href="connected-security.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i
+                    >Security</a
+                  >
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                <div
+                  class="section-title section-title-sm position-relative pb-3 mb-4"
+                >
+                  <h3 class="text-white mb-0">Quick Links</h3>
+                </div>
+                <div
+                  class="link-animated d-flex flex-column justify-content-start"
+                >
+                  <a class="text-white mb-2" href="index.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Home</a
+                  >
+                  <a class="text-white mb-2" href="about.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>About
+                    Us</a
+                  >
+                  <a class="text-white mb-2" href="contact.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i
+                    >Contact</a
+                  >
+                  <a class="text-white mb-2" href="quote.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Get
+                    Quote</a
+                  >
+                  <a class="text-white" href="portal.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Customer
+                    Portal</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid" style="background: #061429">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-12">
+            <div
+              class="d-flex align-items-center justify-content-center"
+              style="height: 60px"
+            >
+              <p class="mb-0 text-white small">
+                &copy;
+                <a class="text-white border-bottom" href="index.html"
+                  >GrayTech Systems</a
+                >. All Rights Reserved. POPIA Compliant
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"
+      ><i class="bi bi-arrow-up"></i
+    ></a>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="src/lib/wow/wow.min.js"></script>
+    <script src="src/lib/easing/easing.min.js"></script>
+    <script src="src/lib/waypoints/waypoints.min.js"></script>
+    <script src="src/lib/counterup/counterup.min.js"></script>
+    <script src="src/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="src/js/main.js"></script>
+
+    <script>
+      function selectPlan(plan, price) {
+        alert(
+          `You've selected the ${plan} IT Support Plan (R ${price.toLocaleString()}/month)\n\nA GrayTech consultant will contact you within 24 hours to set up your IT maintenance.`
+        );
+      }
+      function contactSales() {
+        alert(
+          `Please contact our sales team at 087 701 9055 or email sales@graytechsystems.co.za for a custom Enterprise quote.`
+        );
+      }
+    </script>
+  </body>
+</html>
