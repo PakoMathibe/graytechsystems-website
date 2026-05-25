@@ -1,254 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8" />
-    <title>Customer Dashboard | GrayTech Systems</title>
+    <title>Customer Dashboard | GrayTech Systems - Manage Your Account</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta
-      content="Manage your GrayTech Systems account, view data usage, pay invoices, and track support tickets."
-      name="description"
-    />
+    <meta content="Manage your GrayTech Systems account, view data usage, pay invoices, and track support tickets." name="description" />
+    <meta content="GrayTech Systems customer portal dashboard fibre internet account management" name="keywords" />
+    
+    <!-- Favicon -->
     <link href="../img/favicon.ico" rel="icon" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    
+    <!-- Font Awesome & Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+    
+    <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/dashboard.css" />
-  </head>
-  <body>
+</head>
+<body>
     <div class="dashboard-container">
-      <!-- Sidebar -->
-      <aside class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-          <h2><i class="fa fa-wifi"></i> GrayTech</h2>
-        </div>
-        <nav class="sidebar-nav">
-          <a href="#" class="nav-item active" data-section="overview"
-            ><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a
-          >
-          <a href="#" class="nav-item" data-section="usage"
-            ><i class="fas fa-chart-line"></i><span>Data Usage</span></a
-          >
-          <a href="#" class="nav-item" data-section="billing"
-            ><i class="fas fa-file-invoice-dollar"></i
-            ><span>Billing & Invoices</span></a
-          >
-          <a href="#" class="nav-item" data-section="support"
-            ><i class="fas fa-headset"></i><span>Support Tickets</span></a
-          >
-          <a href="#" class="nav-item" data-section="profile"
-            ><i class="fas fa-user-cog"></i><span>Account Settings</span></a
-          >
-          <a href="#" class="nav-item" data-section="services"
-            ><i class="fas fa-cogs"></i><span>My Services</span></a
-          >
-        </nav>
-        <div class="sidebar-footer">
-          <a href="../portal.html" class="logout-btn"
-            ><i class="fas fa-sign-out-alt"></i><span>Logout</span></a
-          >
-        </div>
-      </aside>
-      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fa fa-wifi"></i> GrayTech</h2>
+                <p class="sidebar-subtitle">Customer Portal</p>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-section="overview"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
+                <a href="#" class="nav-item" data-section="usage"><i class="fas fa-chart-line"></i><span>Data Usage</span></a>
+                <a href="#" class="nav-item" data-section="billing"><i class="fas fa-file-invoice-dollar"></i><span>Billing</span></a>
+                <a href="#" class="nav-item" data-section="support"><i class="fas fa-headset"></i><span>Support</span></a>
+                <a href="#" class="nav-item" data-section="profile"><i class="fas fa-user-cog"></i><span>Profile</span></a>
+                <a href="#" class="nav-item" data-section="services"><i class="fas fa-cogs"></i><span>Services</span></a>
+                <a href="#" class="nav-item" data-section="security"><i class="fas fa-shield-alt"></i><span>Security</span></a>
+                <a href="#" class="nav-item" data-section="referrals"><i class="fas fa-gift"></i><span>Referrals</span></a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="support-info">
+                    <i class="fas fa-headset"></i>
+                    <div>
+                        <small>24/7 Support</small>
+                        <strong>087 701 9055</strong>
+                    </div>
+                </div>
+                <a href="../index.html" class="logout-btn" id="logoutBtn"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
+            </div>
+        </aside>
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-      <!-- Main Content -->
-      <main class="main-content">
-        <div class="top-header">
-          <div style="display: flex; align-items: center">
-            <button class="menu-toggle" id="menuToggle">
-              <i class="fas fa-bars"></i>
-            </button>
-            <div class="page-title"><h1>Dashboard</h1></div>
-          </div>
-          <div class="user-menu">
-            <div class="notification-icon" id="notificationBell">
-              <i class="far fa-bell"></i><span class="badge">3</span>
-            </div>
-            <div class="user-info">
-              <div class="user-avatar">TN</div>
-              <div class="user-details">
-                <div class="user-name">Thabo Nkosi</div>
-                <div style="font-size: 0.75rem; color: var(--gray)">
-                  Business Account
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="top-header">
+                <div class="header-left">
+                    <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+                    <div class="page-title"><h1>Dashboard</h1><span class="page-subtitle">Welcome back, Thabo</span></div>
                 </div>
-              </div>
+                <div class="user-menu">
+                    <div class="notification-icon" id="notificationBell">
+                        <i class="far fa-bell"></i>
+                        <span class="badge">3</span>
+                        <div class="notification-dropdown" id="notificationDropdown">
+                            <div class="notification-item unread">
+                                <i class="fas fa-file-invoice"></i>
+                                <div><strong>New Invoice</strong><br><small>Invoice #INV-2026-005 is ready</small></div>
+                                <span class="time">5 min ago</span>
+                            </div>
+                            <div class="notification-item unread">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <div><strong>Service Upgrade</strong><br><small>Fibre 1Gbps now available</small></div>
+                                <span class="time">1 hour ago</span>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-headset"></i>
+                                <div><strong>Support Update</strong><br><small>Ticket #1 has been updated</small></div>
+                                <span class="time">Yesterday</span>
+                            </div>
+                            <div class="notification-footer"><a href="#" onclick="switchSection('support')">View all notifications →</a></div>
+                        </div>
+                    </div>
+                    <div class="user-info" id="userMenuBtn">
+                        <div class="user-avatar" id="userAvatar">TN</div>
+                        <div class="user-details">
+                            <div class="user-name" id="userName">Thabo Nkosi</div>
+                            <div class="user-role">Business Account</div>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="user-dropdown" id="userDropdown">
+                        <a href="#" onclick="switchSection('profile')"><i class="fas fa-user"></i> My Profile</a>
+                        <a href="#" onclick="switchSection('security')"><i class="fas fa-shield-alt"></i> Security</a>
+                        <a href="#" onclick="switchSection('billing')"><i class="fas fa-file-invoice"></i> Billing</a>
+                        <hr>
+                        <a href="#" id="dropdownLogoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
 
-        <div class="dashboard-content">
-          <!-- Overview Section -->
-          <div id="overviewSection">
-            <div class="stats-grid">
-              <div class="stat-card">
-                <div class="stat-info">
-                  <h3>Current Plan</h3>
-                  <div class="stat-value" id="currentPlan">Fibre 200Mbps</div>
+            <div class="dashboard-content">
+                <!-- Overview Section -->
+                <div id="overviewSection">
+                    <div class="welcome-card">
+                        <div class="welcome-text">
+                            <h2>Welcome back, Thabo!</h2>
+                            <p>Your internet is performing optimally. 99.9% uptime maintained this month.</p>
+                        </div>
+                        <div class="welcome-stats">
+                            <div class="welcome-stat"><span class="stat-number">99.9%</span><span class="stat-label">Uptime</span></div>
+                            <div class="welcome-stat"><span class="stat-number">&lt;24h</span><span class="stat-label">Response Time</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="stats-grid" id="statsGrid"></div>
+                    
+                    <div class="two-columns">
+                        <div class="section-card">
+                            <div class="section-header">
+                                <h2><i class="fas fa-chart-line"></i> Data Usage (Last 7 Days)</h2>
+                                <a onclick="switchSection('usage')">View Details →</a>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="usageChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="section-card">
+                            <div class="section-header">
+                                <h2><i class="fas fa-file-invoice"></i> Recent Invoices</h2>
+                                <a onclick="switchSection('billing')">View All →</a>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="invoice-table">
+                                    <thead><tr><th>Invoice #</th><th>Date</th><th>Amount</th><th>Status</th><th></th></tr></thead>
+                                    <tbody id="recentInvoicesBody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section-card">
+                        <div class="section-header">
+                            <h2><i class="fas fa-ticket-alt"></i> Active Support Tickets</h2>
+                            <a onclick="switchSection('support')">View All →</a>
+                        </div>
+                        <div id="ticketsPreviewList"></div>
+                    </div>
+                    
+                    <div class="quick-actions">
+                        <div class="quick-action" onclick="openNewTicketModal()"><i class="fas fa-headset"></i><span>Support</span></div>
+                        <div class="quick-action" onclick="switchSection('billing')"><i class="fas fa-credit-card"></i><span>Pay Bill</span></div>
+                        <div class="quick-action" onclick="switchSection('services')"><i class="fas fa-rocket"></i><span>Upgrade</span></div>
+                        <div class="quick-action" onclick="window.open('tel:0877019055')"><i class="fas fa-phone"></i><span>Call Us</span></div>
+                    </div>
                 </div>
-                <div class="stat-icon">
-                  <i class="fas fa-tachometer-alt"></i>
-                </div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-info">
-                  <h3>Data Used</h3>
-                  <div class="stat-value" id="dataUsed">347 / 500 GB</div>
-                </div>
-                <div class="stat-icon"><i class="fas fa-database"></i></div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-info">
-                  <h3>Outstanding Balance</h3>
-                  <div class="stat-value" id="outstandingBalance">R 1,245</div>
-                </div>
-                <div class="stat-icon"><i class="fas fa-credit-card"></i></div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-info">
-                  <h3>Active Tickets</h3>
-                  <div class="stat-value" id="activeTicketCount">2</div>
-                </div>
-                <div class="stat-icon"><i class="fas fa-ticket-alt"></i></div>
-              </div>
-            </div>
-            <div class="row two-columns">
-              <div class="section-card">
-                <div class="section-header">
-                  <h2>Data Usage (Last 7 Days)</h2>
-                  <a href="#" onclick="switchSection('usage'); return false;"
-                    >View Details →</a
-                  >
-                </div>
-                <div class="chart-container">
-                  <canvas id="usageChart"></canvas>
-                </div>
-              </div>
-              <div class="section-card">
-                <div class="section-header">
-                  <h2>Recent Invoices</h2>
-                  <a href="#" onclick="switchSection('billing'); return false;"
-                    >View All →</a
-                  >
-                </div>
-                <div class="table-responsive">
-                  <table class="invoice-table" id="recentInvoicesTable">
-                    <thead>
-                      <tr>
-                        <th>Invoice #</th>
-                        <th>Date</th>
-                        <th>Amount</th>
-                        <th>Status</th>
-                        <th></th>
-                      </tr>
-                    </thead>
-                    <tbody id="recentInvoicesBody"></tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-            <div class="section-card">
-              <div class="section-header">
-                <h2>Active Support Tickets</h2>
-                <a href="#" onclick="switchSection('support'); return false;"
-                  >View All →</a
-                >
-              </div>
-              <div id="ticketsPreviewList"></div>
-            </div>
-          </div>
 
-          <!-- Data Usage Section -->
-          <div id="usageSection" style="display: none">
-            <div class="section-card">
-              <div class="section-header"><h2>Data Usage Details</h2></div>
-              <div id="usageDetails"></div>
-            </div>
-            <div class="section-card">
-              <div class="section-header"><h2>Daily Breakdown</h2></div>
-              <div class="chart-container">
-                <canvas id="dailyUsageChart"></canvas>
-              </div>
-            </div>
-          </div>
+                <!-- Data Usage Section -->
+                <div id="usageSection" style="display:none">
+                    <div class="section-card">
+                        <div class="section-header"><h2><i class="fas fa-chart-simple"></i> Data Usage Details</h2></div>
+                        <div id="usageDetails"></div>
+                    </div>
+                    <div class="section-card">
+                        <div class="section-header"><h2><i class="fas fa-calendar-day"></i> Daily Breakdown</h2></div>
+                        <div class="chart-container"><canvas id="dailyUsageChart"></canvas></div>
+                    </div>
+                </div>
 
-          <!-- Billing Section -->
-          <div id="billingSection" style="display: none">
-            <div class="section-card">
-              <div class="section-header"><h2>Invoice History</h2></div>
-              <div class="table-responsive">
-                <table class="invoice-table">
-                  <thead>
-                    <tr>
-                      <th>Invoice #</th>
-                      <th>Date</th>
-                      <th>Due Date</th>
-                      <th>Amount</th>
-                      <th>Status</th>
-                      <th></th>
-                    </tr>
-                  </thead>
-                  <tbody id="allInvoicesBody"></tbody>
-                </table>
-              </div>
-            </div>
-          </div>
+                <!-- Billing Section -->
+                <div id="billingSection" style="display:none">
+                    <div class="section-card">
+                        <div class="section-header">
+                            <h2><i class="fas fa-history"></i> Invoice History</h2>
+                            <button id="downloadStatementBtn" class="btn-outline-small"><i class="fas fa-download"></i> Download Statement (PDF)</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="invoice-table">
+                                <thead><tr><th>Invoice #</th><th>Date</th><th>Due Date</th><th>Amount</th><th>Status</th><th></th></tr></thead>
+                                <tbody id="allInvoicesBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="section-card">
+                        <div class="section-header"><h2><i class="fas fa-credit-card"></i> Payment Methods</h2></div>
+                        <div class="payment-methods">
+                            <div class="payment-method"><i class="fab fa-cc-visa"></i> **** 4242 <span class="badge-default">Default</span></div>
+                            <div class="payment-method"><i class="fab fa-cc-mastercard"></i> **** 1234</div>
+                            <button class="btn-outline-small">+ Add Payment Method</button>
+                        </div>
+                    </div>
+                </div>
 
-          <!-- Support Section -->
-          <div id="supportSection" style="display: none">
-            <div class="section-card">
-              <div class="section-header">
-                <h2>All Support Tickets</h2>
-                <a href="#" class="btn-new-ticket" id="newTicketBtn"
-                  ><i class="fas fa-plus"></i> New Ticket</a
-                >
-              </div>
-              <div id="allTicketsList"></div>
-            </div>
-          </div>
+                <!-- Support Section -->
+                <div id="supportSection" style="display:none">
+                    <div class="section-card">
+                        <div class="section-header">
+                            <h2><i class="fas fa-ticket-alt"></i> All Support Tickets</h2>
+                            <button class="btn-new-ticket" id="newTicketBtn"><i class="fas fa-plus"></i> New Ticket</button>
+                        </div>
+                        <div id="allTicketsList"></div>
+                    </div>
+                </div>
 
-          <!-- Profile Section -->
-          <div id="profileSection" style="display: none">
-            <div class="section-card">
-              <div class="section-header">
-                <h2>Personal Information</h2>
-                <a href="#" id="editProfileBtn" style="color: var(--primary)"
-                  >Edit</a
-                >
-              </div>
-              <div id="profileInfo"></div>
-            </div>
-            <div class="section-card">
-              <div class="section-header">
-                <h2>Billing Address</h2>
-                <a href="#" id="editAddressBtn" style="color: var(--primary)"
-                  >Edit</a
-                >
-              </div>
-              <div id="billingAddress"></div>
-            </div>
-          </div>
+                <!-- Profile Section -->
+                <div id="profileSection" style="display:none">
+                    <div class="two-columns">
+                        <div class="section-card">
+                            <div class="section-header"><h2><i class="fas fa-user"></i> Personal Information</h2><button id="editProfileBtn" class="btn-outline-small">Edit</button></div>
+                            <div id="profileInfo"></div>
+                        </div>
+                        <div class="section-card">
+                            <div class="section-header"><h2><i class="fas fa-map-marker-alt"></i> Billing Address</h2><button id="editAddressBtn" class="btn-outline-small">Edit</button></div>
+                            <div id="billingAddress"></div>
+                        </div>
+                    </div>
+                    <div class="section-card">
+                        <div class="section-header"><h2><i class="fas fa-file-contract"></i> Contract & Billing Info</h2></div>
+                        <div id="contractInfo"></div>
+                    </div>
+                </div>
 
-          <!-- Services Section -->
-          <div id="servicesSection" style="display: none">
-            <div class="stats-grid" id="serviceStats"></div>
-            <div class="section-card">
-              <div class="section-header">
-                <h2>Available Upgrades & Add-ons</h2>
-              </div>
-              <div class="upgrades-grid" id="upgradesList"></div>
+                <!-- Services Section -->
+                <div id="servicesSection" style="display:none">
+                    <div class="stats-grid" id="serviceStats"></div>
+                    <div class="section-card">
+                        <div class="section-header"><h2><i class="fas fa-arrow-up"></i> Available Upgrades</h2></div>
+                        <div class="upgrades-grid" id="upgradesList"></div>
+                    </div>
+                    <div class="section-card">
+                        <div class="section-header"><h2><i class="fas fa-plug"></i> Add-ons</h2></div>
+                        <div class="upgrades-grid" id="addonsList"></div>
+                    </div>
+                </div>
+
+                <!-- Security Section -->
+                <div id="securitySection" style="display:none">
+                    <div class="section-card">
+                        <div class="section-header"><h2><i class="fas fa-shield-alt"></i> Security Settings</h2></div>
+                        <div id="securitySettings"></div>
+                    </div>
+                    <div class="section-card">
+                        <div class="section-header"><h2><i class="fas fa-history"></i> Recent Login Activity</h2></div>
+                        <div id="loginActivity"></div>
+                    </div>
+                </div>
+
+                <!-- Referrals Section -->
+                <div id="referralsSection" style="display:none">
+                    <div class="section-card text-center">
+                        <div class="referral-header">
+                            <i class="fas fa-gift fa-3x text-primary mb-3"></i>
+                            <h2>Refer a Friend, Get R100 Credit</h2>
+                            <p>Share your unique referral link and earn R100 account credit for every friend who signs up.</p>
+                        </div>
+                        <div class="referral-link-box">
+                            <input type="text" id="referralLink" value="https://graytechsystems.co.za/ref/THABO2026" readonly>
+                            <button id="copyReferralBtn"><i class="fas fa-copy"></i> Copy Link</button>
+                        </div>
+                        <div class="referral-stats">
+                            <div class="referral-stat"><span class="stat-number">3</span><span class="stat-label">Friends Referred</span></div>
+                            <div class="referral-stat"><span class="stat-number">R 300</span><span class="stat-label">Credit Earned</span></div>
+                            <div class="referral-stat"><span class="stat-number">R 150</span><span class="stat-label">Pending Credit</span></div>
+                        </div>
+                        <div class="referral-history" id="referralHistory"></div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </main>
+        </main>
     </div>
 
     <!-- Toast Notification -->
@@ -256,133 +277,86 @@
 
     <!-- Modals -->
     <div id="paymentModal" class="modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3>Make Payment</h3>
-          <span class="modal-close">&times;</span>
+        <div class="modal-content">
+            <div class="modal-header"><h3>Make Payment</h3><span class="modal-close">&times;</span></div>
+            <div class="modal-body">
+                <div class="payment-amount"><small>Invoice Amount</small><h2 id="modalInvoiceAmount">R 0</h2></div>
+                <div class="form-group"><label>Card Number</label><input type="text" id="paymentCard" class="modal-input" placeholder="4242 4242 4242 4242"></div>
+                <div class="row-2"><div class="form-group"><label>Expiry Date</label><input type="text" id="paymentExpiry" class="modal-input" placeholder="MM/YY"></div><div class="form-group"><label>CVV</label><input type="text" id="paymentCvv" class="modal-input" placeholder="123"></div></div>
+                <div class="form-group"><label>Cardholder Name</label><input type="text" id="paymentName" class="modal-input" placeholder="Name on card"></div>
+                <button id="confirmPaymentBtn" class="btn-primary-modal">Pay Now <i class="fas fa-arrow-right"></i></button>
+            </div>
         </div>
-        <div class="modal-body">
-          <p>Invoice: <strong id="modalInvoiceNumber"></strong></p>
-          <p>Amount: <strong id="modalInvoiceAmount"></strong></p>
-          <label>Card Number</label
-          ><input
-            type="text"
-            placeholder="4242 4242 4242 4242"
-            class="modal-input"
-          /><label>Expiry Date</label
-          ><input type="text" placeholder="MM/YY" class="modal-input" /><label
-            >CVV</label
-          ><input type="text" placeholder="123" class="modal-input" /><button
-            id="confirmPaymentBtn"
-            class="btn-primary-modal"
-          >
-            Pay Now
-          </button>
-        </div>
-      </div>
     </div>
 
     <div id="orderModal" class="modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3>Confirm Upgrade</h3>
-          <span class="modal-close">&times;</span>
+        <div class="modal-content">
+            <div class="modal-header"><h3>Confirm Upgrade</h3><span class="modal-close">&times;</span></div>
+            <div class="modal-body">
+                <div class="upgrade-confirm">
+                    <i class="fas fa-rocket fa-2x text-primary"></i>
+                    <p>You are about to upgrade to: <strong id="orderServiceName"></strong></p>
+                    <p>New monthly cost: <strong id="orderServicePrice"></strong></p>
+                    <p class="text-muted small">The upgrade will be applied within 24 hours.</p>
+                </div>
+                <button id="confirmOrderBtn" class="btn-primary-modal">Confirm Upgrade</button>
+            </div>
         </div>
-        <div class="modal-body">
-          <p>
-            You are about to upgrade to: <strong id="orderServiceName"></strong>
-          </p>
-          <p>New monthly cost: <strong id="orderServicePrice"></strong></p>
-          <p>
-            The upgrade will be applied within 24 hours. A technician may need
-            to visit your premises.
-          </p>
-          <button id="confirmOrderBtn" class="btn-primary-modal">
-            Confirm Upgrade
-          </button>
-        </div>
-      </div>
     </div>
 
     <div id="ticketModal" class="modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3>Create Support Ticket</h3>
-          <span class="modal-close">&times;</span>
+        <div class="modal-content">
+            <div class="modal-header"><h3>Create Support Ticket</h3><span class="modal-close">&times;</span></div>
+            <div class="modal-body">
+                <div class="form-group"><label>Subject</label><input type="text" id="ticketSubject" class="modal-input" placeholder="Brief description of your issue"></div>
+                <div class="form-group"><label>Message</label><textarea id="ticketMessage" class="modal-textarea" rows="4" placeholder="Please provide details about your issue..."></textarea></div>
+                <div class="form-group"><label>Priority</label><select id="ticketPriority" class="modal-select"><option value="Low">Low</option><option value="Normal" selected>Normal</option><option value="High">High</option><option value="Urgent">Urgent</option></select></div>
+                <div class="form-group"><label>Category</label><select id="ticketCategory" class="modal-select"><option value="Technical">Technical Issue</option><option value="Billing">Billing Question</option><option value="General">General Enquiry</option><option value="Installation">Installation</option></select></div>
+                <button id="submitTicketBtn" class="btn-primary-modal">Submit Ticket</button>
+            </div>
         </div>
-        <div class="modal-body">
-          <label>Subject</label
-          ><input
-            type="text"
-            id="ticketSubject"
-            class="modal-input"
-            placeholder="Brief description of your issue"
-          /><label>Message</label
-          ><textarea
-            id="ticketMessage"
-            class="modal-textarea"
-            rows="4"
-            placeholder="Please provide details about your issue..."
-          ></textarea
-          ><label>Priority</label
-          ><select id="ticketPriority" class="modal-select">
-            <option value="Low">Low</option>
-            <option value="Normal" selected>Normal</option>
-            <option value="High">High</option>
-            <option value="Urgent">Urgent</option></select
-          ><button id="submitTicketBtn" class="btn-primary-modal">
-            Submit Ticket
-          </button>
-        </div>
-      </div>
     </div>
 
     <div id="editProfileModal" class="modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3>Edit Profile</h3>
-          <span class="modal-close">&times;</span>
+        <div class="modal-content">
+            <div class="modal-header"><h3>Edit Profile</h3><span class="modal-close">&times;</span></div>
+            <div class="modal-body">
+                <div class="form-group"><label>Full Name</label><input type="text" id="editFullName" class="modal-input"></div>
+                <div class="form-group"><label>Email Address</label><input type="email" id="editEmail" class="modal-input"></div>
+                <div class="form-group"><label>Phone Number</label><input type="tel" id="editPhone" class="modal-input"></div>
+                <button id="saveProfileBtn" class="btn-primary-modal">Save Changes</button>
+            </div>
         </div>
-        <div class="modal-body">
-          <label>Full Name</label
-          ><input type="text" id="editFullName" class="modal-input" /><label
-            >Email Address</label
-          ><input type="email" id="editEmail" class="modal-input" /><label
-            >Phone Number</label
-          ><input type="tel" id="editPhone" class="modal-input" /><button
-            id="saveProfileBtn"
-            class="btn-primary-modal"
-          >
-            Save Changes
-          </button>
-        </div>
-      </div>
     </div>
 
     <div id="editAddressModal" class="modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3>Edit Billing Address</h3>
-          <span class="modal-close">&times;</span>
+        <div class="modal-content">
+            <div class="modal-header"><h3>Edit Billing Address</h3><span class="modal-close">&times;</span></div>
+            <div class="modal-body">
+                <div class="form-group"><label>Street Address</label><input type="text" id="editStreet" class="modal-input"></div>
+                <div class="form-group"><label>City</label><input type="text" id="editCity" class="modal-input"></div>
+                <div class="form-group"><label>Postal Code</label><input type="text" id="editPostalCode" class="modal-input"></div>
+                <button id="saveAddressBtn" class="btn-primary-modal">Save Changes</button>
+            </div>
         </div>
-        <div class="modal-body">
-          <label>Street Address</label
-          ><input type="text" id="editStreet" class="modal-input" /><label
-            >City</label
-          ><input type="text" id="editCity" class="modal-input" /><label
-            >Postal Code</label
-          ><input type="text" id="editPostalCode" class="modal-input" /><button
-            id="saveAddressBtn"
-            class="btn-primary-modal"
-          >
-            Save Changes
-          </button>
-        </div>
-      </div>
     </div>
 
+    <div id="changePasswordModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header"><h3>Change Password</h3><span class="modal-close">&times;</span></div>
+            <div class="modal-body">
+                <div class="form-group"><label>Current Password</label><input type="password" id="currentPassword" class="modal-input"></div>
+                <div class="form-group"><label>New Password</label><input type="password" id="newPassword" class="modal-input"></div>
+                <div class="form-group"><label>Confirm New Password</label><input type="password" id="confirmPassword" class="modal-input"></div>
+                <button id="savePasswordBtn" class="btn-primary-modal">Update Password</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
     <script src="js/data.js"></script>
     <script src="js/charts.js"></script>
     <script src="js/modules.js"></script>
-  </body>
+    <script src="js/main.js"></script>
+</body>
 </html>
