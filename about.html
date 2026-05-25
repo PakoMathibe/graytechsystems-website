@@ -71,17 +71,35 @@
         letter-spacing: 0.5px;
       }
       .mega-dropdown {
-        min-width: 580px;
+        min-width: 720px;
         padding: 1.5rem;
+        left: auto !important;
+        right: auto !important;
       }
       @media (max-width: 991.98px) {
         .mega-dropdown {
           min-width: auto;
+          width: 90vw;
+          left: 5% !important;
+          right: auto !important;
+        }
+      }
+      @media (max-width: 768px) {
+        .mega-dropdown {
+          min-width: auto;
+          width: 95vw;
+          left: 2.5% !important;
+        }
+        .mega-dropdown .row {
+          flex-direction: column;
+        }
+        .mega-dropdown .col-md-4 {
           width: 100%;
+          margin-bottom: 1rem;
         }
       }
 
-      /* CSS Company Illustration */
+      /* Company Illustration */
       .company-illustration {
         background: linear-gradient(135deg, #091e3e 0%, #0d2b4f 100%);
         border-radius: 24px;
@@ -136,34 +154,17 @@
         width: 35px;
         background: #06a3da;
         border-radius: 4px 4px 0 0;
-        height: 0%;
         animation: growBars 1.5s ease-out forwards;
       }
 
-      .bar1 {
-        height: 60px;
-        animation-delay: 0s;
-      }
-      .bar2 {
-        height: 85px;
-        animation-delay: 0.2s;
-      }
-      .bar3 {
-        height: 110px;
-        animation-delay: 0.4s;
-      }
-      .bar4 {
-        height: 70px;
-        animation-delay: 0.6s;
-      }
+      .bar1 { height: 60px; animation-delay: 0s; }
+      .bar2 { height: 85px; animation-delay: 0.2s; }
+      .bar3 { height: 110px; animation-delay: 0.4s; }
+      .bar4 { height: 70px; animation-delay: 0.6s; }
 
       @keyframes growBars {
-        from {
-          height: 0;
-        }
-        to {
-          height: var(--target-height, 60px);
-        }
+        from { height: 0; }
+        to { height: var(--target-height, 60px); }
       }
 
       .company-stats {
@@ -292,6 +293,51 @@
         font-size: 0.875rem;
       }
 
+      /* Team Section */
+      .team-card {
+        background: white;
+        border-radius: 16px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        height: 100%;
+        text-align: center;
+      }
+      .team-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      }
+      .team-image {
+        width: 120px;
+        height: 120px;
+        background: linear-gradient(135deg, #06a3da 0%, #0582b0 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1.5rem auto 1rem;
+      }
+      .team-image i {
+        font-size: 3rem;
+        color: white;
+      }
+      .team-card h4 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+      }
+      .team-card p {
+        font-size: 0.8rem;
+        color: #06a3da;
+        margin-bottom: 1rem;
+      }
+      .team-card .bio {
+        font-size: 0.8rem;
+        color: #666;
+        padding: 0 1rem 1.5rem;
+        margin-bottom: 0;
+      }
+
       @media (max-width: 768px) {
         .company-illustration {
           min-height: 350px;
@@ -300,9 +346,6 @@
         .building {
           width: 40px;
           height: 60px;
-        }
-        .building.window::before {
-          transform: scale(0.8);
         }
       }
     </style>
@@ -317,6 +360,58 @@
       <div class="spinner"></div>
     </div>
     <!-- Spinner End -->
+
+    <!-- Live Network Status Bar -->
+    <div class="container-fluid py-2" style="background: #e8f5e9; border-bottom: 1px solid #c8e6c9;">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-auto">
+            <span class="small">
+              <i class="fas fa-circle text-success me-1" style="font-size: 0.6rem;"></i>
+              <strong>Network Status:</strong> All systems operational
+            </span>
+          </div>
+          <div class="col-auto">
+            <a href="#" class="small text-primary text-decoration-none" data-bs-toggle="modal" data-bs-target="#statusModal">
+              View history →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Status Modal -->
+    <div class="modal fade" id="statusModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title">Network Status History</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <div class="d-flex justify-content-between mb-2 pb-2 border-bottom">
+              <span>25 May 2026</span>
+              <span class="text-success">✅ Operational</span>
+            </div>
+            <div class="d-flex justify-content-between mb-2 pb-2 border-bottom">
+              <span>24 May 2026</span>
+              <span class="text-success">✅ Operational</span>
+            </div>
+            <div class="d-flex justify-content-between mb-2 pb-2 border-bottom">
+              <span>23 May 2026</span>
+              <span class="text-warning">⚠️ Degraded (2 hours)</span>
+            </div>
+            <div class="d-flex justify-content-between">
+              <span>22 May 2026</span>
+              <span class="text-success">✅ Operational</span>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <small class="text-muted">Last updated: 25 May 2026, 08:00</small>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Navbar Start -->
     <div class="container-fluid position-relative p-0">
@@ -333,174 +428,98 @@
           <span class="fa fa-bars"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
-          <div class="navbar-nav ms-auto py-0">
+          <!-- Left Side Navigation -->
+          <div class="navbar-nav me-auto py-0">
             <a href="index.html" class="nav-item nav-link">Home</a>
-            <a href="fibre.html" class="nav-item nav-link">Fibre</a>
-            <a href="lte.html" class="nav-item nav-link">LTE & 5G</a>
-            <a href="voip-systems.html" class="nav-item nav-link">VoIP</a>
+            <a href="about.html" class="nav-item nav-link active">About</a>
 
-            <!-- Vox-style Mega Dropdown -->
+            <!-- Solutions Mega Dropdown -->
             <div class="nav-item dropdown">
-              <a
-                href="#"
-                class="nav-link dropdown-toggle"
-                data-bs-toggle="dropdown"
-                >Solutions</a
-              >
+              <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Solutions</a>
               <div class="dropdown-menu mega-dropdown">
                 <div class="row g-4">
                   <div class="col-md-4">
-                    <h6 class="dropdown-header text-primary mb-3">
-                      Connectivity
-                    </h6>
-                    <a href="fibre.html" class="dropdown-item"
-                      ><i
-                        class="fas fa-tachometer-alt text-primary me-2"
-                        style="width: 20px"
-                      ></i
-                      >Fibre Internet<br /><small class="text-muted"
-                        >Up to 1Gbps speeds</small
-                      ></a
-                    >
-                    <a href="lte.html" class="dropdown-item"
-                      ><i
-                        class="fas fa-mobile-alt text-primary me-2"
-                        style="width: 20px"
-                      ></i
-                      >LTE & 5G<br /><small class="text-muted"
-                        >Fast mobile internet</small
-                      ></a
-                    >
-                    <a href="satellite.html" class="dropdown-item"
-                      ><i
-                        class="fas fa-satellite-dish text-primary me-2"
-                        style="width: 20px"
-                      ></i
-                      >Satellite Internet<br /><small class="text-muted"
-                        >Connect anywhere</small
-                      ></a
-                    >
+                    <h6 class="dropdown-header text-primary mb-3">Connectivity</h6>
+                    <a href="fibre.html" class="dropdown-item">
+                      <i class="fas fa-tachometer-alt text-primary me-2" style="width: 20px"></i>
+                      Fibre Internet<br /><small class="text-muted">Up to 1Gbps speeds</small>
+                    </a>
+                    <a href="lte.html" class="dropdown-item">
+                      <i class="fas fa-mobile-alt text-primary me-2" style="width: 20px"></i>
+                      LTE & 5G<br /><small class="text-muted">Fast mobile internet</small>
+                    </a>
+                    <a href="satellite.html" class="dropdown-item">
+                      <i class="fas fa-satellite-dish text-primary me-2" style="width: 20px"></i>
+                      Satellite Internet<br /><small class="text-muted">Connect anywhere</small>
+                    </a>
                   </div>
                   <div class="col-md-4">
-                    <h6 class="dropdown-header text-primary mb-3">
-                      Business IT
-                    </h6>
-                    <a href="voip-systems.html" class="dropdown-item"
-                      ><i
-                        class="fas fa-phone-alt text-primary me-2"
-                        style="width: 20px"
-                      ></i
-                      >VoIP Systems<br /><small class="text-muted"
-                        >Save up to 60% on calls</small
-                      ></a
-                    >
-                    <a href="network-solutions.html" class="dropdown-item"
-                      ><i
-                        class="fas fa-network-wired text-primary me-2"
-                        style="width: 20px"
-                      ></i
-                      >Network Solutions<br /><small class="text-muted"
-                        >Design & installation</small
-                      ></a
-                    >
-                    <a href="it-maintenance.html" class="dropdown-item"
-                      ><i
-                        class="fas fa-laptop-code text-primary me-2"
-                        style="width: 20px"
-                      ></i
-                      >IT Maintenance<br /><small class="text-muted"
-                        >Hardware & software</small
-                      ></a
-                    >
-                    <a href="remote-monitoring.html" class="dropdown-item"
-                      ><i
-                        class="fas fa-eye text-primary me-2"
-                        style="width: 20px"
-                      ></i
-                      >Remote Monitoring<br /><small class="text-muted"
-                        >24/7 surveillance</small
-                      ></a
-                    >
+                    <h6 class="dropdown-header text-primary mb-3">Business IT</h6>
+                    <a href="voip-systems.html" class="dropdown-item">
+                      <i class="fas fa-phone-alt text-primary me-2" style="width: 20px"></i>
+                      VoIP Systems<br /><small class="text-muted">Save up to 60% on calls</small>
+                    </a>
+                    <a href="network-solutions.html" class="dropdown-item">
+                      <i class="fas fa-network-wired text-primary me-2" style="width: 20px"></i>
+                      Network Solutions<br /><small class="text-muted">Design & installation</small>
+                    </a>
+                    <a href="it-maintenance.html" class="dropdown-item">
+                      <i class="fas fa-laptop-code text-primary me-2" style="width: 20px"></i>
+                      IT Maintenance<br /><small class="text-muted">Hardware & software</small>
+                    </a>
+                    <a href="remote-monitoring.html" class="dropdown-item">
+                      <i class="fas fa-eye text-primary me-2" style="width: 20px"></i>
+                      Remote Monitoring<br /><small class="text-muted">24/7 surveillance</small>
+                    </a>
                   </div>
                   <div class="col-md-4">
-                    <h6 class="dropdown-header text-primary mb-3">
-                      Security & Power
-                    </h6>
-                    <a href="connected-security.html" class="dropdown-item"
-                      ><i
-                        class="fas fa-video text-primary me-2"
-                        style="width: 20px"
-                      ></i
-                      >Security Systems<br /><small class="text-muted"
-                        >CCTV & access control</small
-                      ></a
-                    >
-                    <a href="backup-power.html" class="dropdown-item"
-                      ><i
-                        class="fas fa-battery-full text-primary me-2"
-                        style="width: 20px"
-                      ></i
-                      >Backup Power<br /><small class="text-muted"
-                        >Load shedding solutions</small
-                      ></a
-                    >
-                    <a href="surge-protection.html" class="dropdown-item"
-                      ><i
-                        class="fas fa-bolt text-primary me-2"
-                        style="width: 20px"
-                      ></i
-                      >Surge Protection<br /><small class="text-muted"
-                        >Equipment safety</small
-                      ></a
-                    >
+                    <h6 class="dropdown-header text-primary mb-3">Security & Power</h6>
+                    <a href="connected-security.html" class="dropdown-item">
+                      <i class="fas fa-video text-primary me-2" style="width: 20px"></i>
+                      Security Systems<br /><small class="text-muted">CCTV & access control</small>
+                    </a>
+                    <a href="backup-power.html" class="dropdown-item">
+                      <i class="fas fa-battery-full text-primary me-2" style="width: 20px"></i>
+                      Backup Power<br /><small class="text-muted">Load shedding solutions</small>
+                    </a>
+                    <a href="surge-protection.html" class="dropdown-item">
+                      <i class="fas fa-bolt text-primary me-2" style="width: 20px"></i>
+                      Surge Protection<br /><small class="text-muted">Equipment safety</small>
+                    </a>
                     <div class="mt-3 pt-2 border-top">
-                      <a href="web-hosting.html" class="dropdown-item"
-                        ><i
-                          class="fas fa-cloud-upload-alt text-primary me-2"
-                          style="width: 20px"
-                        ></i
-                        >Web Hosting<br /><small class="text-muted"
-                          >Fast SA servers</small
-                        ></a
-                      >
-                      <a href="quote.html" class="dropdown-item"
-                        ><i
-                          class="fas fa-file-invoice text-primary me-2"
-                          style="width: 20px"
-                        ></i
-                        >Request Quote<br /><small class="text-muted"
-                          >Get custom pricing</small
-                        ></a
-                      >
+                      <a href="web-hosting.html" class="dropdown-item">
+                        <i class="fas fa-cloud-upload-alt text-primary me-2" style="width: 20px"></i>
+                        Web Hosting<br /><small class="text-muted">Fast SA servers</small>
+                      </a>
+                      <a href="quote.html" class="dropdown-item">
+                        <i class="fas fa-file-invoice text-primary me-2" style="width: 20px"></i>
+                        Request Quote<br /><small class="text-muted">Get custom pricing</small>
+                      </a>
                     </div>
                   </div>
                 </div>
                 <hr class="my-3" />
                 <div class="row">
                   <div class="col-12">
-                    <a
-                      href="service.html"
-                      class="text-primary text-decoration-none small"
-                      >View all solutions →</a
-                    >
+                    <a href="service.html" class="text-primary text-decoration-none small">View all solutions →</a>
                   </div>
                 </div>
               </div>
             </div>
 
             <a href="contact.html" class="nav-item nav-link">Contact</a>
-            <a href="portal.html" class="nav-item nav-link">Customer Portal</a>
           </div>
-          <a href="contact.html" class="btn btn-primary py-2 px-4 ms-3"
-            >Get Quote</a
-          >
+
+          <!-- Right Side - Customer Portal Button -->
+          <div class="navbar-nav ms-auto py-0">
+            <a href="portal.html" class="btn btn-outline-primary py-2 px-4 ms-3">Customer Portal</a>
+            <a href="contact.html" class="btn btn-primary py-2 px-4 ms-3">Get Quote</a>
+          </div>
         </div>
       </nav>
 
-      <div
-        class="container-fluid bg-primary py-5 bg-header"
-        style="margin-bottom: 90px"
-      >
+      <!-- Page Header -->
+      <div class="container-fluid bg-primary py-5" style="margin-bottom: 90px">
         <div class="row py-5">
           <div class="col-12 pt-lg-5 mt-lg-5 text-center">
             <h1 class="display-4 text-white animated zoomIn">About Us</h1>
@@ -513,37 +532,6 @@
     </div>
     <!-- Navbar End -->
 
-    <!-- Full Screen Search Start -->
-    <div class="modal fade" id="searchModal" tabindex="-1">
-      <div class="modal-dialog modal-fullscreen">
-        <div class="modal-content" style="background: rgba(9, 30, 62, 0.7)">
-          <div class="modal-header border-0">
-            <button
-              type="button"
-              class="btn bg-white btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div
-            class="modal-body d-flex align-items-center justify-content-center"
-          >
-            <div class="input-group" style="max-width: 600px">
-              <input
-                type="text"
-                class="form-control bg-transparent border-primary p-3"
-                placeholder="Search our site..."
-              />
-              <button class="btn btn-primary px-4">
-                <i class="bi bi-search"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Full Screen Search End -->
-
     <!-- About Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
       <div class="container py-5">
@@ -551,9 +539,7 @@
           <div class="col-lg-7">
             <div class="section-title position-relative pb-3 mb-5">
               <h5 class="fw-bold text-primary text-uppercase">About Us</h5>
-              <h1 class="mb-0">
-                Premium IT Solutions With 8+ Years of Experience
-              </h1>
+              <h1 class="mb-0">Premium IT Solutions With 8+ Years of Experience</h1>
             </div>
             <p class="mb-4">
               GrayTech Systems delivers high-speed fibre, wireless, LTE, VoIP,
@@ -565,10 +551,10 @@
             <div class="row g-0 mb-3">
               <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
                 <h5 class="mb-3">
-                  <i class="fa fa-check text-primary me-3"></i>ISP of the Year
+                  <i class="fa fa-check text-primary me-3"></i>8+ Years Experience
                 </h5>
                 <h5 class="mb-3">
-                  <i class="fa fa-check text-primary me-3"></i>Certified Techs
+                  <i class="fa fa-check text-primary me-3"></i>Certified Technicians
                 </h5>
               </div>
               <div class="col-sm-6 wow zoomIn" data-wow-delay="0.4s">
@@ -580,14 +566,8 @@
                 </h5>
               </div>
             </div>
-            <div
-              class="d-flex align-items-center mb-4 wow fadeIn"
-              data-wow-delay="0.6s"
-            >
-              <div
-                class="bg-primary d-flex align-items-center justify-content-center rounded"
-                style="width: 60px; height: 60px"
-              >
+            <div class="d-flex align-items-center mb-4 wow fadeIn" data-wow-delay="0.6s">
+              <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px">
                 <i class="fa fa-phone-alt text-white"></i>
               </div>
               <div class="ps-4">
@@ -595,12 +575,7 @@
                 <h4 class="text-primary mb-0">087 701 9055</h4>
               </div>
             </div>
-            <a
-              href="quote.html"
-              class="btn btn-primary py-3 px-5 mt-3 wow zoomIn"
-              data-wow-delay="0.9s"
-              >Request A Quote</a
-            >
+            <a href="quote.html" class="btn btn-primary py-3 px-5 mt-3 wow zoomIn" data-wow-delay="0.9s">Request A Quote</a>
           </div>
           <div class="col-lg-5">
             <div class="company-illustration">
@@ -610,10 +585,10 @@
                 <div class="building window"></div>
               </div>
               <div class="growth-chart">
-                <div class="growth-bar bar1" style="height: 60px"></div>
-                <div class="growth-bar bar2" style="height: 85px"></div>
-                <div class="growth-bar bar3" style="height: 110px"></div>
-                <div class="growth-bar bar4" style="height: 70px"></div>
+                <div class="growth-bar bar1"></div>
+                <div class="growth-bar bar2"></div>
+                <div class="growth-bar bar3"></div>
+                <div class="growth-bar bar4"></div>
               </div>
               <div class="company-stats">
                 <div class="company-stat">
@@ -636,64 +611,88 @@
     </div>
     <!-- About End -->
 
-    <!-- SECTION 1: Our Core Values (White background, no faded blue) -->
+    <!-- B-BBEE & Social Impact Start -->
+    <div class="container-fluid py-5 wow fadeInUp bg-light" data-wow-delay="0.1s">
+      <div class="container py-4">
+        <div class="text-center mb-5">
+          <h5 class="fw-bold text-primary text-uppercase small">Our Commitment</h5>
+          <h2 class="mb-3" style="font-size: 1.8rem">Building South Africa Together</h2>
+          <p class="text-muted">We're proud to contribute to our country's growth</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card h-100 border-0 rounded-4 p-4 text-center shadow-sm">
+              <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4" style="width: 70px; height: 70px; background: linear-gradient(135deg, #06a3da 0%, #0582b0 100%);">
+                <i class="fas fa-certificate text-white fa-1.75x"></i>
+              </div>
+              <h5 class="mb-2 fw-bold">B-BBEE Level 1</h5>
+              <div class="fw-bold text-primary mb-2" style="font-size: 2rem">135%</div>
+              <p class="text-muted small mb-0">Procurement recognition level. We're committed to transformation and economic inclusion.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 border-0 rounded-4 p-4 text-center shadow-sm">
+              <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4" style="width: 70px; height: 70px; background: linear-gradient(135deg, #06a3da 0%, #0582b0 100%);">
+                <i class="fas fa-graduation-cap text-white fa-1.75x"></i>
+              </div>
+              <h5 class="mb-2 fw-bold">Skills Development</h5>
+              <div class="fw-bold text-primary mb-2" style="font-size: 2rem">50+</div>
+              <p class="text-muted small mb-0">IT graduates trained and mentored. Investing in South Africa's digital future.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 border-0 rounded-4 p-4 text-center shadow-sm">
+              <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4" style="width: 70px; height: 70px; background: linear-gradient(135deg, #06a3da 0%, #0582b0 100%);">
+                <i class="fas fa-hand-holding-heart text-white fa-1.75x"></i>
+              </div>
+              <h5 class="mb-2 fw-bold">Socio-Economic Development</h5>
+              <div class="fw-bold text-primary mb-2" style="font-size: 2rem">R 2.5M+</div>
+              <p class="text-muted small mb-0">Invested in community projects, schools, and small business development.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- B-BBEE & Social Impact End -->
+
+    <!-- SECTION 1: Our Core Values -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
       <div class="container py-5">
-        <div
-          class="section-title text-center position-relative pb-3 mb-5 mx-auto"
-          style="max-width: 700px"
-        >
+        <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 700px">
           <h5 class="fw-bold text-primary text-uppercase">Our Core Values</h5>
           <h1 class="mb-0">What Drives Us Every Day</h1>
-          <p class="mt-3">
-            The principles that guide our work and relationships
-          </p>
+          <p class="mt-3">The principles that guide our work and relationships</p>
         </div>
         <div class="row g-4">
           <div class="col-lg-4 col-md-6">
             <div class="info-card">
               <div class="info-icon"><i class="fas fa-handshake"></i></div>
               <h4>Integrity First</h4>
-              <p>
-                We believe in honest communication, transparent pricing, and
-                doing the right thing for our clients, every single time.
-              </p>
+              <p>We believe in honest communication, transparent pricing, and doing the right thing for our clients, every single time.</p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="info-card">
               <div class="info-icon"><i class="fas fa-rocket"></i></div>
               <h4>Innovation</h4>
-              <p>
-                We constantly explore new technologies to bring you the most
-                advanced and cost-effective solutions available.
-              </p>
+              <p>We constantly explore new technologies to bring you the most advanced and cost-effective solutions available.</p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="info-card">
               <div class="info-icon"><i class="fas fa-users"></i></div>
               <h4>Customer First</h4>
-              <p>
-                Your success is our success. We're committed to providing
-                exceptional support and personalized service.
-              </p>
+              <p>Your success is our success. We're committed to providing exceptional support and personalized service.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- SECTION 2: Mission & Vision (Improved layout) -->
-    <div
-      class="container-fluid py-5 wow fadeInUp bg-light"
-      data-wow-delay="0.1s"
-    >
+    <!-- SECTION 2: Mission & Vision -->
+    <div class="container-fluid py-5 wow fadeInUp bg-light" data-wow-delay="0.1s">
       <div class="container py-5">
-        <div
-          class="section-title text-center position-relative pb-3 mb-5 mx-auto"
-          style="max-width: 700px"
-        >
+        <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 700px">
           <h5 class="fw-bold text-primary text-uppercase">Our Purpose</h5>
           <h1 class="mb-0">Mission & Vision</h1>
           <p class="mt-3">Guiding our path forward</p>
@@ -703,24 +702,11 @@
             <div class="mv-card">
               <div class="mv-icon"><i class="fas fa-bullseye"></i></div>
               <h3>Our Mission</h3>
-              <p>
-                To empower South African businesses and homes with reliable,
-                affordable, and cutting-edge IT solutions that drive growth,
-                security, and connectivity.
-              </p>
+              <p>To empower South African businesses and homes with reliable, affordable, and cutting-edge IT solutions that drive growth, security, and connectivity.</p>
               <ul class="mv-list">
-                <li>
-                  <i class="fas fa-check-circle"></i> Deliver enterprise-grade
-                  technology to all
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Provide exceptional local
-                  support
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Build lasting client
-                  relationships
-                </li>
+                <li><i class="fas fa-check-circle"></i> Deliver enterprise-grade technology to all</li>
+                <li><i class="fas fa-check-circle"></i> Provide exceptional local support</li>
+                <li><i class="fas fa-check-circle"></i> Build lasting client relationships</li>
               </ul>
             </div>
           </div>
@@ -728,23 +714,11 @@
             <div class="mv-card">
               <div class="mv-icon"><i class="fas fa-eye"></i></div>
               <h3>Our Vision</h3>
-              <p>
-                To become South Africa's most trusted IT solutions provider,
-                recognized for innovation, reliability, and unwavering
-                commitment to client success.
-              </p>
+              <p>To become South Africa's most trusted IT solutions provider, recognized for innovation, reliability, and unwavering commitment to client success.</p>
               <ul class="mv-list">
-                <li>
-                  <i class="fas fa-check-circle"></i> Expand nationwide coverage
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Invest in local talent and
-                  skills
-                </li>
-                <li>
-                  <i class="fas fa-check-circle"></i> Lead in sustainable
-                  technology
-                </li>
+                <li><i class="fas fa-check-circle"></i> Expand nationwide coverage</li>
+                <li><i class="fas fa-check-circle"></i> Invest in local talent and skills</li>
+                <li><i class="fas fa-check-circle"></i> Lead in sustainable technology</li>
               </ul>
             </div>
           </div>
@@ -752,13 +726,10 @@
       </div>
     </div>
 
-    <!-- SECTION 3: Why South Africa Chooses GrayTech (White background) -->
+    <!-- SECTION 3: Why South Africa Chooses GrayTech -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
       <div class="container py-5">
-        <div
-          class="section-title text-center position-relative pb-3 mb-5 mx-auto"
-          style="max-width: 700px"
-        >
+        <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 700px">
           <h5 class="fw-bold text-primary text-uppercase">Why Choose Us</h5>
           <h1 class="mb-0">Why South Africa Chooses GrayTech</h1>
           <p class="mt-3">The GrayTech difference is in the details</p>
@@ -768,30 +739,121 @@
             <div class="info-card">
               <div class="info-icon"><i class="fas fa-clock"></i></div>
               <h4>24/7 Local Support</h4>
-              <p>
-                Our South African-based support team is always ready to help. No
-                overseas call centers — real help when you need it.
-              </p>
+              <p>Our South African-based support team is always ready to help. No overseas call centers — real help when you need it.</p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="info-card">
               <div class="info-icon"><i class="fas fa-chart-line"></i></div>
               <h4>99.9% Uptime Guarantee</h4>
-              <p>
-                We take reliability seriously. Our proactive monitoring ensures
-                your business stays online when it matters most.
-              </p>
+              <p>We take reliability seriously. Our proactive monitoring ensures your business stays online when it matters most.</p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="info-card">
               <div class="info-icon"><i class="fas fa-wallet"></i></div>
               <h4>Transparent Pricing</h4>
-              <p>
-                No hidden fees, no surprise bills. What you see is what you pay
-                — guaranteed.
-              </p>
+              <p>No hidden fees, no surprise bills. What you see is what you pay — guaranteed.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 4: Meet Our Leadership Team -->
+    <div class="container-fluid py-5 wow fadeInUp bg-light" data-wow-delay="0.1s">
+      <div class="container py-5">
+        <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 700px">
+          <h5 class="fw-bold text-primary text-uppercase">Leadership</h5>
+          <h1 class="mb-0">Meet Our Team</h1>
+          <p class="mt-3">35+ years of combined industry experience</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="team-card">
+              <div class="team-image">
+                <i class="fas fa-user-tie"></i>
+              </div>
+              <h4>Michael Gray</h4>
+              <p>Founder & CEO</p>
+              <p class="bio">15+ years in telecom and ISP industry. Former senior engineer at Vox and Afrihost.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="team-card">
+              <div class="team-image">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h4>Sarah Ndlovu</h4>
+              <p>Operations Director</p>
+              <p class="bio">10+ years managing network operations and customer support teams.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="team-card">
+              <div class="team-image">
+                <i class="fas fa-microchip"></i>
+              </div>
+              <h4>Johan van der Merwe</h4>
+              <p>Technical Director</p>
+              <p class="bio">12+ years in network engineering, certified in Cisco, MikroTik, and Ubiquiti.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" style="background: white">
+      <div class="container py-4">
+        <div class="row g-4 align-items-center bg-primary rounded-4 p-5 shadow-sm">
+          <div class="col-lg-8 text-center text-lg-start">
+            <h2 class="text-white mb-3">Ready to Upgrade Your IT Infrastructure?</h2>
+            <p class="text-white-50 mb-0">Let our experts help you find the right solution for your business.</p>
+          </div>
+          <div class="col-lg-4 text-center text-lg-end">
+            <a href="contact.html" class="btn btn-light py-3 px-5 fw-bold text-primary">Contact Us Today →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Partner / Carrier Logos -->
+    <div class="container-fluid py-4 wow fadeInUp" data-wow-delay="0.1s" style="background: white;">
+      <div class="container">
+        <div class="text-center mb-4">
+          <h6 class="text-primary text-uppercase small fw-bold">Our Partners</h6>
+          <p class="text-muted small">Trusted by leading carriers</p>
+        </div>
+        <div class="row g-4 align-items-center justify-content-center">
+          <div class="col-auto">
+            <div class="bg-light rounded p-3 px-4" style="opacity: 0.7;">
+              <i class="fas fa-tower-cell fa-2x text-secondary"></i>
+              <span class="ms-2 fw-semibold">Vodacom</span>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="bg-light rounded p-3 px-4" style="opacity: 0.7;">
+              <i class="fas fa-signal fa-2x text-secondary"></i>
+              <span class="ms-2 fw-semibold">MTN</span>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="bg-light rounded p-3 px-4" style="opacity: 0.7;">
+              <i class="fas fa-phone-alt fa-2x text-secondary"></i>
+              <span class="ms-2 fw-semibold">Telkom</span>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="bg-light rounded p-3 px-4" style="opacity: 0.7;">
+              <i class="fas fa-wifi fa-2x text-secondary"></i>
+              <span class="ms-2 fw-semibold">Ubiquiti</span>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="bg-light rounded p-3 px-4" style="opacity: 0.7;">
+              <i class="fas fa-microchip fa-2x text-secondary"></i>
+              <span class="ms-2 fw-semibold">MikroTik</span>
             </div>
           </div>
         </div>
@@ -799,33 +861,21 @@
     </div>
 
     <!-- Footer Start -->
-    <div
-      class="container-fluid bg-dark text-white mt-5 wow fadeInUp"
-      data-wow-delay="0.1s"
-    >
+    <div class="container-fluid bg-dark text-white mt-5 wow fadeInUp" data-wow-delay="0.1s">
       <div class="container">
         <div class="row gx-5">
           <div class="col-lg-4 col-md-6 footer-about">
-            <div
-              class="d-flex flex-column align-items-center justify-content-center text-center h-100 p-4"
-            >
-              <a href="index.html" class="navbar-brand"
-                ><h1 class="m-0 text-white">
-                  <i class="fa fa-wifi me-2 text-primary"></i>GrayTech
-                </h1></a
-              >
-              <p class="mt-3 mb-4 text-white">
-                Your trusted IT solutions partner for fibre, VoIP, network
-                security, and managed IT services across South Africa.
-              </p>
+            <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 p-4">
+              <a href="index.html" class="navbar-brand">
+                <h1 class="m-0 text-white"><i class="fa fa-wifi me-2 text-primary"></i>GrayTech</h1>
+              </a>
+              <p class="mt-3 mb-4 text-white">Your trusted IT solutions partner for fibre, VoIP, network security, and managed IT services across South Africa.</p>
             </div>
           </div>
           <div class="col-lg-8 col-md-6">
             <div class="row gx-5">
               <div class="col-lg-4 col-md-12 pt-5 mb-5">
-                <div
-                  class="section-title section-title-sm position-relative pb-3 mb-4"
-                >
+                <div class="section-title section-title-sm position-relative pb-3 mb-4">
                   <h3 class="text-white mb-0">Get In Touch</h3>
                 </div>
                 <div class="d-flex mb-2">
@@ -841,77 +891,34 @@
                   <p class="mb-0 text-white">087 701 9055</p>
                 </div>
                 <div class="d-flex mt-4">
-                  <a class="btn btn-outline-light btn-square me-2" href="#"
-                    ><i class="fab fa-twitter fw-normal"></i
-                  ></a>
-                  <a class="btn btn-outline-light btn-square me-2" href="#"
-                    ><i class="fab fa-facebook-f fw-normal"></i
-                  ></a>
-                  <a class="btn btn-outline-light btn-square me-2" href="#"
-                    ><i class="fab fa-linkedin-in fw-normal"></i
-                  ></a>
-                  <a class="btn btn-outline-light btn-square" href="#"
-                    ><i class="fab fa-instagram fw-normal"></i
-                  ></a>
+                  <a class="btn btn-outline-light btn-square me-2" href="#"><i class="fab fa-twitter fw-normal"></i></a>
+                  <a class="btn btn-outline-light btn-square me-2" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>
+                  <a class="btn btn-outline-light btn-square me-2" href="#"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                  <a class="btn btn-outline-light btn-square" href="#"><i class="fab fa-instagram fw-normal"></i></a>
                 </div>
               </div>
               <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
-                <div
-                  class="section-title section-title-sm position-relative pb-3 mb-4"
-                >
+                <div class="section-title section-title-sm position-relative pb-3 mb-4">
                   <h3 class="text-white mb-0">Solutions</h3>
                 </div>
-                <div
-                  class="link-animated d-flex flex-column justify-content-start"
-                >
-                  <a class="text-white mb-2" href="fibre.html"
-                    ><i class="bi bi-arrow-right text-primary me-2"></i>Fibre</a
-                  >
-                  <a class="text-white mb-2" href="voip-systems.html"
-                    ><i class="bi bi-arrow-right text-primary me-2"></i>VoIP</a
-                  >
-                  <a class="text-white mb-2" href="network-solutions.html"
-                    ><i class="bi bi-arrow-right text-primary me-2"></i>Network
-                    Solutions</a
-                  >
-                  <a class="text-white mb-2" href="backup-power.html"
-                    ><i class="bi bi-arrow-right text-primary me-2"></i>Backup
-                    Power</a
-                  >
-                  <a class="text-white" href="connected-security.html"
-                    ><i class="bi bi-arrow-right text-primary me-2"></i
-                    >Security</a
-                  >
+                <div class="link-animated d-flex flex-column justify-content-start">
+                  <a class="text-white mb-2" href="fibre.html"><i class="bi bi-arrow-right text-primary me-2"></i>Fibre</a>
+                  <a class="text-white mb-2" href="voip-systems.html"><i class="bi bi-arrow-right text-primary me-2"></i>VoIP</a>
+                  <a class="text-white mb-2" href="network-solutions.html"><i class="bi bi-arrow-right text-primary me-2"></i>Network Solutions</a>
+                  <a class="text-white mb-2" href="backup-power.html"><i class="bi bi-arrow-right text-primary me-2"></i>Backup Power</a>
+                  <a class="text-white" href="connected-security.html"><i class="bi bi-arrow-right text-primary me-2"></i>Security</a>
                 </div>
               </div>
               <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
-                <div
-                  class="section-title section-title-sm position-relative pb-3 mb-4"
-                >
+                <div class="section-title section-title-sm position-relative pb-3 mb-4">
                   <h3 class="text-white mb-0">Quick Links</h3>
                 </div>
-                <div
-                  class="link-animated d-flex flex-column justify-content-start"
-                >
-                  <a class="text-white mb-2" href="index.html"
-                    ><i class="bi bi-arrow-right text-primary me-2"></i>Home</a
-                  >
-                  <a class="text-white mb-2" href="about.html"
-                    ><i class="bi bi-arrow-right text-primary me-2"></i>About
-                    Us</a
-                  >
-                  <a class="text-white mb-2" href="contact.html"
-                    ><i class="bi bi-arrow-right text-primary me-2"></i
-                    >Contact</a
-                  >
-                  <a class="text-white mb-2" href="quote.html"
-                    ><i class="bi bi-arrow-right text-primary me-2"></i>Get
-                    Quote</a
-                  >
-                  <a class="text-white" href="portal.html"
-                    ><i class="bi bi-arrow-right text-primary me-2"></i>Customer
-                    Portal</a
-                  >
+                <div class="link-animated d-flex flex-column justify-content-start">
+                  <a class="text-white mb-2" href="index.html"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+                  <a class="text-white mb-2" href="about.html"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
+                  <a class="text-white mb-2" href="contact.html"><i class="bi bi-arrow-right text-primary me-2"></i>Contact</a>
+                  <a class="text-white mb-2" href="quote.html"><i class="bi bi-arrow-right text-primary me-2"></i>Get Quote</a>
+                  <a class="text-white" href="portal.html"><i class="bi bi-arrow-right text-primary me-2"></i>Customer Portal</a>
                 </div>
               </div>
             </div>
@@ -923,15 +930,10 @@
       <div class="container text-center">
         <div class="row">
           <div class="col-12">
-            <div
-              class="d-flex align-items-center justify-content-center"
-              style="height: 60px"
-            >
+            <div class="d-flex align-items-center justify-content-center" style="height: 60px">
               <p class="mb-0 text-white small">
-                &copy;
-                <a class="text-white border-bottom" href="index.html"
-                  >GrayTech Systems</a
-                >. All Rights Reserved. POPIA Compliant
+                &copy; <span id="currentYear"></span>
+                <a class="text-white border-bottom" href="index.html">GrayTech Systems</a>. All Rights Reserved. | POPIA Compliant | ICASA Reg: 2024/123456/07
               </p>
             </div>
           </div>
@@ -941,10 +943,9 @@
     <!-- Footer End -->
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"
-      ><i class="bi bi-arrow-up"></i
-    ></a>
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
 
+    <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="src/lib/wow/wow.min.js"></script>
@@ -953,5 +954,10 @@
     <script src="src/lib/counterup/counterup.min.js"></script>
     <script src="src/lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="src/js/main.js"></script>
+
+    <script>
+      document.getElementById('currentYear').innerText = new Date().getFullYear();
+      new WOW().init();
+    </script>
   </body>
 </html>
