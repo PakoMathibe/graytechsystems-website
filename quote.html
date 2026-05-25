@@ -37,10 +37,7 @@
     />
 
     <!-- Libraries Stylesheet -->
-    <link
-      href="src/lib/owlcarousel/assets/owl.carousel.min.css"
-      rel="stylesheet"
-    />
+    <link href="src/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
     <link href="src/lib/animate/animate.min.css" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
@@ -66,6 +63,68 @@
         margin-bottom: 1.5rem;
         display: none;
       }
+      .payment-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 9999;
+        align-items: center;
+        justify-content: center;
+      }
+      .payment-modal.active {
+        display: flex;
+      }
+      .payment-card {
+        background: white;
+        max-width: 450px;
+        width: 90%;
+        border-radius: 20px;
+        overflow: hidden;
+        animation: slideUp 0.3s ease;
+      }
+      @keyframes slideUp {
+        from {
+          transform: translateY(50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      .payment-header {
+        background: linear-gradient(135deg, #06a3da 0%, #0582b0 100%);
+        padding: 1.5rem;
+        text-align: center;
+        color: white;
+      }
+      .payment-body {
+        padding: 1.5rem;
+      }
+      .payment-method {
+        border: 2px solid #e9ecef;
+        border-radius: 12px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .payment-method:hover {
+        border-color: #06a3da;
+        background: rgba(6, 163, 218, 0.05);
+      }
+      .payment-method.selected {
+        border-color: #06a3da;
+        background: rgba(6, 163, 218, 0.1);
+      }
+      .payment-method i {
+        font-size: 1.5rem;
+        width: 40px;
+      }
       .loading-spinner {
         display: inline-block;
         width: 20px;
@@ -90,6 +149,114 @@
         box-shadow: 0 0 0 3px rgba(6, 163, 218, 0.25);
         border-color: #06a3da;
       }
+      .quote-summary {
+        background: #f8f9fa;
+        border-radius: 12px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+      }
+      .quote-total {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #06a3da;
+      }
+      .step-indicator {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+      }
+      .step {
+        text-align: center;
+        flex: 1;
+        position: relative;
+      }
+      .step .circle {
+        width: 40px;
+        height: 40px;
+        background: #e9ecef;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 0.5rem;
+        font-weight: bold;
+        color: #6c757d;
+      }
+      .step.active .circle {
+        background: #06a3da;
+        color: white;
+      }
+      .step.completed .circle {
+        background: #28a745;
+        color: white;
+      }
+      .step.completed .circle::after {
+        content: "✓";
+      }
+      .step.completed .circle span {
+        display: none;
+      }
+      .step .label {
+        font-size: 0.75rem;
+        color: #6c757d;
+      }
+      .step.active .label {
+        color: #06a3da;
+        font-weight: bold;
+      }
+      .step.completed .label {
+        color: #28a745;
+      }
+      /* Mega Menu Dropdown Styles */
+      .dropdown-menu {
+        border-radius: 12px;
+        border: none;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      }
+      .dropdown-item {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+        transition: all 0.2s;
+      }
+      .dropdown-item:hover {
+        background-color: rgba(6, 163, 218, 0.05);
+        color: #06a3da;
+        transform: translateX(5px);
+      }
+      .dropdown-header {
+        font-weight: 700;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .mega-dropdown {
+        min-width: 720px;
+        padding: 1.5rem;
+        left: auto !important;
+        right: auto !important;
+      }
+      @media (max-width: 991.98px) {
+        .mega-dropdown {
+          min-width: auto;
+          width: 90vw;
+          left: 5% !important;
+          right: auto !important;
+        }
+      }
+      @media (max-width: 768px) {
+        .mega-dropdown {
+          min-width: auto;
+          width: 95vw;
+          left: 2.5% !important;
+        }
+        .mega-dropdown .row {
+          flex-direction: column;
+        }
+        .mega-dropdown .col-md-4 {
+          width: 100%;
+          margin-bottom: 1rem;
+        }
+      }
     </style>
   </head>
 
@@ -103,7 +270,59 @@
     </div>
     <!-- Spinner End -->
 
-    <!-- Navbar Start -->
+    <!-- Live Network Status Bar -->
+    <div class="container-fluid py-2" style="background: #e8f5e9; border-bottom: 1px solid #c8e6c9;">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-auto">
+            <span class="small">
+              <i class="fas fa-circle text-success me-1" style="font-size: 0.6rem;"></i>
+              <strong>Network Status:</strong> All systems operational
+            </span>
+          </div>
+          <div class="col-auto">
+            <a href="#" class="small text-primary text-decoration-none" data-bs-toggle="modal" data-bs-target="#statusModal">
+              View history →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Status Modal -->
+    <div class="modal fade" id="statusModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title">Network Status History</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <div class="d-flex justify-content-between mb-2 pb-2 border-bottom">
+              <span>25 May 2026</span>
+              <span class="text-success">✅ Operational</span>
+            </div>
+            <div class="d-flex justify-content-between mb-2 pb-2 border-bottom">
+              <span>24 May 2026</span>
+              <span class="text-success">✅ Operational</span>
+            </div>
+            <div class="d-flex justify-content-between mb-2 pb-2 border-bottom">
+              <span>23 May 2026</span>
+              <span class="text-warning">⚠️ Degraded (2 hours)</span>
+            </div>
+            <div class="d-flex justify-content-between">
+              <span>22 May 2026</span>
+              <span class="text-success">✅ Operational</span>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <small class="text-muted">Last updated: 25 May 2026, 08:00</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar Start (Matching Homepage) -->
     <div class="container-fluid position-relative p-0">
       <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
         <a href="index.html" class="navbar-brand p-0">
@@ -118,47 +337,101 @@
           <span class="fa fa-bars"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
-          <div class="navbar-nav ms-auto py-0">
+          <!-- Left Side Navigation -->
+          <div class="navbar-nav me-auto py-0">
             <a href="index.html" class="nav-item nav-link">Home</a>
             <a href="about.html" class="nav-item nav-link">About</a>
-            <a href="service.html" class="nav-item nav-link">Services</a>
+
+            <!-- Solutions Mega Dropdown -->
             <div class="nav-item dropdown">
-              <a
-                href="#"
-                class="nav-link dropdown-toggle active"
-                data-bs-toggle="dropdown"
-                >Pages</a
-              >
-              <div class="dropdown-menu m-0">
-                <a href="feature.html" class="dropdown-item">Our features</a>
-                <a href="team.html" class="dropdown-item">Team Members</a>
-                <a href="quote.html" class="dropdown-item active">Free Quote</a>
+              <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Solutions</a>
+              <div class="dropdown-menu mega-dropdown">
+                <div class="row g-4">
+                  <div class="col-md-4">
+                    <h6 class="dropdown-header text-primary mb-3">Connectivity</h6>
+                    <a href="fibre.html" class="dropdown-item">
+                      <i class="fas fa-tachometer-alt text-primary me-2" style="width: 20px"></i>
+                      Fibre Internet<br /><small class="text-muted">Up to 1Gbps speeds</small>
+                    </a>
+                    <a href="lte.html" class="dropdown-item">
+                      <i class="fas fa-mobile-alt text-primary me-2" style="width: 20px"></i>
+                      LTE & 5G<br /><small class="text-muted">Fast mobile internet</small>
+                    </a>
+                    <a href="satellite.html" class="dropdown-item">
+                      <i class="fas fa-satellite-dish text-primary me-2" style="width: 20px"></i>
+                      Satellite Internet<br /><small class="text-muted">Connect anywhere</small>
+                    </a>
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="dropdown-header text-primary mb-3">Business IT</h6>
+                    <a href="voip-systems.html" class="dropdown-item">
+                      <i class="fas fa-phone-alt text-primary me-2" style="width: 20px"></i>
+                      VoIP Systems<br /><small class="text-muted">Save up to 60% on calls</small>
+                    </a>
+                    <a href="network-solutions.html" class="dropdown-item">
+                      <i class="fas fa-network-wired text-primary me-2" style="width: 20px"></i>
+                      Network Solutions<br /><small class="text-muted">Design & installation</small>
+                    </a>
+                    <a href="it-maintenance.html" class="dropdown-item">
+                      <i class="fas fa-laptop-code text-primary me-2" style="width: 20px"></i>
+                      IT Maintenance<br /><small class="text-muted">Hardware & software</small>
+                    </a>
+                    <a href="remote-monitoring.html" class="dropdown-item">
+                      <i class="fas fa-eye text-primary me-2" style="width: 20px"></i>
+                      Remote Monitoring<br /><small class="text-muted">24/7 surveillance</small>
+                    </a>
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="dropdown-header text-primary mb-3">Security & Power</h6>
+                    <a href="connected-security.html" class="dropdown-item">
+                      <i class="fas fa-video text-primary me-2" style="width: 20px"></i>
+                      Security Systems<br /><small class="text-muted">CCTV & access control</small>
+                    </a>
+                    <a href="backup-power.html" class="dropdown-item">
+                      <i class="fas fa-battery-full text-primary me-2" style="width: 20px"></i>
+                      Backup Power<br /><small class="text-muted">Load shedding solutions</small>
+                    </a>
+                    <a href="surge-protection.html" class="dropdown-item">
+                      <i class="fas fa-bolt text-primary me-2" style="width: 20px"></i>
+                      Surge Protection<br /><small class="text-muted">Equipment safety</small>
+                    </a>
+                    <div class="mt-3 pt-2 border-top">
+                      <a href="web-hosting.html" class="dropdown-item">
+                        <i class="fas fa-cloud-upload-alt text-primary me-2" style="width: 20px"></i>
+                        Web Hosting<br /><small class="text-muted">Fast SA servers</small>
+                      </a>
+                      <a href="quote.html" class="dropdown-item active">
+                        <i class="fas fa-file-invoice text-primary me-2" style="width: 20px"></i>
+                        Request Quote<br /><small class="text-muted">Get custom pricing</small>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <hr class="my-3" />
+                <div class="row">
+                  <div class="col-12">
+                    <a href="service.html" class="text-primary text-decoration-none small">View all solutions →</a>
+                  </div>
+                </div>
               </div>
             </div>
+
             <a href="contact.html" class="nav-item nav-link">Contact</a>
-            <a href="portal.html" class="nav-item nav-link">Customer Portal</a>
           </div>
-          <button
-            type="button"
-            class="btn text-primary ms-3"
-            data-bs-toggle="modal"
-            data-bs-target="#searchModal"
-          >
-            <i class="fa fa-search"></i>
-          </button>
-          <a href="contact.html" class="btn btn-primary py-2 px-4 ms-3"
-            >Get Quote</a
-          >
+
+          <!-- Right Side - Customer Portal Button -->
+          <div class="navbar-nav ms-auto py-0">
+            <a href="portal.html" class="btn btn-outline-primary py-2 px-4 ms-3">Customer Portal</a>
+            <a href="contact.html" class="btn btn-primary py-2 px-4 ms-3">Get Quote</a>
+          </div>
         </div>
       </nav>
 
-      <div
-        class="container-fluid bg-primary py-5 bg-header"
-        style="margin-bottom: 90px"
-      >
+      <!-- Page Header -->
+      <div class="container-fluid bg-primary py-5" style="margin-bottom: 90px">
         <div class="row py-5">
           <div class="col-12 pt-lg-5 mt-lg-5 text-center">
-            <h1 class="display-4 text-white animated zoomIn">Free Quote</h1>
+            <h1 class="display-4 text-white animated zoomIn">Request a Quote</h1>
             <a href="index.html" class="h5 text-white">Home</a>
             <i class="far fa-circle text-white px-2"></i>
             <a href="quote.html" class="h5 text-white">Free Quote</a>
@@ -168,77 +441,54 @@
     </div>
     <!-- Navbar End -->
 
-    <!-- Full Screen Search Start -->
-    <div class="modal fade" id="searchModal" tabindex="-1">
-      <div class="modal-dialog modal-fullscreen">
-        <div class="modal-content" style="background: rgba(9, 30, 62, 0.7)">
-          <div class="modal-header border-0">
-            <button
-              type="button"
-              class="btn bg-white btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div
-            class="modal-body d-flex align-items-center justify-content-center"
-          >
-            <div class="input-group" style="max-width: 600px">
-              <input
-                type="text"
-                class="form-control bg-transparent border-primary p-3"
-                placeholder="Search our services..."
-              />
-              <button class="btn btn-primary px-4">
-                <i class="bi bi-search"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Full Screen Search End -->
-
     <!-- Quote Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
       <div class="container py-5">
+        <!-- Step Indicator -->
+        <div class="step-indicator wow fadeInUp" data-wow-delay="0.1s">
+          <div class="step active" id="step1Indicator">
+            <div class="circle"><span>1</span></div>
+            <div class="label">Your Details</div>
+          </div>
+          <div class="step" id="step2Indicator">
+            <div class="circle"><span>2</span></div>
+            <div class="label">Select Package</div>
+          </div>
+          <div class="step" id="step3Indicator">
+            <div class="circle"><span>3</span></div>
+            <div class="label">Payment</div>
+          </div>
+          <div class="step" id="step4Indicator">
+            <div class="circle"><span>4</span></div>
+            <div class="label">Confirmation</div>
+          </div>
+        </div>
+
         <div class="row g-5">
           <div class="col-lg-7">
             <div class="section-title position-relative pb-3 mb-5">
-              <h5 class="fw-bold text-primary text-uppercase">
-                Request A Quote
-              </h5>
-              <h1 class="mb-0">Get a Custom Connectivity Quote in 24 Hours</h1>
+              <h5 class="fw-bold text-primary text-uppercase">Get Connected</h5>
+              <h1 class="mb-0">Get a Custom Quote in Under 5 Minutes</h1>
             </div>
             <div class="row gx-3">
               <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
                 <h5 class="mb-4">
-                  <i class="fa fa-reply text-primary me-3"></i>Reply within 24
-                  hours
+                  <i class="fa fa-reply text-primary me-3"></i>Reply within 24 hours
                 </h5>
               </div>
               <div class="col-sm-6 wow zoomIn" data-wow-delay="0.4s">
                 <h5 class="mb-4">
-                  <i class="fa fa-phone-alt text-primary me-3"></i>24 hrs
-                  telephone support
+                  <i class="fa fa-phone-alt text-primary me-3"></i>24/7 telephone support
                 </h5>
               </div>
             </div>
             <p class="mb-4">
-              Tell us about your connectivity needs — whether it's fibre for
-              your home, LTE for remote work, VoIP for your business, or a
-              wireless link between buildings. We'll prepare a custom quote with
-              no obligation. Our team typically responds within one business
-              day.
+              Tell us about your connectivity needs — whether it's fibre for your home, 
+              LTE for remote work, VoIP for your business, or a wireless link between 
+              buildings. We'll prepare a custom quote with no obligation.
             </p>
-            <div
-              class="d-flex align-items-center mt-2 wow zoomIn"
-              data-wow-delay="0.6s"
-            >
-              <div
-                class="bg-primary d-flex align-items-center justify-content-center rounded"
-                style="width: 60px; height: 60px"
-              >
+            <div class="d-flex align-items-center mt-2 wow zoomIn" data-wow-delay="0.6s">
+              <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px">
                 <i class="fa fa-phone-alt text-white"></i>
               </div>
               <div class="ps-4">
@@ -248,129 +498,103 @@
             </div>
           </div>
           <div class="col-lg-5">
-            <div
-              class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn"
-              data-wow-delay="0.9s"
-            >
+            <div class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn" data-wow-delay="0.9s">
               <form id="quoteForm" class="w-100">
-                <div class="row g-3">
-                  <!-- Success/Error Messages -->
-                  <div id="successMessage" class="quote-success">
-                    <i class="fas fa-check-circle me-2"></i>
-                    <strong>Quote Request Sent!</strong><br />
-                    Thank you for your enquiry. A GrayTech consultant will
-                    contact you within 24 hours.
+                <!-- Step 1: Contact Details -->
+                <div id="step1" class="step-content">
+                  <div class="row g-3">
+                    <div id="successMessage" class="quote-success">
+                      <i class="fas fa-check-circle me-2"></i>
+                      <strong>Quote Request Sent!</strong><br />
+                      Thank you for your enquiry. A GrayTech consultant will contact you within 24 hours.
+                    </div>
+                    <div id="errorMessage" class="quote-error">
+                      <i class="fas fa-exclamation-circle me-2"></i>
+                      <strong>Something went wrong.</strong><br />
+                      Please check your details and try again.
+                    </div>
+                    <div class="col-12">
+                      <input type="text" id="quoteName" class="form-control bg-light border-0" placeholder="Your Full Name *" style="height: 55px" required />
+                    </div>
+                    <div class="col-12">
+                      <input type="email" id="quoteEmail" class="form-control bg-light border-0" placeholder="Your Email Address *" style="height: 55px" required />
+                    </div>
+                    <div class="col-12">
+                      <input type="tel" id="quotePhone" class="form-control bg-light border-0" placeholder="Your Phone Number" style="height: 55px" />
+                    </div>
+                    <div class="col-12">
+                      <input type="text" id="quoteAddress" class="form-control bg-light border-0" placeholder="Your Suburb / City" style="height: 55px" />
+                    </div>
+                    <div class="col-12">
+                      <button type="button" id="nextToPackage" class="btn btn-dark w-100 py-3 fw-bold">Continue to Packages →</button>
+                    </div>
                   </div>
-                  <div id="errorMessage" class="quote-error">
-                    <i class="fas fa-exclamation-circle me-2"></i>
-                    <strong>Something went wrong.</strong><br />
-                    Please check your details and try again.
-                  </div>
+                </div>
 
-                  <div class="col-xl-12">
-                    <input
-                      type="text"
-                      name="name"
-                      id="quoteName"
-                      class="form-control bg-light border-0"
-                      placeholder="Your Full Name"
-                      style="height: 55px"
-                      required
-                    />
+                <!-- Step 2: Package Selection -->
+                <div id="step2" class="step-content" style="display: none;">
+                  <div class="row g-3">
+                    <div class="col-12">
+                      <select id="quotePackage" class="form-select bg-light border-0" style="height: 55px">
+                        <option value="">Select a package</option>
+                        <option value="LTE Starter|459|200GB Data, 20Mbps, Free Router">LTE Starter - R459/month</option>
+                        <option value="LTE Pro|699|400GB Data, 50Mbps, Free Router + Antenna">LTE Pro - R699/month (POPULAR)</option>
+                        <option value="Fibre 100|899|1TB Data, 100Mbps, Free Installation">Fibre 100 - R899/month</option>
+                        <option value="Fibre 500|1299|Unlimited Data, 500Mbps, Free Mesh Node">Fibre 500 - R1,299/month</option>
+                      </select>
+                    </div>
+                    <div class="col-12">
+                      <textarea id="quoteMessage" class="form-control bg-light border-0" rows="3" placeholder="Additional requirements or special requests..."></textarea>
+                    </div>
+                    <div class="col-12">
+                      <button type="button" id="backToDetails" class="btn btn-outline-light w-100 py-2 mb-2">← Back</button>
+                      <button type="button" id="nextToPayment" class="btn btn-dark w-100 py-3 fw-bold">Continue to Payment →</button>
+                    </div>
                   </div>
-                  <div class="col-12">
-                    <input
-                      type="email"
-                      name="email"
-                      id="quoteEmail"
-                      class="form-control bg-light border-0"
-                      placeholder="Your Email Address"
-                      style="height: 55px"
-                      required
-                    />
+                </div>
+
+                <!-- Step 3: Payment -->
+                <div id="step3" class="step-content" style="display: none;">
+                  <div class="row g-3">
+                    <div class="col-12">
+                      <div class="quote-summary text-dark" id="paymentSummary">
+                        <strong>Selected Package:</strong> <span id="selectedPackageName">-</span><br>
+                        <strong>Monthly Cost:</strong> <span id="selectedPackagePrice">-</span><br>
+                        <strong>Once-off fee (installation + router):</strong> R999<br>
+                        <hr>
+                        <div class="d-flex justify-content-between">
+                          <strong>Total Today:</strong>
+                          <strong class="quote-total" id="totalToday">R0</strong>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="payment-method" data-method="card">
+                        <i class="fab fa-cc-visa me-2"></i> <i class="fab fa-cc-mastercard me-2"></i>
+                        <strong>Credit / Debit Card</strong>
+                        <span class="float-end"><i class="fas fa-chevron-right"></i></span>
+                      </div>
+                      <div class="payment-method" data-method="eft">
+                        <i class="fas fa-university me-2"></i>
+                        <strong>Instant EFT / Bank Transfer</strong>
+                        <span class="float-end"><i class="fas fa-chevron-right"></i></span>
+                      </div>
+                      <div class="payment-method" data-method="debit">
+                        <i class="fas fa-calendar-check me-2"></i>
+                        <strong>DebiCheck (Debit Order)</strong>
+                        <span class="float-end"><i class="fas fa-chevron-right"></i></span>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <button type="button" id="backToPackage2" class="btn btn-outline-light w-100 py-2 mb-2">← Back</button>
+                    </div>
                   </div>
-                  <div class="col-12">
-                    <input
-                      type="tel"
-                      name="phone"
-                      id="quotePhone"
-                      class="form-control bg-light border-0"
-                      placeholder="Your Phone Number (optional)"
-                      style="height: 55px"
-                    />
-                  </div>
-                  <div class="col-12">
-                    <select
-                      name="service"
-                      id="quoteService"
-                      class="form-select bg-light border-0"
-                      style="height: 55px"
-                      required
-                    >
-                      <option value="">Select A Service</option>
-                      <option value="Fibre to the Home">
-                        🏠 Fibre to the Home - 50Mbps to 1Gbps
-                      </option>
-                      <option value="Business Fibre">
-                        🏢 Business Fibre - Dedicated connectivity
-                      </option>
-                      <option value="LTE / 5G">
-                        📱 LTE / 5G - Uncapped and capped plans
-                      </option>
-                      <option value="Wireless Broadband">
-                        📡 Wireless Broadband - For remote areas
-                      </option>
-                      <option value="VoIP Phone Systems">
-                        ☎️ VoIP Phone Systems - Business telephony
-                      </option>
-                      <option value="Network Solutions">
-                        🔧 Network Solutions - Design & installation
-                      </option>
-                      <option value="IT Maintenance">
-                        💻 IT Maintenance - Hardware & software support
-                      </option>
-                      <option value="Backup Power">
-                        ⚡ Backup Power - Load shedding solutions
-                      </option>
-                      <option value="Security Systems">
-                        🎥 Security Systems - CCTV & access control
-                      </option>
-                    </select>
-                  </div>
-                  <div class="col-12">
-                    <input
-                      type="text"
-                      name="address"
-                      id="quoteAddress"
-                      class="form-control bg-light border-0"
-                      placeholder="Your Suburb / City (for coverage check)"
-                      style="height: 55px"
-                    />
-                  </div>
-                  <div class="col-12">
-                    <textarea
-                      name="message"
-                      id="quoteMessage"
-                      class="form-control bg-light border-0"
-                      rows="3"
-                      placeholder="Tell us about your location and speed requirements..."
-                    ></textarea>
-                  </div>
-                  <div class="col-12">
-                    <button
-                      type="submit"
-                      id="submitBtn"
-                      class="btn btn-dark w-100 py-3 fw-bold"
-                    >
-                      Request A Quote
-                    </button>
-                  </div>
-                  <div class="col-12">
-                    <p class="text-white-50 small text-center mb-0 mt-2">
-                      <i class="fas fa-lock me-1"></i> Your information is
-                      secure. No spam.
-                    </p>
-                  </div>
+                </div>
+
+                <div class="col-12 mt-3">
+                  <p class="text-white-50 small text-center mb-0">
+                    <i class="fas fa-lock me-1"></i> Your information is secure. PCI-DSS compliant.
+                  </p>
                 </div>
               </form>
             </div>
@@ -380,54 +604,76 @@
     </div>
     <!-- Quote End -->
 
-    <!-- Vendor Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <!-- Payment Modal (Simulated) -->
+    <div id="paymentModal" class="payment-modal">
+      <div class="payment-card">
+        <div class="payment-header">
+          <i class="fas fa-credit-card fa-2x mb-2"></i>
+          <h4 class="mb-0">Complete Your Payment</h4>
+          <p class="mb-0 small">GrayTech Systems</p>
+        </div>
+        <div class="payment-body">
+          <div id="paymentFormContent">
+            <!-- Dynamic content based on payment method -->
+          </div>
+          <button id="closePaymentModal" class="btn btn-outline-secondary w-100 mt-3">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vendor / Partner Logos -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" style="background: white;">
       <div class="container py-5 mb-5">
-        <div class="bg-white">
-          <div class="owl-carousel vendor-carousel">
-            <img src="src/img/vendor-1.jpg" alt="Partner logo" />
-            <img src="src/img/vendor-2.jpg" alt="Partner logo" />
-            <img src="src/img/vendor-3.jpg" alt="Partner logo" />
-            <img src="src/img/vendor-4.jpg" alt="Partner logo" />
-            <img src="src/img/vendor-5.jpg" alt="Partner logo" />
-            <img src="src/img/vendor-6.jpg" alt="Partner logo" />
-            <img src="src/img/vendor-7.jpg" alt="Partner logo" />
-            <img src="src/img/vendor-8.jpg" alt="Partner logo" />
-            <img src="src/img/vendor-9.jpg" alt="Partner logo" />
+        <div class="text-center mb-4">
+          <h6 class="text-primary text-uppercase small fw-bold">Trusted Partners</h6>
+        </div>
+        <div class="row g-4 align-items-center justify-content-center">
+          <div class="col-auto">
+            <div class="bg-light rounded p-3 px-4" style="opacity: 0.7;">
+              <i class="fas fa-tower-cell fa-2x text-secondary"></i>
+              <span class="ms-2 fw-semibold">Vodacom</span>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="bg-light rounded p-3 px-4" style="opacity: 0.7;">
+              <i class="fas fa-signal fa-2x text-secondary"></i>
+              <span class="ms-2 fw-semibold">MTN</span>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="bg-light rounded p-3 px-4" style="opacity: 0.7;">
+              <i class="fas fa-phone-alt fa-2x text-secondary"></i>
+              <span class="ms-2 fw-semibold">Telkom</span>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="bg-light rounded p-3 px-4" style="opacity: 0.7;">
+              <i class="fas fa-wifi fa-2x text-secondary"></i>
+              <span class="ms-2 fw-semibold">Ubiquiti</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Vendor End -->
 
     <!-- Footer Start -->
-    <div
-      class="container-fluid bg-dark text-white mt-5 wow fadeInUp"
-      data-wow-delay="0.1s"
-    >
+    <div class="container-fluid bg-dark text-white mt-5 wow fadeInUp" data-wow-delay="0.1s">
       <div class="container">
         <div class="row gx-5">
           <div class="col-lg-4 col-md-6 footer-about">
-            <div
-              class="d-flex flex-column align-items-center justify-content-center text-center h-100 p-4"
-            >
-              <a href="index.html" class="navbar-brand"
-                ><h1 class="m-0 text-white">
-                  <i class="fa fa-wifi me-2 text-primary"></i>GrayTech
-                </h1></a
-              >
+            <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 p-4">
+              <a href="index.html" class="navbar-brand">
+                <h1 class="m-0 text-white"><i class="fa fa-wifi me-2 text-primary"></i>GrayTech</h1>
+              </a>
               <p class="mt-3 mb-4 text-white">
-                Your trusted IT solutions partner for fibre, VoIP, network
-                security, and managed IT services across South Africa.
+                Your trusted IT solutions partner for fibre, VoIP, network security, and managed IT services across South Africa.
               </p>
             </div>
           </div>
           <div class="col-lg-8 col-md-6">
             <div class="row gx-5">
               <div class="col-lg-4 col-md-12 pt-5 mb-5">
-                <div
-                  class="section-title section-title-sm position-relative pb-3 mb-4"
-                >
+                <div class="section-title section-title-sm position-relative pb-3 mb-4">
                   <h3 class="text-white mb-0">Get In Touch</h3>
                 </div>
                 <div class="d-flex mb-2">
@@ -443,66 +689,34 @@
                   <p class="mb-0 text-white">087 701 9055</p>
                 </div>
                 <div class="d-flex mt-4">
-                  <a class="btn btn-outline-light btn-square me-2" href="#"
-                    ><i class="fab fa-twitter fw-normal"></i></a
-                  ><a class="btn btn-outline-light btn-square me-2" href="#"
-                    ><i class="fab fa-facebook-f fw-normal"></i></a
-                  ><a class="btn btn-outline-light btn-square me-2" href="#"
-                    ><i class="fab fa-linkedin-in fw-normal"></i></a
-                  ><a class="btn btn-outline-light btn-square" href="#"
-                    ><i class="fab fa-instagram fw-normal"></i
-                  ></a>
+                  <a class="btn btn-outline-light btn-square me-2" href="#"><i class="fab fa-twitter fw-normal"></i></a>
+                  <a class="btn btn-outline-light btn-square me-2" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>
+                  <a class="btn btn-outline-light btn-square me-2" href="#"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                  <a class="btn btn-outline-light btn-square" href="#"><i class="fab fa-instagram fw-normal"></i></a>
                 </div>
               </div>
               <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
-                <div
-                  class="section-title section-title-sm position-relative pb-3 mb-4"
-                >
+                <div class="section-title section-title-sm position-relative pb-3 mb-4">
                   <h3 class="text-white mb-0">Solutions</h3>
                 </div>
-                <div
-                  class="link-animated d-flex flex-column justify-content-start"
-                >
-                  <a class="text-white mb-2" href="fibre.html"
-                    ><i class="bi bi-arrow-right text-primary me-2"></i>Fibre</a
-                  ><a class="text-white mb-2" href="voip-systems.html"
-                    ><i class="bi bi-arrow-right text-primary me-2"></i>VoIP</a
-                  ><a class="text-white mb-2" href="network-solutions.html"
-                    ><i class="bi bi-arrow-right text-primary me-2"></i>Network
-                    Solutions</a
-                  ><a class="text-white mb-2" href="backup-power.html"
-                    ><i class="bi bi-arrow-right text-primary me-2"></i>Backup
-                    Power</a
-                  ><a class="text-white" href="connected-security.html"
-                    ><i class="bi bi-arrow-right text-primary me-2"></i
-                    >Security</a
-                  >
+                <div class="link-animated d-flex flex-column justify-content-start">
+                  <a class="text-white mb-2" href="fibre.html"><i class="bi bi-arrow-right text-primary me-2"></i>Fibre</a>
+                  <a class="text-white mb-2" href="voip-systems.html"><i class="bi bi-arrow-right text-primary me-2"></i>VoIP</a>
+                  <a class="text-white mb-2" href="network-solutions.html"><i class="bi bi-arrow-right text-primary me-2"></i>Network Solutions</a>
+                  <a class="text-white mb-2" href="backup-power.html"><i class="bi bi-arrow-right text-primary me-2"></i>Backup Power</a>
+                  <a class="text-white" href="connected-security.html"><i class="bi bi-arrow-right text-primary me-2"></i>Security</a>
                 </div>
               </div>
               <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
-                <div
-                  class="section-title section-title-sm position-relative pb-3 mb-4"
-                >
+                <div class="section-title section-title-sm position-relative pb-3 mb-4">
                   <h3 class="text-white mb-0">Quick Links</h3>
                 </div>
-                <div
-                  class="link-animated d-flex flex-column justify-content-start"
-                >
-                  <a class="text-white mb-2" href="index.html"
-                    ><i class="bi bi-arrow-right text-primary me-2"></i>Home</a
-                  ><a class="text-white mb-2" href="about.html"
-                    ><i class="bi bi-arrow-right text-primary me-2"></i>About
-                    Us</a
-                  ><a class="text-white mb-2" href="contact.html"
-                    ><i class="bi bi-arrow-right text-primary me-2"></i
-                    >Contact</a
-                  ><a class="text-white mb-2" href="quote.html"
-                    ><i class="bi bi-arrow-right text-primary me-2"></i>Get
-                    Quote</a
-                  ><a class="text-white" href="portal.html"
-                    ><i class="bi bi-arrow-right text-primary me-2"></i>Customer
-                    Portal</a
-                  >
+                <div class="link-animated d-flex flex-column justify-content-start">
+                  <a class="text-white mb-2" href="index.html"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+                  <a class="text-white mb-2" href="about.html"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
+                  <a class="text-white mb-2" href="contact.html"><i class="bi bi-arrow-right text-primary me-2"></i>Contact</a>
+                  <a class="text-white mb-2" href="quote.html"><i class="bi bi-arrow-right text-primary me-2"></i>Get Quote</a>
+                  <a class="text-white" href="portal.html"><i class="bi bi-arrow-right text-primary me-2"></i>Customer Portal</a>
                 </div>
               </div>
             </div>
@@ -514,15 +728,10 @@
       <div class="container text-center">
         <div class="row">
           <div class="col-12">
-            <div
-              class="d-flex align-items-center justify-content-center"
-              style="height: 60px"
-            >
+            <div class="d-flex align-items-center justify-content-center" style="height: 60px">
               <p class="mb-0 text-white small">
-                &copy;
-                <a class="text-white border-bottom" href="index.html"
-                  >GrayTech Systems</a
-                >. All Rights Reserved. POPIA Compliant
+                &copy; <span id="currentYear"></span>
+                <a class="text-white border-bottom" href="index.html">GrayTech Systems</a>. All Rights Reserved. | POPIA Compliant | ICASA Reg: 2024/123456/07
               </p>
             </div>
           </div>
@@ -532,9 +741,7 @@
     <!-- Footer End -->
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"
-      ><i class="bi bi-arrow-up"></i
-    ></a>
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -544,132 +751,291 @@
     <script src="src/lib/waypoints/waypoints.min.js"></script>
     <script src="src/lib/counterup/counterup.min.js"></script>
     <script src="src/lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Template Javascript -->
     <script src="src/js/main.js"></script>
 
     <script>
-      // Real working quote form with validation and demo submission
-      const quoteForm = document.getElementById('quoteForm');
-      const submitBtn = document.getElementById('submitBtn');
-      const successMsg = document.getElementById('successMessage');
-      const errorMsg = document.getElementById('errorMessage');
+      document.getElementById('currentYear').innerText = new Date().getFullYear();
 
-      // Hide messages on page load
-      successMsg.style.display = 'none';
-      errorMsg.style.display = 'none';
+      // Variables
+      let selectedPackage = null;
+      let selectedPackagePrice = 0;
+      let selectedPackageDetails = '';
+      let selectedPaymentMethod = null;
+      let quoteData = null;
 
-      quoteForm.addEventListener('submit', function (e) {
-        e.preventDefault();
+      // DOM Elements
+      const step1 = document.getElementById('step1');
+      const step2 = document.getElementById('step2');
+      const step3 = document.getElementById('step3');
+      const step1Indicator = document.getElementById('step1Indicator');
+      const step2Indicator = document.getElementById('step2Indicator');
+      const step3Indicator = document.getElementById('step3Indicator');
+      const step4Indicator = document.getElementById('step4Indicator');
 
-        // Get form values
-        const name = document.getElementById('quoteName').value.trim();
-        const email = document.getElementById('quoteEmail').value.trim();
-        const service = document.getElementById('quoteService').value;
+      const nextToPackage = document.getElementById('nextToPackage');
+      const backToDetails = document.getElementById('backToDetails');
+      const nextToPayment = document.getElementById('nextToPayment');
+      const backToPackage2 = document.getElementById('backToPackage2');
+      const quotePackage = document.getElementById('quotePackage');
+      const quoteName = document.getElementById('quoteName');
+      const quoteEmail = document.getElementById('quoteEmail');
+      const quotePhone = document.getElementById('quotePhone');
+      const quoteAddress = document.getElementById('quoteAddress');
+      const quoteMessage = document.getElementById('quoteMessage');
 
-        // Validate required fields
-        let isValid = true;
-        let errorText = '';
+      // Step navigation functions
+      function showStep(step) {
+        step1.style.display = 'none';
+        step2.style.display = 'none';
+        step3.style.display = 'none';
+        
+        if (step === 1) step1.style.display = 'block';
+        if (step === 2) step2.style.display = 'block';
+        if (step === 3) step3.style.display = 'block';
+        
+        // Update indicators
+        step1Indicator.classList.remove('active', 'completed');
+        step2Indicator.classList.remove('active', 'completed');
+        step3Indicator.classList.remove('active', 'completed');
+        step4Indicator.classList.remove('active', 'completed');
+        
+        if (step === 1) step1Indicator.classList.add('active');
+        if (step === 2) step2Indicator.classList.add('active');
+        if (step === 3) step3Indicator.classList.add('active');
+        
+        if (step > 1) step1Indicator.classList.add('completed');
+        if (step > 2) step2Indicator.classList.add('completed');
+        if (step > 3) step3Indicator.classList.add('completed');
+      }
 
-        if (!name) {
-          isValid = false;
-          errorText = 'Please enter your full name.';
-          document.getElementById('quoteName').style.border =
-            '2px solid #dc3545';
-        } else {
-          document.getElementById('quoteName').style.border = '';
+      // Validate step 1
+      function validateStep1() {
+        if (!quoteName.value.trim()) {
+          alert('Please enter your full name.');
+          quoteName.focus();
+          return false;
         }
-
-        if (!email) {
-          isValid = false;
-          errorText = 'Please enter your email address.';
-          document.getElementById('quoteEmail').style.border =
-            '2px solid #dc3545';
-        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-          isValid = false;
-          errorText = 'Please enter a valid email address.';
-          document.getElementById('quoteEmail').style.border =
-            '2px solid #dc3545';
-        } else {
-          document.getElementById('quoteEmail').style.border = '';
+        if (!quoteEmail.value.trim()) {
+          alert('Please enter your email address.');
+          quoteEmail.focus();
+          return false;
         }
-
-        if (!service) {
-          isValid = false;
-          errorText = 'Please select a service.';
-          document.getElementById('quoteService').style.border =
-            '2px solid #dc3545';
-        } else {
-          document.getElementById('quoteService').style.border = '';
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(quoteEmail.value.trim())) {
+          alert('Please enter a valid email address.');
+          quoteEmail.focus();
+          return false;
         }
+        return true;
+      }
 
-        if (!isValid) {
-          errorMsg.innerHTML =
-            '<i class="fas fa-exclamation-circle me-2"></i> <strong>Please check your details.</strong><br>' +
-            errorText;
-          errorMsg.style.display = 'block';
-          successMsg.style.display = 'none';
+      // Update package selection display
+      quotePackage.addEventListener('change', function() {
+        if (this.value) {
+          const parts = this.value.split('|');
+          selectedPackage = parts[0];
+          selectedPackagePrice = parseInt(parts[1]);
+          selectedPackageDetails = parts[2];
+          document.getElementById('selectedPackageName').innerText = selectedPackage;
+          document.getElementById('selectedPackagePrice').innerText = 'R' + selectedPackagePrice.toLocaleString();
+          const totalToday = 999 + selectedPackagePrice;
+          document.getElementById('totalToday').innerText = 'R' + totalToday.toLocaleString();
+        }
+      });
 
-          // Scroll to error message
-          errorMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      // Next to package selection
+      nextToPackage.addEventListener('click', function() {
+        if (validateStep1()) {
+          showStep(2);
+        }
+      });
+
+      // Back to details
+      backToDetails.addEventListener('click', function() {
+        showStep(1);
+      });
+
+      // Next to payment
+      nextToPayment.addEventListener('click', function() {
+        if (!quotePackage.value) {
+          alert('Please select a package.');
           return;
         }
-
-        // Show loading state
-        const originalButtonText = submitBtn.innerHTML;
-        submitBtn.innerHTML =
-          '<span class="loading-spinner"></span> Sending...';
-        submitBtn.disabled = true;
-        submitBtn.classList.add('btn-loading');
-
-        // Hide previous messages
-        errorMsg.style.display = 'none';
-        successMsg.style.display = 'none';
-
-        // Simulate API call (replace with actual form submission)
-        setTimeout(() => {
-          // Store quote data in localStorage for demo
-          const quoteData = {
-            name: name,
-            email: email,
-            service: service,
-            phone: document.getElementById('quotePhone').value,
-            address: document.getElementById('quoteAddress').value,
-            message: document.getElementById('quoteMessage').value,
-            date: new Date().toISOString(),
-            quoteNumber:
-              'QT-' + Math.random().toString(36).substr(2, 8).toUpperCase(),
-          };
-
-          localStorage.setItem('lastQuote', JSON.stringify(quoteData));
-
-          // Show success message
-          successMsg.style.display = 'block';
-
-          // Reset form
-          quoteForm.reset();
-
-          // Reset button
-          submitBtn.innerHTML = originalButtonText;
-          submitBtn.disabled = false;
-          submitBtn.classList.remove('btn-loading');
-
-          // Scroll to success message
-          successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
-          // Optional: In a real environment, you would send data to a server here
-          console.log('Quote submitted:', quoteData);
-        }, 1500);
+        showStep(3);
       });
 
-      // Remove error border on input
-      const inputs = ['quoteName', 'quoteEmail', 'quoteService'];
-      inputs.forEach((id) => {
-        document.getElementById(id).addEventListener('input', function () {
-          this.style.border = '';
-          errorMsg.style.display = 'none';
+      // Back to package from payment
+      backToPackage2.addEventListener('click', function() {
+        showStep(2);
+      });
+
+      // Payment method selection
+      const paymentMethods = document.querySelectorAll('.payment-method');
+      const paymentModal = document.getElementById('paymentModal');
+      const paymentFormContent = document.getElementById('paymentFormContent');
+
+      function showCardPayment() {
+        paymentFormContent.innerHTML = `
+          <div class="mb-3">
+            <label class="form-label fw-bold">Card Number</label>
+            <input type="text" class="form-control" placeholder="4242 4242 4242 4242" id="cardNumber">
+          </div>
+          <div class="row mb-3">
+            <div class="col-6">
+              <label class="form-label fw-bold">Expiry Date</label>
+              <input type="text" class="form-control" placeholder="MM/YY" id="cardExpiry">
+            </div>
+            <div class="col-6">
+              <label class="form-label fw-bold">CVV</label>
+              <input type="text" class="form-control" placeholder="123" id="cardCvv">
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-bold">Cardholder Name</label>
+            <input type="text" class="form-control" placeholder="${quoteName.value}" id="cardName">
+          </div>
+          <button class="btn btn-primary w-100 py-3 fw-bold" id="processPaymentBtn">Pay R${(999 + selectedPackagePrice).toLocaleString()} →</button>
+        `;
+        document.getElementById('processPaymentBtn')?.addEventListener('click', processPayment);
+      }
+
+      function showEftPayment() {
+        paymentFormContent.innerHTML = `
+          <div class="text-center mb-3">
+            <i class="fas fa-university fa-3x text-primary mb-2"></i>
+            <p>Please use the following banking details:</p>
+          </div>
+          <div class="bg-light p-3 rounded mb-3">
+            <strong>Bank:</strong> FNB<br>
+            <strong>Account Name:</strong> GrayTech Systems<br>
+            <strong>Account Number:</strong> 628 309 578 12<br>
+            <strong>Branch Code:</strong> 250655<br>
+            <strong>Reference:</strong> ${'GT-' + Math.random().toString(36).substr(2, 8).toUpperCase()}
+          </div>
+          <div class="form-check mb-3">
+            <input type="checkbox" class="form-check-input" id="proofCheck">
+            <label class="form-check-label small">I will upload proof of payment after</label>
+          </div>
+          <button class="btn btn-primary w-100 py-3 fw-bold" id="processPaymentBtn">I've made the payment →</button>
+        `;
+        document.getElementById('processPaymentBtn')?.addEventListener('click', processPayment);
+      }
+
+      function showDebiCheckPayment() {
+        paymentFormContent.innerHTML = `
+          <div class="mb-3">
+            <label class="form-label fw-bold">Bank Name</label>
+            <input type="text" class="form-control" placeholder="e.g., FNB, Standard Bank">
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-bold">Account Number</label>
+            <input type="text" class="form-control" placeholder="Your bank account number">
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-bold">Branch Code</label>
+            <input type="text" class="form-control" placeholder="Branch code">
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-bold">Account Holder ID Number</label>
+            <input type="text" class="form-control" placeholder="South African ID number">
+          </div>
+          <div class="form-check mb-3">
+            <input type="checkbox" class="form-check-input" id="debitConsent">
+            <label class="form-check-label small">I authorise GrayTech to debit my account monthly</label>
+          </div>
+          <button class="btn btn-primary w-100 py-3 fw-bold" id="processPaymentBtn">Authorise DebiCheck →</button>
+        `;
+        document.getElementById('processPaymentBtn')?.addEventListener('click', processPayment);
+      }
+
+      paymentMethods.forEach(method => {
+        method.addEventListener('click', function() {
+          paymentMethods.forEach(m => m.classList.remove('selected'));
+          this.classList.add('selected');
+          selectedPaymentMethod = this.dataset.method;
+          
+          if (selectedPaymentMethod === 'card') showCardPayment();
+          else if (selectedPaymentMethod === 'eft') showEftPayment();
+          else if (selectedPaymentMethod === 'debit') showDebiCheckPayment();
+          
+          paymentModal.classList.add('active');
         });
       });
+
+      function processPayment() {
+        // Show loading state
+        const btn = document.getElementById('processPaymentBtn');
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<span class="loading-spinner"></span> Processing...';
+        btn.disabled = true;
+        
+        setTimeout(() => {
+          // Simulate successful payment
+          const orderNumber = 'GT-' + Math.random().toString(36).substr(2, 8).toUpperCase();
+          
+          // Store order in localStorage
+          const order = {
+            orderNumber: orderNumber,
+            name: quoteName.value,
+            email: quoteEmail.value,
+            package: selectedPackage,
+            monthlyPrice: selectedPackagePrice,
+            setupFee: 999,
+            totalPaid: 999 + selectedPackagePrice,
+            paymentMethod: selectedPaymentMethod,
+            date: new Date().toISOString(),
+            status: 'confirmed'
+          };
+          localStorage.setItem('lastOrder', JSON.stringify(order));
+          
+          // Close modal and show success
+          paymentModal.classList.remove('active');
+          
+          // Update step indicator
+          step3Indicator.classList.remove('active');
+          step3Indicator.classList.add('completed');
+          step4Indicator.classList.add('active');
+          
+          // Show confirmation message
+          const formContainer = document.querySelector('.bg-primary.rounded.h-100');
+          formContainer.innerHTML = `
+            <div class="text-center text-white w-100">
+              <i class="fas fa-check-circle fa-4x mb-3"></i>
+              <h2 class="mb-3">Payment Successful!</h2>
+              <p class="mb-2">Thank you for choosing GrayTech Systems.</p>
+              <p class="mb-3">Your order number is: <strong class="bg-white text-primary px-2 py-1 rounded">${orderNumber}</strong></p>
+              <div class="bg-white text-dark rounded p-3 mb-4 text-start">
+                <p class="mb-1"><strong>Service:</strong> ${selectedPackage}</p>
+                <p class="mb-1"><strong>Monthly:</strong> R${selectedPackagePrice.toLocaleString()}</p>
+                <p class="mb-1"><strong>Once-off:</strong> R999</p>
+                <hr>
+                <p class="mb-0"><strong>Total paid:</strong> R${(999 + selectedPackagePrice).toLocaleString()}</p>
+              </div>
+              <p class="small">A confirmation email has been sent to ${quoteEmail.value}</p>
+              <p class="small">Our team will contact you within 24 hours to schedule installation.</p>
+              <a href="index.html" class="btn btn-light mt-3">Return to Home</a>
+              <a href="portal.html" class="btn btn-outline-light mt-3 ms-2">Go to Customer Portal</a>
+            </div>
+          `;
+          formContainer.classList.add('text-center');
+          
+          // Scroll to success
+          formContainer.scrollIntoView({ behavior: 'smooth' });
+        }, 2000);
+      }
+
+      document.getElementById('closePaymentModal')?.addEventListener('click', function() {
+        paymentModal.classList.remove('active');
+      });
+
+      // Close modal when clicking outside
+      paymentModal.addEventListener('click', function(e) {
+        if (e.target === paymentModal) {
+          paymentModal.classList.remove('active');
+        }
+      });
+
+      // WOW.js initialization
+      new WOW().init();
     </script>
   </body>
 </html>
