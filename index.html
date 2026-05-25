@@ -143,7 +143,7 @@
         transform: translateY(-5px);
         box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.15) !important;
       }
-      /* Mega Menu Dropdown Styles */
+      /* Mega Menu Dropdown Styles - FIXED */
       .dropdown-menu {
         border-radius: 12px;
         border: none;
@@ -166,13 +166,31 @@
         letter-spacing: 0.5px;
       }
       .mega-dropdown {
-        min-width: 580px;
+        min-width: 720px;
         padding: 1.5rem;
+        left: auto !important;
+        right: auto !important;
       }
       @media (max-width: 991.98px) {
         .mega-dropdown {
           min-width: auto;
+          width: 90vw;
+          left: 5% !important;
+          right: auto !important;
+        }
+      }
+      @media (max-width: 768px) {
+        .mega-dropdown {
+          min-width: auto;
+          width: 95vw;
+          left: 2.5% !important;
+        }
+        .mega-dropdown .row {
+          flex-direction: column;
+        }
+        .mega-dropdown .col-md-4 {
           width: 100%;
+          margin-bottom: 1rem;
         }
       }
       .transition-all {
@@ -180,6 +198,48 @@
       }
       .transition-all:hover {
         transform: translateY(-5px);
+      }
+      /* Pricing Card Fixes */
+      .pricing-card {
+        background: white !important;
+        color: #333 !important;
+      }
+      .pricing-card h3, 
+      .pricing-card h2, 
+      .pricing-card p,
+      .pricing-card li {
+        color: #333 !important;
+      }
+      .pricing-card .text-muted {
+        color: #6c757d !important;
+      }
+      .pricing-card hr {
+        background-color: #dee2e6;
+      }
+      .pricing-card .btn-outline-primary {
+        background: transparent;
+        border: 2px solid #06a3da;
+        color: #06a3da;
+      }
+      .pricing-card .btn-outline-primary:hover {
+        background: #06a3da;
+        color: white;
+      }
+      .pricing-card .btn-primary {
+        background: #06a3da;
+        border: none;
+        color: white;
+      }
+      .pricing-card .badge.bg-secondary {
+        background: #e9ecef !important;
+        color: #495057 !important;
+      }
+      .pricing-card .badge.bg-primary {
+        background: #06a3da !important;
+        color: white !important;
+      }
+      .pricing-card i.fa-check {
+        color: #06a3da !important;
       }
     </style>
   </head>
@@ -868,7 +928,7 @@
           </div>
           <div class="col-lg-3 col-md-6">
             <div class="bg-white rounded p-4 text-center shadow-sm h-100">
-              <i class="fas fa-chalkboard-user fa-3x text-primary mb-3"></i>
+              <i class="fas fa-graduation-cap fa-3x text-primary mb-3"></i>
               <h5>Education</h5>
               <p class="small text-muted mb-0">
                 Campus networks, e-learning platforms, security
@@ -993,7 +1053,7 @@
         <div class="row g-4">
           <!-- Package 1 -->
           <div class="col-lg-3 col-md-6">
-            <div class="bg-white rounded-4 p-4 text-center shadow-sm h-100 transition-all">
+            <div class="bg-white rounded-4 p-4 text-center shadow-sm h-100 transition-all pricing-card">
               <div class="mb-3">
                 <span class="badge bg-secondary bg-opacity-10 text-secondary px-3 py-2">LTE</span>
               </div>
@@ -1012,7 +1072,7 @@
           </div>
           <!-- Package 2 -->
           <div class="col-lg-3 col-md-6">
-            <div class="bg-white rounded-4 p-4 text-center shadow-sm h-100" style="border-top: 4px solid #06a3da;">
+            <div class="bg-white rounded-4 p-4 text-center shadow-sm h-100 pricing-card" style="border-top: 4px solid #06a3da;">
               <div class="mb-3">
                 <span class="badge bg-primary text-white px-3 py-2">POPULAR</span>
               </div>
@@ -1031,7 +1091,7 @@
           </div>
           <!-- Package 3 -->
           <div class="col-lg-3 col-md-6">
-            <div class="bg-white rounded-4 p-4 text-center shadow-sm h-100">
+            <div class="bg-white rounded-4 p-4 text-center shadow-sm h-100 pricing-card">
               <div class="mb-3">
                 <span class="badge bg-secondary bg-opacity-10 text-secondary px-3 py-2">FIBRE</span>
               </div>
@@ -1050,7 +1110,7 @@
           </div>
           <!-- Package 4 -->
           <div class="col-lg-3 col-md-6">
-            <div class="bg-white rounded-4 p-4 text-center shadow-sm h-100">
+            <div class="bg-white rounded-4 p-4 text-center shadow-sm h-100 pricing-card">
               <div class="mb-3">
                 <span class="badge bg-secondary bg-opacity-10 text-secondary px-3 py-2">FIBRE</span>
               </div>
