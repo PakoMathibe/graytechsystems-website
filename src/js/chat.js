@@ -1,48 +1,10 @@
-// ========== AI CHAT ASSISTANT ==========
+// ========== GRAYTECH AI CHAT ASSISTANT ==========
+
 class GrayTechChat {
     constructor() {
         this.isOpen = false;
         this.messages = [];
-        this.isTyping = false;
-        this.agentName = 'GrayBot';
         this.agentAvatar = 'fas fa-robot';
-        
-        // Chat knowledge base
-        this.knowledgeBase = {
-            greetings: ['hello', 'hi', 'hey', 'good morning', 'good afternoon', 'good evening', 'howdy'],
-            pricing: ['price', 'cost', 'how much', 'package', 'plan', 'pricing', 'rates', 'monthly', 'subscription'],
-            coverage: ['coverage', 'available', 'area', 'location', 'fibre map', 'check availability', 'can i get'],
-            speed: ['speed', 'fast', 'mbps', 'gigabit', 'slow', 'download', 'upload', 'performance'],
-            support: ['support', 'help', 'issue', 'problem', 'not working', 'down', 'complaint', 'ticket'],
-            installation: ['install', 'installation', 'setup', 'technician', 'appointment', 'schedule'],
-            billing: ['bill', 'invoice', 'payment', 'pay', 'debit order', 'eft', 'credit card', 'refund'],
-            contract: ['contract', 'cancel', 'terminate', 'notice', 'month to month', '12 months', '24 months'],
-            order: ['order', 'sign up', 'register', 'buy', 'purchase', 'get connected'],
-            router: ['router', 'wifi', 'device', 'modem', 'settings', 'connection'],
-            loadShedding: ['load shedding', 'power', 'backup', 'ups', 'battery', 'eskom'],
-            business: ['business', 'company', 'office', 'commercial', 'corporate'],
-            home: ['home', 'residential', 'house', 'apartment', 'flat'],
-            providers: ['openserve', 'vumatel', 'octotel', 'frogfoot', 'metrofibre', 'vodacom', 'mtn', 'provider']
-        };
-        
-        this.responses = {
-            greeting: "Hey there! 👋 I'm GrayBot, your AI assistant. How can I help you with your fibre internet needs today?",
-            pricing: "Our fibre packages start from R459/month. Here are our popular plans:\n\n• LTE Starter: R459/month (200GB)\n• LTE Pro: R699/month (400GB)\n• Fibre 100: R899/month (1TB)\n• Fibre 500: R1,299/month (Unlimited)\n\nWould you like me to check which packages are available in your area?",
-            coverage: "I can help you check fibre availability! 🔍\n\nJust tell me your suburb or city name (e.g., 'Sandton', 'Cape Town', 'Durban', 'Fourways'), or use our coverage checker on this page.\n\nWould you like me to check for you?",
-            speed: "Our fibre speeds range from 50Mbps to 1Gbps depending on your area and provider:\n\n• 50Mbps: Perfect for streaming & browsing\n• 100Mbps: Great for families & WFH\n• 200Mbps: Ideal for gamers & 4K streaming\n• 500Mbps: Power user / small business\n• 1Gbps: Enterprise / heavy usage\n\nWhat speed are you interested in?",
-            support: "I'm sorry to hear you're having an issue. 😟\n\nOur support team is available 24/7. You can:\n\n1. Call us: 087 701 9055\n2. Email: support@graytechsystems.co.za\n3. Create a support ticket in your customer portal\n\nWould you like me to help you create a ticket?",
-            installation: "Great news! 🎉\n\nHere's what happens after you sign up:\n\n1️⃣ Confirmation email within minutes\n2️⃣ Installation scheduled within 24 hours\n3️⃣ Technician visits within 3-5 business days\n4️⃣ Free router installation included\n\nReady to get started? I can help you sign up right now!",
-            billing: "For billing inquiries, you can:\n\n• Pay online via our customer portal\n• Set up debit order (DebiCheck)\n• Call our finance team: 087 701 9056\n\nIs there a specific invoice or payment issue I can help with?",
-            contract: "All our fibre packages come with a 12-month contract. LTE plans offer month-to-month options.\n\nNeed to cancel? Please give 30 days written notice to support@graytechsystems.co.za",
-            order: "Awesome! Let's get you connected. 🚀\n\nJust click the 'Check Coverage' button on this page, enter your address, and you'll see available providers and packages. Then you can complete your order online in minutes.\n\nWould you like me to guide you through the process?",
-            router: "All our fibre packages include a FREE high-quality router! 🎁\n\n• LTE plans: Free 4G/LTE router\n• 100Mbps+: Free standard router\n• 500Mbps+: Free mesh router\n\nNeed help with router configuration? I can assist!",
-            loadShedding: "We've got you covered during load shedding! 💡\n\n• Most exchanges have backup power\n• We offer UPS solutions for your home/office\n• Our LTE packages work during power outages\n\nWould you like to learn about our backup power solutions?",
-            business: "For business solutions, we offer:\n\n• Dedicated business fibre (SLA-backed)\n• VoIP phone systems (save up to 60%)\n• Network security & monitoring\n• IT maintenance & support\n\nWould you like me to connect you with our business team?",
-            home: "For home users, we have:\n\n• Fibre packages from 50Mbps to 1Gbps\n• LTE/5G for reliable backup\n• Smart home security solutions\n\nWhat's your primary use? Streaming, gaming, working from home?",
-            providers: "We work with multiple providers to give you the best coverage:\n\n• OpenServe (largest network)\n• Vumatel (major metros)\n• Octotel (Western Cape)\n• Frogfoot (growing network)\n• MetroFibre (premium areas)\n• Vodacom & MTN (selected areas)\n\nCheck your area to see available providers!",
-            default: "Thanks for your message! 📡\n\nI'm still learning, but I can help with:\n• Fibre packages & pricing 💰\n• Coverage checking 🗺️\n• Installation process 🔧\n• Support & troubleshooting 🛠️\n• Billing & payments 💳\n\nCould you rephrase your question or select one of the suggestions below?"
-        };
-        
         this.init();
     }
     
@@ -53,14 +15,13 @@ class GrayTechChat {
     }
     
     createChatWidget() {
-        // Check if chat widget already exists
         if (document.querySelector('.chat-widget')) return;
         
         const chatHTML = `
             <div class="chat-widget">
                 <div class="chat-button" id="chatButton">
                     <i class="fas fa-comment-dots"></i>
-                    <span class="notification-badge">1</span>
+                    <span class="chat-badge">1</span>
                 </div>
                 <div class="chat-window" id="chatWindow">
                     <div class="chat-header">
@@ -70,7 +31,7 @@ class GrayTechChat {
                             </div>
                             <div class="chat-header-text">
                                 <h4>GrayTech Support</h4>
-                                <p><span class="status-dot"></span> AI Assistant • Online</p>
+                                <p><span class="status-dot"></span> AI Assistant • Online 24/7</p>
                             </div>
                         </div>
                         <button class="chat-close" id="chatClose">
@@ -83,31 +44,38 @@ class GrayTechChat {
                                 <i class="${this.agentAvatar}"></i>
                             </div>
                             <div class="message-content">
-                                Hello! 👋 I'm GrayBot, your AI assistant.<br>
-                                How can I help you with your fibre internet today?
-                                <span class="message-time">Just now</span>
-                                <div class="quick-replies">
-                                    <button class="quick-reply" data-query="fibre packages">💰 View Packages</button>
-                                    <button class="quick-reply" data-query="check coverage">🗺️ Check Coverage</button>
-                                    <button class="quick-reply" data-query="installation">🔧 Installation Process</button>
-                                    <button class="quick-reply" data-query="support">🛠️ Get Support</button>
+                                <div class="message-text">
+                                    Hello! 👋 I'm GrayBot, your AI assistant.<br>
+                                    How can I help you with your fibre internet today?
                                 </div>
+                                <div class="quick-replies">
+                                    <button class="quick-reply" data-msg="fibre packages">💰 View Packages</button>
+                                    <button class="quick-reply" data-msg="check coverage">🗺️ Check Coverage</button>
+                                    <button class="quick-reply" data-msg="installation">🔧 Installation</button>
+                                    <button class="quick-reply" data-msg="support">🛠️ Support</button>
+                                </div>
+                                <span class="message-time">Just now</span>
                             </div>
                         </div>
                     </div>
                     <div class="chat-suggestions">
-                        <span class="suggestion-chip" data-query="fibre packages">💰 Fibre Packages</span>
-                        <span class="suggestion-chip" data-query="check coverage">🗺️ Check Coverage</span>
-                        <span class="suggestion-chip" data-query="installation time">⏱️ Installation Time</span>
-                        <span class="suggestion-chip" data-query="load shedding">⚡ Load Shedding</span>
-                        <span class="suggestion-chip" data-query="business fibre">🏢 Business Fibre</span>
-                        <span class="suggestion-chip" data-query="router included">📡 Router Included</span>
+                        <span class="suggestion-chip" data-msg="fibre packages">💰 Packages</span>
+                        <span class="suggestion-chip" data-msg="check coverage">🗺️ Coverage</span>
+                        <span class="suggestion-chip" data-msg="installation">⏱️ Installation</span>
+                        <span class="suggestion-chip" data-msg="load shedding">⚡ Load Shedding</span>
+                        <span class="suggestion-chip" data-msg="business fibre">🏢 Business</span>
+                        <span class="suggestion-chip" data-msg="router included">📡 Router</span>
                     </div>
                     <div class="chat-input-container">
-                        <input type="text" class="chat-input" id="chatInput" placeholder="Type your message...">
-                        <button class="chat-send" id="chatSend">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
+                        <div class="chat-input-wrapper">
+                            <textarea class="chat-input" id="chatInput" placeholder="Type your message..." rows="1"></textarea>
+                            <button class="chat-send" id="chatSend">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                        <div class="chat-footer-note">
+                            <i class="fas fa-lock"></i> Secure • <i class="fas fa-clock"></i> Quick response
+                        </div>
                     </div>
                 </div>
             </div>
@@ -137,16 +105,26 @@ class GrayTechChat {
         
         if (chatInput) {
             chatInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') this.sendMessage();
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    this.sendMessage();
+                }
+            });
+            
+            // Auto-resize textarea
+            chatInput.addEventListener('input', function() {
+                this.style.height = 'auto';
+                this.style.height = Math.min(this.scrollHeight, 80) + 'px';
             });
         }
         
-        // Quick reply buttons
+        // Quick reply and suggestion buttons
         document.querySelectorAll('.quick-reply, .suggestion-chip').forEach(btn => {
             btn.addEventListener('click', () => {
-                const query = btn.dataset.query;
-                if (query) {
-                    document.getElementById('chatInput').value = query;
+                const msg = btn.dataset.msg;
+                if (msg) {
+                    const input = document.getElementById('chatInput');
+                    if (input) input.value = msg;
                     this.sendMessage();
                 }
             });
@@ -155,17 +133,14 @@ class GrayTechChat {
     
     toggleChat() {
         const chatWindow = document.getElementById('chatWindow');
-        const notificationBadge = document.querySelector('.notification-badge');
+        const chatBadge = document.querySelector('.chat-badge');
         
         if (chatWindow) {
             this.isOpen = !this.isOpen;
             chatWindow.classList.toggle('open', this.isOpen);
             
-            if (this.isOpen && notificationBadge) {
-                notificationBadge.style.display = 'none';
-            }
-            
-            if (this.isOpen) {
+            if (this.isOpen && chatBadge) {
+                chatBadge.style.display = 'none';
                 document.getElementById('chatInput')?.focus();
             }
         }
@@ -181,111 +156,73 @@ class GrayTechChat {
     
     sendMessage() {
         const input = document.getElementById('chatInput');
-        const message = input.value.trim();
+        const message = input?.value.trim();
         
         if (!message) return;
         
-        // Add user message
         this.addMessage(message, 'user');
         input.value = '';
+        input.style.height = 'auto';
         
-        // Show typing indicator
         this.showTypingIndicator();
         
-        // Process and respond after delay
         setTimeout(() => {
             this.hideTypingIndicator();
-            const response = this.processMessage(message);
+            const response = this.getBotResponse(message);
             this.addMessage(response, 'system');
-        }, 800 + Math.random() * 500);
+        }, 800);
     }
     
-    processMessage(message) {
+    getBotResponse(message) {
         const lowerMsg = message.toLowerCase();
         
-        // Check for coverage request (includes suburb/city mention)
-        const locationMatch = lowerMsg.match(/\b(sandton|johannesburg|pretoria|capetown|cape town|durban|fourways|midrand|centurion|randburg|roodepoort|bryanston|rosebank|menlyn|waterkloof|claremont|stellenbosch|paarl|bellville|umhlanga|ballito)\b/i);
-        if ((lowerMsg.includes('coverage') || lowerMsg.includes('available') || lowerMsg.includes('area')) && locationMatch) {
-            const city = locationMatch[0];
-            return `I'm checking availability in ${city}... 🗺️\n\nGreat news! Fibre is available in ${city} through multiple providers like OpenServe, Vumatel, and Octotel. Speeds range from 50Mbps to 1Gbps starting from R599/month.\n\nWould you like me to check which specific packages are available in your exact address?`;
+        // Package info
+        if (lowerMsg.includes('package') || lowerMsg.includes('price') || lowerMsg.includes('cost')) {
+            return "💰 **Our Packages**\n\n• **LTE Starter:** R459/month (200GB)\n• **LTE Pro:** R699/month (400GB)\n• **Fibre 100:** R899/month (1TB)\n• **Fibre 500:** R1,299/month (Unlimited)\n\nAll plans include free installation and router! Which one interests you?";
         }
         
-        // Check for specific package request
-        if (lowerMsg.includes('package') || lowerMsg.includes('plan') || (lowerMsg.includes('fibre') && (lowerMsg.includes('price') || lowerMsg.includes('cost')))) {
-            return this.responses.pricing;
+        // Coverage
+        if (lowerMsg.includes('coverage') || lowerMsg.includes('available')) {
+            return "🗺️ **Check Your Coverage**\n\nPlease tell me your suburb or city (e.g., 'Sandton', 'Cape Town', 'Durban') and I'll check which providers are available in your area.\n\nOr use our coverage checker on the homepage!";
         }
         
-        // Check for price/cost
-        if (this.matchesAny(lowerMsg, this.knowledgeBase.pricing)) {
-            return this.responses.pricing;
+        // Installation
+        if (lowerMsg.includes('installation')) {
+            return "🔧 **Installation Process**\n\n1️⃣ Confirmation email within minutes\n2️⃣ Installation scheduled within 24 hours\n3️⃣ Technician visits within 3-5 business days\n4️⃣ Free router installation included\n\nReady to get started?";
         }
         
-        // Check for coverage
-        if (this.matchesAny(lowerMsg, this.knowledgeBase.coverage)) {
-            return this.responses.coverage;
+        // Support
+        if (lowerMsg.includes('support') || lowerMsg.includes('help')) {
+            return "🛠️ **Need Support?**\n\n📞 Call us: 087 701 9055\n📧 Email: support@graytechsystems.co.za\n💬 Live chat: Available 8am-8pm\n\nHow can I assist further?";
         }
         
-        // Check for speed
-        if (this.matchesAny(lowerMsg, this.knowledgeBase.speed)) {
-            return this.responses.speed;
+        // Load shedding
+        if (lowerMsg.includes('load shedding') || lowerMsg.includes('backup')) {
+            return "⚡ **Load Shedding Solutions**\n\n• Most exchanges have backup power (8+ hours)\n• LTE works during power outages\n• UPS solutions from R1,299\n• Backup generators for businesses\n\nWould you like a quote?";
         }
         
-        // Check for support
-        if (this.matchesAny(lowerMsg, this.knowledgeBase.support)) {
-            return this.responses.support;
+        // Business
+        if (lowerMsg.includes('business') || lowerMsg.includes('company')) {
+            return "🏢 **Business Solutions**\n\n• Dedicated fibre (99.99% uptime)\n• VoIP systems (save 60% on calls)\n• Network security (24/7 monitoring)\n• IT support (on-site & remote)\n\nRequest a business quote for custom pricing!";
         }
         
-        // Check for installation
-        if (this.matchesAny(lowerMsg, this.knowledgeBase.installation)) {
-            return this.responses.installation;
+        // Router
+        if (lowerMsg.includes('router')) {
+            return "📡 **Free Router Included!**\n\n• LTE plans: Free 4G router\n• 100Mbps+: Free standard router\n• 500Mbps+: Free mesh router system\n\nNeed help with setup? I can guide you!";
         }
         
-        // Check for billing
-        if (this.matchesAny(lowerMsg, this.knowledgeBase.billing)) {
-            return this.responses.billing;
+        // Greeting
+        if (lowerMsg.includes('hello') || lowerMsg.includes('hi') || lowerMsg.includes('hey')) {
+            return "Hey there! 👋 I'm GrayBot, your AI assistant. How can I help with your fibre internet needs today?";
         }
         
-        // Check for order/signup
-        if (this.matchesAny(lowerMsg, this.knowledgeBase.order)) {
-            return this.responses.order;
+        // Thank you
+        if (lowerMsg.includes('thank')) {
+            return "You're very welcome! 😊\n\nIs there anything else I can help with? You can also call 087 701 9055 for immediate assistance.";
         }
         
-        // Check for router
-        if (this.matchesAny(lowerMsg, this.knowledgeBase.router)) {
-            return this.responses.router;
-        }
-        
-        // Check for load shedding
-        if (this.matchesAny(lowerMsg, this.knowledgeBase.loadShedding)) {
-            return this.responses.loadShedding;
-        }
-        
-        // Check for business
-        if (this.matchesAny(lowerMsg, this.knowledgeBase.business)) {
-            return this.responses.business;
-        }
-        
-        // Check for home/residential
-        if (this.matchesAny(lowerMsg, this.knowledgeBase.home)) {
-            return this.responses.home;
-        }
-        
-        // Check for providers
-        if (this.matchesAny(lowerMsg, this.knowledgeBase.providers)) {
-            return this.responses.providers;
-        }
-        
-        // Check for greeting
-        if (this.matchesAny(lowerMsg, this.knowledgeBase.greetings)) {
-            return this.responses.greeting;
-        }
-        
-        // Default response
-        return this.responses.default;
-    }
-    
-    matchesAny(text, keywords) {
-        return keywords.some(keyword => text.includes(keyword));
+        // Default
+        return "Thanks for your message! 📡\n\nI can help with:\n💰 Packages & pricing\n🗺️ Coverage checking\n🔧 Installation process\n🛠️ Support & troubleshooting\n\nCould you rephrase your question or select one of the options below?";
     }
     
     addMessage(text, sender) {
@@ -297,18 +234,16 @@ class GrayTechChat {
         
         if (sender === 'system') {
             messageDiv.innerHTML = `
-                <div class="message-avatar">
-                    <i class="${this.agentAvatar}"></i>
-                </div>
+                <div class="message-avatar"><i class="${this.agentAvatar}"></i></div>
                 <div class="message-content">
-                    ${this.formatMessage(text)}
+                    <div class="message-text">${this.formatMessage(text)}</div>
                     <span class="message-time">${time}</span>
                 </div>
             `;
         } else {
             messageDiv.innerHTML = `
                 <div class="message-content">
-                    ${this.formatMessage(text)}
+                    <div class="message-text">${this.formatMessage(text)}</div>
                     <span class="message-time">${time}</span>
                 </div>
             `;
@@ -316,445 +251,52 @@ class GrayTechChat {
         
         messagesContainer.appendChild(messageDiv);
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
-        
-        // Save to localStorage
         this.saveMessages();
     }
     
     formatMessage(text) {
+        // Convert markdown-style bold
+        let formatted = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
         // Convert newlines to <br>
-        return text.replace(/\n/g, '<br>');
+        formatted = formatted.replace(/\n/g, '<br>');
+        return formatted;
     }
     
     showTypingIndicator() {
         const messagesContainer = document.getElementById('chatMessages');
-        this.isTyping = true;
-        
         const typingDiv = document.createElement('div');
-        typingDiv.className = 'message system typing-message';
+        typingDiv.className = 'message system';
         typingDiv.id = 'typingIndicator';
         typingDiv.innerHTML = `
-            <div class="message-avatar">
-                <i class="${this.agentAvatar}"></i>
-            </div>
-            <div class="typing-indicator">
-                <span></span><span></span><span></span>
-            </div>
+            <div class="message-avatar"><i class="${this.agentAvatar}"></i></div>
+            <div class="typing-indicator"><span></span><span></span><span></span></div>
         `;
-        
         messagesContainer.appendChild(typingDiv);
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
     }
     
     hideTypingIndicator() {
         const typingDiv = document.getElementById('typingIndicator');
-        if (typingDiv) {
-            typingDiv.remove();
-        }
-        this.isTyping = false;
+        if (typingDiv) typingDiv.remove();
     }
     
     saveMessages() {
         const messages = [];
         document.querySelectorAll('#chatMessages .message').forEach(msg => {
-            if (!msg.classList.contains('typing-message')) {
-                messages.push({
-                    text: msg.querySelector('.message-content')?.innerText || '',
-                    sender: msg.classList.contains('user') ? 'user' : 'system'
-                });
+            if (!msg.id) {
+                const text = msg.querySelector('.message-text')?.innerHTML || '';
+                const sender = msg.classList.contains('user') ? 'user' : 'system';
+                if (text) messages.push({ text, sender });
             }
         });
-        localStorage.setItem('graytech_chat_messages', JSON.stringify(messages.slice(-50)));
+        localStorage.setItem('graytech_chat_messages', JSON.stringify(messages.slice(-30)));
     }
     
     loadMessages() {
         const saved = localStorage.getItem('graytech_chat_messages');
         if (saved) {
             const messages = JSON.parse(saved);
-            const messagesContainer = document.getElementById('chatMessages');
-            if (messagesContainer && messages.length > 0) {
-                messagesContainer.innerHTML = '';
-                messages.forEach(msg => {
-                    this.addMessage(msg.text, msg.sender);
-                });
-            }
-        }
-    }// ========== AI CHAT ASSISTANT ==========
-class GrayTechChat {
-    constructor() {
-        this.isOpen = false;
-        this.messages = [];
-        this.isTyping = false;
-        this.agentName = 'GrayBot';
-        this.agentAvatar = 'fas fa-robot';
-        
-        // Chat knowledge base
-        this.knowledgeBase = {
-            greetings: ['hello', 'hi', 'hey', 'good morning', 'good afternoon', 'good evening', 'howdy'],
-            pricing: ['price', 'cost', 'how much', 'package', 'plan', 'pricing', 'rates', 'monthly', 'subscription'],
-            coverage: ['coverage', 'available', 'area', 'location', 'fibre map', 'check availability', 'can i get'],
-            speed: ['speed', 'fast', 'mbps', 'gigabit', 'slow', 'download', 'upload', 'performance'],
-            support: ['support', 'help', 'issue', 'problem', 'not working', 'down', 'complaint', 'ticket'],
-            installation: ['install', 'installation', 'setup', 'technician', 'appointment', 'schedule'],
-            billing: ['bill', 'invoice', 'payment', 'pay', 'debit order', 'eft', 'credit card', 'refund'],
-            contract: ['contract', 'cancel', 'terminate', 'notice', 'month to month', '12 months', '24 months'],
-            order: ['order', 'sign up', 'register', 'buy', 'purchase', 'get connected'],
-            router: ['router', 'wifi', 'device', 'modem', 'settings', 'connection'],
-            loadShedding: ['load shedding', 'power', 'backup', 'ups', 'battery', 'eskom'],
-            business: ['business', 'company', 'office', 'commercial', 'corporate'],
-            home: ['home', 'residential', 'house', 'apartment', 'flat'],
-            providers: ['openserve', 'vumatel', 'octotel', 'frogfoot', 'metrofibre', 'vodacom', 'mtn', 'provider']
-        };
-        
-        this.responses = {
-            greeting: "Hey there! 👋 I'm GrayBot, your AI assistant. How can I help you with your fibre internet needs today?",
-            pricing: "Our fibre packages start from R459/month. Here are our popular plans:\n\n• LTE Starter: R459/month (200GB)\n• LTE Pro: R699/month (400GB)\n• Fibre 100: R899/month (1TB)\n• Fibre 500: R1,299/month (Unlimited)\n\nWould you like me to check which packages are available in your area?",
-            coverage: "I can help you check fibre availability! 🔍\n\nJust tell me your suburb or city name (e.g., 'Sandton', 'Cape Town', 'Durban', 'Fourways'), or use our coverage checker on this page.\n\nWould you like me to check for you?",
-            speed: "Our fibre speeds range from 50Mbps to 1Gbps depending on your area and provider:\n\n• 50Mbps: Perfect for streaming & browsing\n• 100Mbps: Great for families & WFH\n• 200Mbps: Ideal for gamers & 4K streaming\n• 500Mbps: Power user / small business\n• 1Gbps: Enterprise / heavy usage\n\nWhat speed are you interested in?",
-            support: "I'm sorry to hear you're having an issue. 😟\n\nOur support team is available 24/7. You can:\n\n1. Call us: 087 701 9055\n2. Email: support@graytechsystems.co.za\n3. Create a support ticket in your customer portal\n\nWould you like me to help you create a ticket?",
-            installation: "Great news! 🎉\n\nHere's what happens after you sign up:\n\n1️⃣ Confirmation email within minutes\n2️⃣ Installation scheduled within 24 hours\n3️⃣ Technician visits within 3-5 business days\n4️⃣ Free router installation included\n\nReady to get started? I can help you sign up right now!",
-            billing: "For billing inquiries, you can:\n\n• Pay online via our customer portal\n• Set up debit order (DebiCheck)\n• Call our finance team: 087 701 9056\n\nIs there a specific invoice or payment issue I can help with?",
-            contract: "All our fibre packages come with a 12-month contract. LTE plans offer month-to-month options.\n\nNeed to cancel? Please give 30 days written notice to support@graytechsystems.co.za",
-            order: "Awesome! Let's get you connected. 🚀\n\nJust click the 'Check Coverage' button on this page, enter your address, and you'll see available providers and packages. Then you can complete your order online in minutes.\n\nWould you like me to guide you through the process?",
-            router: "All our fibre packages include a FREE high-quality router! 🎁\n\n• LTE plans: Free 4G/LTE router\n• 100Mbps+: Free standard router\n• 500Mbps+: Free mesh router\n\nNeed help with router configuration? I can assist!",
-            loadShedding: "We've got you covered during load shedding! 💡\n\n• Most exchanges have backup power\n• We offer UPS solutions for your home/office\n• Our LTE packages work during power outages\n\nWould you like to learn about our backup power solutions?",
-            business: "For business solutions, we offer:\n\n• Dedicated business fibre (SLA-backed)\n• VoIP phone systems (save up to 60%)\n• Network security & monitoring\n• IT maintenance & support\n\nWould you like me to connect you with our business team?",
-            home: "For home users, we have:\n\n• Fibre packages from 50Mbps to 1Gbps\n• LTE/5G for reliable backup\n• Smart home security solutions\n\nWhat's your primary use? Streaming, gaming, working from home?",
-            providers: "We work with multiple providers to give you the best coverage:\n\n• OpenServe (largest network)\n• Vumatel (major metros)\n• Octotel (Western Cape)\n• Frogfoot (growing network)\n• MetroFibre (premium areas)\n• Vodacom & MTN (selected areas)\n\nCheck your area to see available providers!",
-            default: "Thanks for your message! 📡\n\nI'm still learning, but I can help with:\n• Fibre packages & pricing 💰\n• Coverage checking 🗺️\n• Installation process 🔧\n• Support & troubleshooting 🛠️\n• Billing & payments 💳\n\nCould you rephrase your question or select one of the suggestions below?"
-        };
-        
-        this.init();
-    }
-    
-    init() {
-        this.createChatWidget();
-        this.loadMessages();
-        this.setupEventListeners();
-    }
-    
-    createChatWidget() {
-        // Check if chat widget already exists
-        if (document.querySelector('.chat-widget')) return;
-        
-        const chatHTML = `
-            <div class="chat-widget">
-                <div class="chat-button" id="chatButton">
-                    <i class="fas fa-comment-dots"></i>
-                    <span class="notification-badge">1</span>
-                </div>
-                <div class="chat-window" id="chatWindow">
-                    <div class="chat-header">
-                        <div class="chat-header-info">
-                            <div class="chat-avatar">
-                                <i class="${this.agentAvatar}"></i>
-                            </div>
-                            <div class="chat-header-text">
-                                <h4>GrayTech Support</h4>
-                                <p><span class="status-dot"></span> AI Assistant • Online</p>
-                            </div>
-                        </div>
-                        <button class="chat-close" id="chatClose">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
-                    <div class="chat-messages" id="chatMessages">
-                        <div class="message system">
-                            <div class="message-avatar">
-                                <i class="${this.agentAvatar}"></i>
-                            </div>
-                            <div class="message-content">
-                                Hello! 👋 I'm GrayBot, your AI assistant.<br>
-                                How can I help you with your fibre internet today?
-                                <span class="message-time">Just now</span>
-                                <div class="quick-replies">
-                                    <button class="quick-reply" data-query="fibre packages">💰 View Packages</button>
-                                    <button class="quick-reply" data-query="check coverage">🗺️ Check Coverage</button>
-                                    <button class="quick-reply" data-query="installation">🔧 Installation Process</button>
-                                    <button class="quick-reply" data-query="support">🛠️ Get Support</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="chat-suggestions">
-                        <span class="suggestion-chip" data-query="fibre packages">💰 Fibre Packages</span>
-                        <span class="suggestion-chip" data-query="check coverage">🗺️ Check Coverage</span>
-                        <span class="suggestion-chip" data-query="installation time">⏱️ Installation Time</span>
-                        <span class="suggestion-chip" data-query="load shedding">⚡ Load Shedding</span>
-                        <span class="suggestion-chip" data-query="business fibre">🏢 Business Fibre</span>
-                        <span class="suggestion-chip" data-query="router included">📡 Router Included</span>
-                    </div>
-                    <div class="chat-input-container">
-                        <input type="text" class="chat-input" id="chatInput" placeholder="Type your message...">
-                        <button class="chat-send" id="chatSend">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        `;
-        
-        document.body.insertAdjacentHTML('beforeend', chatHTML);
-    }
-    
-    setupEventListeners() {
-        const chatButton = document.getElementById('chatButton');
-        const chatWindow = document.getElementById('chatWindow');
-        const chatClose = document.getElementById('chatClose');
-        const chatSend = document.getElementById('chatSend');
-        const chatInput = document.getElementById('chatInput');
-        
-        if (chatButton) {
-            chatButton.addEventListener('click', () => this.toggleChat());
-        }
-        
-        if (chatClose) {
-            chatClose.addEventListener('click', () => this.closeChat());
-        }
-        
-        if (chatSend) {
-            chatSend.addEventListener('click', () => this.sendMessage());
-        }
-        
-        if (chatInput) {
-            chatInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') this.sendMessage();
-            });
-        }
-        
-        // Quick reply buttons
-        document.querySelectorAll('.quick-reply, .suggestion-chip').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const query = btn.dataset.query;
-                if (query) {
-                    document.getElementById('chatInput').value = query;
-                    this.sendMessage();
-                }
-            });
-        });
-    }
-    
-    toggleChat() {
-        const chatWindow = document.getElementById('chatWindow');
-        const notificationBadge = document.querySelector('.notification-badge');
-        
-        if (chatWindow) {
-            this.isOpen = !this.isOpen;
-            chatWindow.classList.toggle('open', this.isOpen);
-            
-            if (this.isOpen && notificationBadge) {
-                notificationBadge.style.display = 'none';
-            }
-            
-            if (this.isOpen) {
-                document.getElementById('chatInput')?.focus();
-            }
-        }
-    }
-    
-    closeChat() {
-        const chatWindow = document.getElementById('chatWindow');
-        if (chatWindow) {
-            this.isOpen = false;
-            chatWindow.classList.remove('open');
-        }
-    }
-    
-    sendMessage() {
-        const input = document.getElementById('chatInput');
-        const message = input.value.trim();
-        
-        if (!message) return;
-        
-        // Add user message
-        this.addMessage(message, 'user');
-        input.value = '';
-        
-        // Show typing indicator
-        this.showTypingIndicator();
-        
-        // Process and respond after delay
-        setTimeout(() => {
-            this.hideTypingIndicator();
-            const response = this.processMessage(message);
-            this.addMessage(response, 'system');
-        }, 800 + Math.random() * 500);
-    }
-    
-    processMessage(message) {
-        const lowerMsg = message.toLowerCase();
-        
-        // Check for coverage request (includes suburb/city mention)
-        const locationMatch = lowerMsg.match(/\b(sandton|johannesburg|pretoria|capetown|cape town|durban|fourways|midrand|centurion|randburg|roodepoort|bryanston|rosebank|menlyn|waterkloof|claremont|stellenbosch|paarl|bellville|umhlanga|ballito)\b/i);
-        if ((lowerMsg.includes('coverage') || lowerMsg.includes('available') || lowerMsg.includes('area')) && locationMatch) {
-            const city = locationMatch[0];
-            return `I'm checking availability in ${city}... 🗺️\n\nGreat news! Fibre is available in ${city} through multiple providers like OpenServe, Vumatel, and Octotel. Speeds range from 50Mbps to 1Gbps starting from R599/month.\n\nWould you like me to check which specific packages are available in your exact address?`;
-        }
-        
-        // Check for specific package request
-        if (lowerMsg.includes('package') || lowerMsg.includes('plan') || (lowerMsg.includes('fibre') && (lowerMsg.includes('price') || lowerMsg.includes('cost')))) {
-            return this.responses.pricing;
-        }
-        
-        // Check for price/cost
-        if (this.matchesAny(lowerMsg, this.knowledgeBase.pricing)) {
-            return this.responses.pricing;
-        }
-        
-        // Check for coverage
-        if (this.matchesAny(lowerMsg, this.knowledgeBase.coverage)) {
-            return this.responses.coverage;
-        }
-        
-        // Check for speed
-        if (this.matchesAny(lowerMsg, this.knowledgeBase.speed)) {
-            return this.responses.speed;
-        }
-        
-        // Check for support
-        if (this.matchesAny(lowerMsg, this.knowledgeBase.support)) {
-            return this.responses.support;
-        }
-        
-        // Check for installation
-        if (this.matchesAny(lowerMsg, this.knowledgeBase.installation)) {
-            return this.responses.installation;
-        }
-        
-        // Check for billing
-        if (this.matchesAny(lowerMsg, this.knowledgeBase.billing)) {
-            return this.responses.billing;
-        }
-        
-        // Check for order/signup
-        if (this.matchesAny(lowerMsg, this.knowledgeBase.order)) {
-            return this.responses.order;
-        }
-        
-        // Check for router
-        if (this.matchesAny(lowerMsg, this.knowledgeBase.router)) {
-            return this.responses.router;
-        }
-        
-        // Check for load shedding
-        if (this.matchesAny(lowerMsg, this.knowledgeBase.loadShedding)) {
-            return this.responses.loadShedding;
-        }
-        
-        // Check for business
-        if (this.matchesAny(lowerMsg, this.knowledgeBase.business)) {
-            return this.responses.business;
-        }
-        
-        // Check for home/residential
-        if (this.matchesAny(lowerMsg, this.knowledgeBase.home)) {
-            return this.responses.home;
-        }
-        
-        // Check for providers
-        if (this.matchesAny(lowerMsg, this.knowledgeBase.providers)) {
-            return this.responses.providers;
-        }
-        
-        // Check for greeting
-        if (this.matchesAny(lowerMsg, this.knowledgeBase.greetings)) {
-            return this.responses.greeting;
-        }
-        
-        // Default response
-        return this.responses.default;
-    }
-    
-    matchesAny(text, keywords) {
-        return keywords.some(keyword => text.includes(keyword));
-    }
-    
-    addMessage(text, sender) {
-        const messagesContainer = document.getElementById('chatMessages');
-        const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-        
-        const messageDiv = document.createElement('div');
-        messageDiv.className = `message ${sender}`;
-        
-        if (sender === 'system') {
-            messageDiv.innerHTML = `
-                <div class="message-avatar">
-                    <i class="${this.agentAvatar}"></i>
-                </div>
-                <div class="message-content">
-                    ${this.formatMessage(text)}
-                    <span class="message-time">${time}</span>
-                </div>
-            `;
-        } else {
-            messageDiv.innerHTML = `
-                <div class="message-content">
-                    ${this.formatMessage(text)}
-                    <span class="message-time">${time}</span>
-                </div>
-            `;
-        }
-        
-        messagesContainer.appendChild(messageDiv);
-        messagesContainer.scrollTop = messagesContainer.scrollHeight;
-        
-        // Save to localStorage
-        this.saveMessages();
-    }
-    
-    formatMessage(text) {
-        // Convert newlines to <br>
-        return text.replace(/\n/g, '<br>');
-    }
-    
-    showTypingIndicator() {
-        const messagesContainer = document.getElementById('chatMessages');
-        this.isTyping = true;
-        
-        const typingDiv = document.createElement('div');
-        typingDiv.className = 'message system typing-message';
-        typingDiv.id = 'typingIndicator';
-        typingDiv.innerHTML = `
-            <div class="message-avatar">
-                <i class="${this.agentAvatar}"></i>
-            </div>
-            <div class="typing-indicator">
-                <span></span><span></span><span></span>
-            </div>
-        `;
-        
-        messagesContainer.appendChild(typingDiv);
-        messagesContainer.scrollTop = messagesContainer.scrollHeight;
-    }
-    
-    hideTypingIndicator() {
-        const typingDiv = document.getElementById('typingIndicator');
-        if (typingDiv) {
-            typingDiv.remove();
-        }
-        this.isTyping = false;
-    }
-    
-    saveMessages() {
-        const messages = [];
-        document.querySelectorAll('#chatMessages .message').forEach(msg => {
-            if (!msg.classList.contains('typing-message')) {
-                messages.push({
-                    text: msg.querySelector('.message-content')?.innerText || '',
-                    sender: msg.classList.contains('user') ? 'user' : 'system'
-                });
-            }
-        });
-        localStorage.setItem('graytech_chat_messages', JSON.stringify(messages.slice(-50)));
-    }
-    
-    loadMessages() {
-        const saved = localStorage.getItem('graytech_chat_messages');
-        if (saved) {
-            const messages = JSON.parse(saved);
-            const messagesContainer = document.getElementById('chatMessages');
-            if (messagesContainer && messages.length > 0) {
-                messagesContainer.innerHTML = '';
+            if (messages.length > 0 && messages.length < 8) {
                 messages.forEach(msg => {
                     this.addMessage(msg.text, msg.sender);
                 });
@@ -763,13 +305,7 @@ class GrayTechChat {
     }
 }
 
-// Initialize chat when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-    window.grayTechChat = new GrayTechChat();
-});
-}
-
-// Initialize chat when DOM is ready
+// Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
     window.grayTechChat = new GrayTechChat();
 });

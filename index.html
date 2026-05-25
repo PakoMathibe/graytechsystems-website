@@ -30,102 +30,151 @@
     <link href="src/css/style.css" rel="stylesheet" />
 
     <style>
-        .service-card-home {
-            background: white;
-            border-radius: 16px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-            height: 100%;
-            cursor: pointer;
-        }
-        .service-card-home:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-        .service-icon-home {
-            width: 70px;
-            height: 70px;
-            background: rgba(6, 163, 218, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-        }
-        .service-icon-home i { font-size: 1.75rem; color: #06a3da; }
-        .service-card-home h4 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
-        .service-card-home p { font-size: 0.85rem; color: #666; margin-bottom: 0; }
-        .home-coverage-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-        .home-coverage-card:hover { transform: translateY(-5px); }
-        .coverage-list-home { padding: 1.5rem; }
-        .coverage-area-home {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.6rem 0;
-            border-bottom: 1px solid #f0f0f0;
-            font-size: 0.875rem;
-        }
-        .area-badge-home {
-            font-size: 0.7rem;
-            padding: 0.2rem 0.6rem;
-            border-radius: 20px;
-            background: rgba(6, 163, 218, 0.1);
-            color: #06a3da;
-        }
-        .area-badge-home.available { background: rgba(52, 173, 84, 0.1); color: #34ad54; }
-        .btn-check-coverage {
-            background: #06a3da;
-            color: white;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            margin-top: 1rem;
-        }
-        .btn-check-coverage:hover { background: #0582b0; transform: translateY(-2px); color: white; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.15) !important; }
-        
-        /* Mega Menu Dropdown Styles - FIXED */
-        .dropdown-menu { border-radius: 12px; border: none; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
-        .dropdown-item { padding: 0.5rem 1rem; font-size: 0.9rem; transition: all 0.2s; }
-        .dropdown-item:hover { background-color: rgba(6,163,218,0.05); color: #06a3da; transform: translateX(5px); }
-        .dropdown-header { font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; }
-        .mega-dropdown { min-width: 720px; padding: 1.5rem; left: auto !important; right: auto !important; }
-        @media (max-width: 991.98px) { .mega-dropdown { min-width: auto; width: 90vw; left: 5% !important; right: auto !important; } }
-        @media (max-width: 768px) { .mega-dropdown { min-width: auto; width: 95vw; left: 2.5% !important; } .mega-dropdown .row { flex-direction: column; } .mega-dropdown .col-md-4 { width: 100%; margin-bottom: 1rem; } }
+      .service-card-home {
+          background: white;
+          border-radius: 16px;
+          padding: 1.5rem;
+          text-align: center;
+          transition: all 0.3s ease;
+          box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+          height: 100%;
+          cursor: pointer;
+      }
+      .service-card-home:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+      .service-icon-home {
+          width: 70px;
+          height: 70px;
+          background: rgba(6, 163, 218, 0.1);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto 1rem;
+      }
+      .service-icon-home i { font-size: 1.75rem; color: #06a3da; }
+      .service-card-home h4 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
+      .service-card-home p { font-size: 0.85rem; color: #666; margin-bottom: 0; }
+      .home-coverage-card {
+          background: white;
+          border-radius: 20px;
+          overflow: hidden;
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s ease;
+      }
+      .home-coverage-card:hover { transform: translateY(-5px); }
+      .coverage-list-home { padding: 1.5rem; }
+      .coverage-area-home {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0.6rem 0;
+          border-bottom: 1px solid #f0f0f0;
+          font-size: 0.875rem;
+      }
+      .area-badge-home {
+          font-size: 0.7rem;
+          padding: 0.2rem 0.6rem;
+          border-radius: 20px;
+          background: rgba(6, 163, 218, 0.1);
+          color: #06a3da;
+      }
+      .area-badge-home.available { background: rgba(52, 173, 84, 0.1); color: #34ad54; }
+      .btn-check-coverage {
+          background: #06a3da;
+          color: white;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.75rem 1.5rem;
+          border-radius: 50px;
+          text-decoration: none;
+          font-weight: 600;
+          transition: all 0.3s;
+          margin-top: 1rem;
+      }
+      .btn-check-coverage:hover { background: #0582b0; transform: translateY(-2px); color: white; }
+      .card:hover { transform: translateY(-5px); box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.15) !important; }
+      
+      /* Mega Menu Dropdown Styles - FIXED */
+      .dropdown-menu { border-radius: 12px; border: none; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+      .dropdown-item { padding: 0.5rem 1rem; font-size: 0.9rem; transition: all 0.2s; }
+      .dropdown-item:hover { background-color: rgba(6,163,218,0.05); color: #06a3da; transform: translateX(5px); }
+      .dropdown-header { font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; }
+      .mega-dropdown { min-width: 720px; padding: 1.5rem; left: auto !important; right: auto !important; }
+      @media (max-width: 991.98px) { .mega-dropdown { min-width: auto; width: 90vw; left: 5% !important; right: auto !important; } }
+      @media (max-width: 768px) { .mega-dropdown { min-width: auto; width: 95vw; left: 2.5% !important; } .mega-dropdown .row { flex-direction: column; } .mega-dropdown .col-md-4 { width: 100%; margin-bottom: 1rem; } }
 
-        .transition-all { transition: all 0.3s ease; }
-        .transition-all:hover { transform: translateY(-5px); }
-        
-        /* Pricing Card Fixes */
-        .pricing-card { background: white !important; color: #333 !important; }
-        .pricing-card h3, .pricing-card h2, .pricing-card p, .pricing-card li { color: #333 !important; }
-        .pricing-card .text-muted { color: #6c757d !important; }
-        .pricing-card hr { background-color: #dee2e6; }
-        .pricing-card .btn-outline-primary { background: transparent; border: 2px solid #06a3da; color: #06a3da; }
-        .pricing-card .btn-outline-primary:hover { background: #06a3da; color: white; }
-        .pricing-card .btn-primary { background: #06a3da; border: none; color: white; }
-        .pricing-card .badge.bg-secondary { background: #e9ecef !important; color: #495057 !important; }
-        .pricing-card .badge.bg-primary { background: #06a3da !important; color: white !important; }
-        .pricing-card i.fa-check { color: #06a3da !important; }
-        
-        /* Scroll Animation Class */
-        .scroll-animate { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
-        .scroll-animate.animated { opacity: 1; transform: translateY(0); }
-    </style>
+      .transition-all { transition: all 0.3s ease; }
+      .transition-all:hover { transform: translateY(-5px); }
+      
+      /* Pricing Card Fixes */
+      .pricing-card { background: white !important; color: #333 !important; }
+      .pricing-card h3, .pricing-card h2, .pricing-card p, .pricing-card li { color: #333 !important; }
+      .pricing-card .text-muted { color: #6c757d !important; }
+      .pricing-card hr { background-color: #dee2e6; }
+      .pricing-card .btn-outline-primary { background: transparent; border: 2px solid #06a3da; color: #06a3da; }
+      .pricing-card .btn-outline-primary:hover { background: #06a3da; color: white; }
+      .pricing-card .btn-primary { background: #06a3da; border: none; color: white; }
+      .pricing-card .badge.bg-secondary { background: #e9ecef !important; color: #495057 !important; }
+      .pricing-card .badge.bg-primary { background: #06a3da !important; color: white !important; }
+      .pricing-card i.fa-check { color: #06a3da !important; }
+      
+      /* Scroll Animation Class */
+      .scroll-animate { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
+      .scroll-animate.animated { opacity: 1; transform: translateY(0); }
+      
+      /* Back to Top overlap fix */
+      .back-to-top {
+          bottom: 100px !important;
+      }
+      @media (max-width: 768px) {
+          .back-to-top {
+              bottom: 90px !important;
+          }
+      }
+      
+      /* Chat text color fix */
+      .chat-header-info p { 
+          font-size: 11px; 
+          margin: 0; 
+          opacity: 1;
+          color: white !important;
+      }
+      
+      /* Testimonial styles fix */
+      .testimonial-item {
+          background: #ffffff;
+          border-radius: 16px;
+          overflow: hidden;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+          margin: 20px;
+      }
+      
+      .testimonial-item h4 {
+          font-size: 1rem;
+          font-weight: 600;
+      }
+      
+      .testimonial-item small {
+          font-size: 0.75rem;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          color: #6c757d;
+      }
+      
+      /* Chat responsive fix */
+      @media (max-width: 480px) {
+          .chat-window {
+              width: calc(100vw - 30px);
+              right: 15px;
+              bottom: 75px;
+              height: 450px;
+          }
+      }
+  </style>
 </head>
 
 <body>
