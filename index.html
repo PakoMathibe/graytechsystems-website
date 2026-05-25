@@ -175,6 +175,12 @@
           width: 100%;
         }
       }
+      .transition-all {
+        transition: all 0.3s ease;
+      }
+      .transition-all:hover {
+        transform: translateY(-5px);
+      }
     </style>
   </head>
 
@@ -187,6 +193,58 @@
       <div class="spinner"></div>
     </div>
     <!-- Spinner End -->
+
+    <!-- Live Network Status Bar -->
+    <div class="container-fluid py-2" style="background: #e8f5e9; border-bottom: 1px solid #c8e6c9;">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-auto">
+            <span class="small">
+              <i class="fas fa-circle text-success me-1" style="font-size: 0.6rem;"></i>
+              <strong>Network Status:</strong> All systems operational
+            </span>
+          </div>
+          <div class="col-auto">
+            <a href="#" class="small text-primary text-decoration-none" data-bs-toggle="modal" data-bs-target="#statusModal">
+              View history →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Status Modal (hidden until clicked) -->
+    <div class="modal fade" id="statusModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title">Network Status History</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <div class="d-flex justify-content-between mb-2 pb-2 border-bottom">
+              <span>25 May 2026</span>
+              <span class="text-success">✅ Operational</span>
+            </div>
+            <div class="d-flex justify-content-between mb-2 pb-2 border-bottom">
+              <span>24 May 2026</span>
+              <span class="text-success">✅ Operational</span>
+            </div>
+            <div class="d-flex justify-content-between mb-2 pb-2 border-bottom">
+              <span>23 May 2026</span>
+              <span class="text-warning">⚠️ Degraded (2 hours)</span>
+            </div>
+            <div class="d-flex justify-content-between">
+              <span>22 May 2026</span>
+              <span class="text-success">✅ Operational</span>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <small class="text-muted">Last updated: 25 May 2026, 08:00</small>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Navbar Start -->
     <div class="container-fluid position-relative p-0">
@@ -468,9 +526,9 @@
               <h5 class="fw-bold text-primary text-uppercase">
                 About GrayTech Systems
               </h5>
-              <h1 class="mb-0">
+              <h2 class="mb-0">
                 Your Trusted IT Solutions Provider in South Africa
-              </h1>
+              </h2>
             </div>
             <p class="mb-4">
               GrayTech Systems is a leading IT solutions provider delivering
@@ -547,7 +605,7 @@
           style="max-width: 700px"
         >
           <h5 class="fw-bold text-primary text-uppercase">Our Solutions</h5>
-          <h1 class="mb-0">Complete IT Solutions For Your Business</h1>
+          <h2 class="mb-0">Complete IT Solutions For Your Business</h2>
           <p class="mt-3">
             From connectivity to security, we handle all your technology needs
           </p>
@@ -703,7 +761,7 @@
           style="max-width: 600px"
         >
           <h5 class="fw-bold text-primary text-uppercase">Why Choose Us</h5>
-          <h1 class="mb-0">We Deliver Enterprise-Grade IT Solutions</h1>
+          <h2 class="mb-0">We Deliver Enterprise-Grade IT Solutions</h2>
         </div>
         <div class="row g-5">
           <div class="col-lg-4">
@@ -795,7 +853,7 @@
           <h5 class="fw-bold text-primary text-uppercase">
             Industries We Serve
           </h5>
-          <h1 class="mb-0">IT Solutions For Every Business</h1>
+          <h2 class="mb-0">IT Solutions For Every Business</h2>
           <p class="mt-3">Tailored technology solutions for your industry</p>
         </div>
         <div class="row g-4">
@@ -881,9 +939,145 @@
     </div>
     <!-- Industries We Serve End -->
 
+    <!-- Partner & Carrier Logos Start -->
+    <div class="container-fluid py-4 wow fadeInUp" data-wow-delay="0.1s" style="background: white;">
+      <div class="container">
+        <div class="text-center mb-4">
+          <h6 class="text-primary text-uppercase small fw-bold">Our Partners</h6>
+          <p class="text-muted small">Trusted by leading carriers</p>
+        </div>
+        <div class="row g-4 align-items-center justify-content-center">
+          <div class="col-auto">
+            <div class="bg-light rounded p-3 px-4" style="opacity: 0.7;">
+              <i class="fas fa-tower-cell fa-2x text-secondary"></i>
+              <span class="ms-2 fw-semibold">Vodacom</span>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="bg-light rounded p-3 px-4" style="opacity: 0.7;">
+              <i class="fas fa-signal fa-2x text-secondary"></i>
+              <span class="ms-2 fw-semibold">MTN</span>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="bg-light rounded p-3 px-4" style="opacity: 0.7;">
+              <i class="fas fa-phone-alt fa-2x text-secondary"></i>
+              <span class="ms-2 fw-semibold">Telkom</span>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="bg-light rounded p-3 px-4" style="opacity: 0.7;">
+              <i class="fas fa-wifi fa-2x text-secondary"></i>
+              <span class="ms-2 fw-semibold">Ubiquiti</span>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="bg-light rounded p-3 px-4" style="opacity: 0.7;">
+              <i class="fas fa-microchip fa-2x text-secondary"></i>
+              <span class="ms-2 fw-semibold">MikroTik</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Partner & Carrier Logos End -->
+
+    <!-- Pricing Section Start -->
+    <div class="container-fluid py-5 wow fadeInUp bg-light" data-wow-delay="0.1s">
+      <div class="container py-5">
+        <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 700px">
+          <h5 class="fw-bold text-primary text-uppercase">Pricing</h5>
+          <h2 class="mb-0">Internet Packages That Fit Your Budget</h2>
+          <p class="mt-3 text-muted">No hidden fees. Month-to-month contracts available.</p>
+        </div>
+        <div class="row g-4">
+          <!-- Package 1 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="bg-white rounded-4 p-4 text-center shadow-sm h-100 transition-all">
+              <div class="mb-3">
+                <span class="badge bg-secondary bg-opacity-10 text-secondary px-3 py-2">LTE</span>
+              </div>
+              <h3 class="h5 text-primary fw-bold">LTE Starter</h3>
+              <h2 class="display-5 fw-bold text-dark">R459</h2>
+              <p class="text-muted small">per month</p>
+              <hr>
+              <ul class="list-unstyled small text-start mb-4">
+                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> 200GB Data</li>
+                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> 20Mbps Speed</li>
+                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Free Router</li>
+                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> 24/7 Support</li>
+              </ul>
+              <a href="quote.html?package=lte-starter" class="btn btn-outline-primary w-100 rounded-pill">Select Plan →</a>
+            </div>
+          </div>
+          <!-- Package 2 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="bg-white rounded-4 p-4 text-center shadow-sm h-100" style="border-top: 4px solid #06a3da;">
+              <div class="mb-3">
+                <span class="badge bg-primary text-white px-3 py-2">POPULAR</span>
+              </div>
+              <h3 class="h5 text-primary fw-bold">LTE Pro</h3>
+              <h2 class="display-5 fw-bold text-dark">R699</h2>
+              <p class="text-muted small">per month</p>
+              <hr>
+              <ul class="list-unstyled small text-start mb-4">
+                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> 400GB Data</li>
+                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> 50Mbps Speed</li>
+                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Free Router + Antenna</li>
+                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Priority Support</li>
+              </ul>
+              <a href="quote.html?package=lte-pro" class="btn btn-primary w-100 rounded-pill">Select Plan →</a>
+            </div>
+          </div>
+          <!-- Package 3 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="bg-white rounded-4 p-4 text-center shadow-sm h-100">
+              <div class="mb-3">
+                <span class="badge bg-secondary bg-opacity-10 text-secondary px-3 py-2">FIBRE</span>
+              </div>
+              <h3 class="h5 text-primary fw-bold">Fibre 100</h3>
+              <h2 class="display-5 fw-bold text-dark">R899</h2>
+              <p class="text-muted small">per month</p>
+              <hr>
+              <ul class="list-unstyled small text-start mb-4">
+                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> 1TB Data</li>
+                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> 100Mbps Speed</li>
+                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Free Installation</li>
+                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Static IP Option</li>
+              </ul>
+              <a href="quote.html?package=fibre-100" class="btn btn-outline-primary w-100 rounded-pill">Select Plan →</a>
+            </div>
+          </div>
+          <!-- Package 4 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="bg-white rounded-4 p-4 text-center shadow-sm h-100">
+              <div class="mb-3">
+                <span class="badge bg-secondary bg-opacity-10 text-secondary px-3 py-2">FIBRE</span>
+              </div>
+              <h3 class="h5 text-primary fw-bold">Fibre 500</h3>
+              <h2 class="display-5 fw-bold text-dark">R1,299</h2>
+              <p class="text-muted small">per month</p>
+              <hr>
+              <ul class="list-unstyled small text-start mb-4">
+                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Unlimited Data</li>
+                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> 500Mbps Speed</li>
+                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Free Mesh Node</li>
+                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Business SLA Available</li>
+              </ul>
+              <a href="quote.html?package=fibre-500" class="btn btn-outline-primary w-100 rounded-pill">Select Plan →</a>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-5">
+          <a href="quote.html" class="text-primary text-decoration-none">Need a custom package? Request a quote →</a>
+        </div>
+      </div>
+    </div>
+    <!-- Pricing Section End -->
+
     <!-- Connectivity Checker Start -->
     <div
-      class="container-fluid py-5 wow fadeInUp bg-light"
+      class="container-fluid py-5 wow fadeInUp"
       data-wow-delay="0.1s"
     >
       <div class="container py-4">
@@ -893,7 +1087,7 @@
               <h5 class="fw-bold text-primary text-uppercase">
                 Check Connectivity
               </h5>
-              <h1 class="mb-3">What's Available in Your Area?</h1>
+              <h2 class="mb-3">What's Available in Your Area?</h2>
             </div>
             <p class="mb-4">
               Enter your address or suburb to see which connectivity options are
@@ -969,31 +1163,23 @@
                           placeholder="Suburb or street address"
                           id="checkAddress"
                           style="padding: 12px"
+                          required
                         />
                       </div>
                       <div class="mb-3">
-                        <select
-                          class="form-select form-select-sm border-0 bg-light"
-                        >
-                          <option>Select service type</option>
-                          <option>Fibre</option>
-                          <option>LTE / 5G</option>
-                          <option>Wireless</option>
-                          <option>All options</option>
+                        <select class="form-select form-select-sm border-0 bg-light" id="checkService">
+                          <option value="">Select service type</option>
+                          <option value="fibre">Fibre</option>
+                          <option value="lte">LTE / 5G</option>
+                          <option value="wireless">Wireless</option>
+                          <option value="all">All options</option>
                         </select>
                       </div>
-                      <button
-                        type="submit"
-                        class="btn btn-primary w-100 py-2 fw-bold"
-                      >
+                      <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">
                         Check Availability
                       </button>
                     </form>
-                    <div
-                      id="connectivityResult"
-                      class="mt-3"
-                      style="display: none"
-                    ></div>
+                    <div id="connectivityResult" class="mt-3" style="display: none;"></div>
                     <p class="small text-center text-muted mt-3 mb-0">
                       <i class="fas fa-lock"></i> Your info is private
                     </p>
@@ -1145,7 +1331,7 @@
           style="max-width: 600px"
         >
           <h5 class="fw-bold text-primary text-uppercase">Testimonials</h5>
-          <h1 class="mb-0">What Our Clients Say About Our IT Solutions</h1>
+          <h2 class="mb-0">What Our Clients Say About Our IT Solutions</h2>
         </div>
         <div
           class="owl-carousel testimonial-carousel wow fadeInUp"
@@ -1458,10 +1644,8 @@
               style="height: 60px"
             >
               <p class="mb-0 text-white small">
-                &copy;
-                <a class="text-white border-bottom" href="index.html"
-                  >GrayTech Systems</a
-                >. All Rights Reserved. POPIA Compliant
+                &copy; <span id="currentYear"></span>
+                <a class="text-white border-bottom" href="index.html">GrayTech Systems</a>. All Rights Reserved. | POPIA Compliant | ICASA Reg: [Insert Number]
               </p>
             </div>
           </div>
@@ -1485,19 +1669,52 @@
     <script src="src/lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="src/js/main.js"></script>
     <script>
-      document
-        .getElementById('connectivityCheckForm')
-        ?.addEventListener('submit', function (e) {
-          e.preventDefault();
-          const address = document.getElementById('checkAddress').value;
-          if (!address) {
-            alert('Please enter your address');
-            return;
-          }
-          const resultDiv = document.getElementById('connectivityResult');
-          resultDiv.style.display = 'block';
-          resultDiv.innerHTML = `<div class="bg-success bg-opacity-10 rounded p-2 text-center"><i class="fas fa-check-circle text-success"></i> <span class="small">Fibre available at this address!</span><div class="mt-2"><a href="quote.html" class="small text-primary">Get quote →</a></div></div>`;
+      document.getElementById('currentYear').innerText = new Date().getFullYear();
+
+      document.getElementById('connectivityCheckForm')?.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const address = document.getElementById('checkAddress').value.trim();
+        const service = document.getElementById('checkService')?.value || '';
+
+        if (!address) {
+          alert('Please enter your address or suburb');
+          return;
+        }
+
+        const resultDiv = document.getElementById('connectivityResult');
+        
+        resultDiv.style.display = 'block';
+        resultDiv.innerHTML = `
+          <div class="bg-primary bg-opacity-10 rounded-3 p-3 text-center">
+            <i class="fas fa-spinner fa-spin text-primary mb-2"></i>
+            <p class="small mb-2">Checking availability for <strong>${escapeHtml(address)}</strong>...</p>
+            <div class="alert alert-success py-2 mb-2" style="background: #d4edda; border: none;">
+              <i class="fas fa-check-circle text-success"></i> 
+              <span class="small">Fibre and LTE available at this location!</span>
+            </div>
+            <hr class="my-2">
+            <div class="row g-2">
+              <div class="col-6">
+                <a href="fibre.html" class="small text-primary text-decoration-none">View fibre plans →</a>
+              </div>
+              <div class="col-6">
+                <a href="quote.html?address=${encodeURIComponent(address)}" class="small text-primary text-decoration-none">Request quote →</a>
+              </div>
+            </div>
+          </div>
+        `;
+        
+        console.log('Coverage check submitted:', { address, service });
+      });
+
+      function escapeHtml(str) {
+        return str.replace(/[&<>]/g, function(m) {
+          if (m === '&') return '&amp;';
+          if (m === '<') return '&lt;';
+          if (m === '>') return '&gt;';
+          return m;
         });
+      }
     </script>
   </body>
 </html>
